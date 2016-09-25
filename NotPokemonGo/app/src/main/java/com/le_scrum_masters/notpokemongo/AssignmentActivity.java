@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import adapters.AssignmentListAdapter;
 import model.AssignmentItem;
 
 /**
@@ -27,8 +28,10 @@ public class AssignmentActivity extends AppCompatActivity {
 
         //AssignmentItem[] items = new AssignmentItem[]{};
         String[] items = new String[]{"Hola","Guten tag","Bonjour","Hello","Hej","Nihao"};
+        Integer[] images = new Integer[]{R.drawable.cool,R.drawable.weehh,R.drawable.cool,R.drawable.cool,R.drawable.weehh,R.drawable.cool};
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item_assignment, R.id.textView, items);
+        AssignmentListAdapter adapter = new AssignmentListAdapter(this, items, images);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item_assignment, R.id.textView, items);
 
         listView.setAdapter(adapter);
 
@@ -40,7 +43,6 @@ public class AssignmentActivity extends AppCompatActivity {
                 String itemValue = (String) listView.getItemAtPosition(position);
 
                 Toast.makeText(getApplicationContext(), itemValue, Toast.LENGTH_LONG).show();
-                //kewl
             }
         });
 

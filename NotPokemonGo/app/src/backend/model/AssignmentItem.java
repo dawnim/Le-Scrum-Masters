@@ -2,9 +2,9 @@ package model;
 
 public interface AssignmentItem {
     String getName();
-    Object getPosition();
-    Object getProgress();
-    Object getImage();
+    String[] getPosition();
+    int getProgress();
+    int getImageId();
     Boolean isInProgress();
     Boolean isCompleted();
 
