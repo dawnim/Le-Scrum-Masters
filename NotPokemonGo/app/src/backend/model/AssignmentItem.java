@@ -1,4 +1,4 @@
-package com.le_scrum_masters.notpokemongo;
+package model;
 
 public interface AssignmentItem {
     String getName();
