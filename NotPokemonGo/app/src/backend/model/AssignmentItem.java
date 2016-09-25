@@ -5,6 +5,8 @@ public interface AssignmentItem {
     Object getPosition();
     Object getProgress();
     Object getImage();
+    Boolean isInProgress();
+    Boolean isCompleted();
 
     void setProgress();
 
