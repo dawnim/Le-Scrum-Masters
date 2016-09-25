@@ -40,6 +40,7 @@ public class AssignmentActivity extends AppCompatActivity {
                 String itemValue = (String) listView.getItemAtPosition(position);
 
                 Toast.makeText(getApplicationContext(), itemValue, Toast.LENGTH_LONG).show();
+                //kewl
             }
         });
 
