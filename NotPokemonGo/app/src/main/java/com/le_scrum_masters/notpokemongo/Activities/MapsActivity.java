@@ -8,13 +8,23 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.le_scrum_masters.notpokemongo.R;
+import com.le_scrum_masters.notpokemongo.model.AssignmentItem;
+
+import model.AssignmentToDB;
+import model.NPGAssignmentItem;
+import model.Place;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private NPGAssignmentItem[] assignments;
+    private Place location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +44,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng chalmers = new LatLng(57.6884, 11.9778);
         mMap.addMarker(new MarkerOptions().position(chalmers).title("Marker on Chalmers"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chalmers, 11));
+        updateAssignments();
+        placeAssignmentMarker(new NPGAssignmentItem("big d's crib",location,0,0)); //test
+    }
+
+    public void updateAssignments(){
+        //assignments =
+    }
+
+    public void placeAssignmentMarker(NPGAssignmentItem Assignment){
+       // double[] coordinates = Assignment.getLocation().getCoordinates();
+        double[] coordinates = {57.706574 ,12.144207}; //big d's crib
+
+        LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
+        Marker marker;
+        marker = mMap.addMarker(new MarkerOptions().position(latLng).title(Assignment.getName()));
+        marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+        marker.showInfoWindow();
     }
 }
