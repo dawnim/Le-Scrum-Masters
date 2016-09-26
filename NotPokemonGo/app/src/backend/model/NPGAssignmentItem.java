@@ -54,7 +54,8 @@ public class NPGAssignmentItem implements AssignmentItem{
         if (inProgress){
             if (progress+1 == goal){
                 this.completed = true;
-            } else {
+                progress += 1;
+            } else if (progress+1 < goal){
                 progress += 1;
             }
         }

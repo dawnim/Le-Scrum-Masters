@@ -5,4 +5,5 @@ package model;
  */
 public interface MapDirector {
     Place getPlaceWithinRadius(int kilometres); // returns a Place within a given radius
+    Place getPlaceWithinRadius(int kilometres, Place.PlaceType type); // returns a Place within a given radius
 }

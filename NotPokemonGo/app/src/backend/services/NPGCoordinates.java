@@ -4,7 +4,7 @@ package services;
  * Created by Albin on 2016-09-26.
  */
 public class NPGCoordinates {
-    public double distanceBetweenCoordinates(int[] coord1, int[] coord2){ //Returns the distance between to points in kilometres
+    public static double distanceBetweenCoordinates(int[] coord1, int[] coord2){ //Returns the distance between two points in kilometres
         int radius_earth = 6371000;
 
         double lat1 = Math.toRadians(coord1[0]);
