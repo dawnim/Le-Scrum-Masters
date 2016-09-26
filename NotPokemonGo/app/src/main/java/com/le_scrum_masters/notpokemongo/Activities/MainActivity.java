@@ -14,7 +14,7 @@ import com.le_scrum_masters.notpokemongo.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    FloatingActionButton goToTask;
+
     FloatingActionButton goToMap;
     Intent intent;
     Intent mapsIntent;
@@ -23,13 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         intent = new Intent(this,TaskActivity.class);
-        goToTask = (FloatingActionButton)findViewById(R.id.fab);
-        goToTask.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
 
         mapsIntent = new Intent(this, MapsActivity.class);
         goToMap = (FloatingActionButton)findViewById(R.id.mapFab);
