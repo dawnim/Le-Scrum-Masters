@@ -2,7 +2,7 @@ package model;
 
 public interface AssignmentItem {
     String getName();
-    String[] getPosition();
+    Place getLocation();
     int getProgress();
     int getImageId();
     Boolean isInProgress();
