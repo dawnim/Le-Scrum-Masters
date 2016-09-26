@@ -22,6 +22,7 @@
             android:name="com.le_scrum_masters.notpokemongo.Activities.TaskActivity"
             android:label="@string/title_activity_task" >
         </activity>
+        <activity android:name=".MapsActivity"></activity>
     </application>
 
 </manifest>
