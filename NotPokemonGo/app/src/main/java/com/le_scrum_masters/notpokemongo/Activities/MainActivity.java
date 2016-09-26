@@ -15,8 +15,9 @@ import com.le_scrum_masters.notpokemongo.R;
 public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton goToTask;
+    FloatingActionButton goToMap;
     Intent intent;
-
+    Intent mapsIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,5 +30,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        mapsIntent = new Intent(this, MapsActivity.class);
+        goToMap = (FloatingActionButton)findViewById(R.id.mapFab);
+        goToMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(mapsIntent);
+            }
+        });
+
     }
 }
