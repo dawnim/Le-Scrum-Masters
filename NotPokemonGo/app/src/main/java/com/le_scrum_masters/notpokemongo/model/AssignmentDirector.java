@@ -1,6 +1,6 @@
-package model;
+package com.le_scrum_masters.notpokemongo.model;
 
-import model.AssignmentItem;
+import com.le_scrum_masters.notpokemongo.model.AssignmentItem;
 
 public interface AssignmentDirector {
     AssignmentItem getDailyPersonalAssignment();

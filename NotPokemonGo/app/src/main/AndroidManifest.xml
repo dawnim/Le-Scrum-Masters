@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,12 +19,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AssignmentActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+            android:name="com.le_scrum_masters.notpokemongo.Activities.TaskActivity"
+            android:label="@string/title_activity_task" >
         </activity>
     </application>
 
