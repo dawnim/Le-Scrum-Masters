@@ -3,11 +3,13 @@ package model;
 public interface AssignmentItem {
     String getName();
     Place getLocation();
-    int getProgress();
+    String getProgress();
     int getImageId();
     Boolean isInProgress();
     Boolean isCompleted();
 
-    void setProgress();
+    void incProgress();
+    void decProgress();
+    void setInProgress(Boolean inProgress);
 
 }
