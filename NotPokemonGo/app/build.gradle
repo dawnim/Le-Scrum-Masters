@@ -28,5 +28,4 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.0.0'
     compile 'com.google.android.gms:play-services-maps:9.0.2'
     compile 'com.google.gms:google-services:3.0.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
 }
