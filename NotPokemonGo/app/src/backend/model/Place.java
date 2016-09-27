@@ -6,4 +6,5 @@ package model;
 public interface Place {
     double[] getCoordinates(); // index 0 = latitude, index 1 = longitude
     String getType();
+    
 }
