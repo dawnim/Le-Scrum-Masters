@@ -1,4 +1,4 @@
-package com.le_scrum_masters.notpokemongo.model;
+package model;
 
 import model.Place;
 
