@@ -1,6 +1,10 @@
 package model;
 
 import com.le_scrum_masters.notpokemongo.model.AssignmentItem;
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/Database-branch
 /**
  * Created by Albin on 2016-09-26.
  */
