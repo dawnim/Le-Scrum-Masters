@@ -14,9 +14,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.le_scrum_masters.notpokemongo.R;
-import com.le_scrum_masters.notpokemongo.model.AssignmentItem;
 
-import model.AssignmentToDB;
 import model.NPGAssignmentItem;
 import model.Place;
 
@@ -26,6 +24,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private NPGAssignmentItem[] assignments;
     private Place location;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +33,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
 
     @Override
@@ -46,6 +46,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chalmers, 11));
         updateAssignments();
         placeAssignmentMarker(new NPGAssignmentItem("big d's crib",location,0,0)); //test
+
+        centerMapOnUserLoc(mMap);
+    }
+
+    public void centerMapOnUserLoc(GoogleMap map){
+
+        // map.setMyLocationEnabled(true);
+
     }
 
     public void updateAssignments(){
@@ -54,7 +62,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void placeAssignmentMarker(NPGAssignmentItem Assignment){
        // double[] coordinates = Assignment.getLocation().getCoordinates();
-        double[] coordinates = {57.706574 ,12.144207}; //big d's crib
+        double[] coordinates = {57.706574 ,12.144207}; //test big d's crib
 
         LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
         Marker marker;
