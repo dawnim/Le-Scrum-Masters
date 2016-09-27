@@ -14,6 +14,7 @@ import com.le_scrum_masters.notpokemongo.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    TaskDatabase Db;
     FloatingActionButton goToTask;
     Intent intent;
 
@@ -29,5 +30,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Db = new TaskDatabase(this);
     }
 }
