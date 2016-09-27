@@ -14,12 +14,11 @@ import com.le_scrum_masters.notpokemongo.R;
 
 public class MainActivity extends AppCompatActivity {
 
-<<<<<<< HEAD
-=======
+
     TaskDatabase db;
     FloatingActionButton goToTask;
-    Intent intent;
->>>>>>> refs/remotes/origin/Database-branch
+
+
 
     FloatingActionButton goToMap;
     Intent intent;
@@ -38,10 +37,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(mapsIntent);
             }
         });
-<<<<<<< HEAD
 
-=======
-        db = new TaskDatabase(this);
->>>>>>> refs/remotes/origin/Database-branch
+
+db = new TaskDatabase(this);
+
     }
 }
