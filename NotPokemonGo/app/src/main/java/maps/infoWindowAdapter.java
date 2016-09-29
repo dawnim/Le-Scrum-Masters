@@ -1,11 +1,10 @@
 package maps;
 
-import android.util.AttributeSet;
 import android.view.View;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
-import model.NPGAssignmentItem;
+import model.old.NPGAssignmentItem;
 
 /**
  * För att modifiera rutan över markers med t.ex. assignmentbilden och kanske några ords beskrivning

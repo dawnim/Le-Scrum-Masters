@@ -1,6 +1,4 @@
-package model;
-
-import model.Place;
+package model.old;
 
 public interface AssignmentItem {
     String getName();

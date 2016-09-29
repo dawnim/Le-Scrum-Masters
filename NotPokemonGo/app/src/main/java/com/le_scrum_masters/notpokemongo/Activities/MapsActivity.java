@@ -15,8 +15,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.le_scrum_masters.notpokemongo.R;
 
-import model.NPGAssignmentItem;
-import model.Place;
+import model.old.NPGAssignmentItem;
+import model.old.Place;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
