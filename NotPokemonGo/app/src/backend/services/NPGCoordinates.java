@@ -1,5 +1,9 @@
 package services;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.maps.android.SphericalUtil;
+
 /**
  * Created by Albin on 2016-09-26.
  */
@@ -20,5 +24,11 @@ public class NPGCoordinates {
         double distance = radius_earth * b;
 
         return distance;
+    }
+
+    public static LatLngBounds toBounds(LatLng center, double radius) {
+        LatLng southwest = SphericalUtil.computeOffset(center, radius * Math.sqrt(2.0), 225);
+        LatLng northeast = SphericalUtil.computeOffset(center, radius * Math.sqrt(2.0), 45);
+        return new LatLngBounds(southwest, northeast);
     }
 }

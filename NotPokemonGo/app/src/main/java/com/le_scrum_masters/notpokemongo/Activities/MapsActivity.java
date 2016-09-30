@@ -3,6 +3,7 @@ package com.le_scrum_masters.notpokemongo.Activities;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.location.places.Place;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,8 +16,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.le_scrum_masters.notpokemongo.R;
 
+import model.NPGPOIDirector;
 import model.old.NPGAssignmentItem;
-import model.old.Place;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -34,6 +35,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        //NPGPOIDirector dir = new NPGPOIDirector(this, this);
+
+        //System.out.println(dir.findPlaceWithinRadius(1000, Place.TYPE_CAFE));
+
     }
 
     @Override
@@ -45,7 +50,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(chalmers).title("Marker on Chalmers"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chalmers, 11));
         updateAssignments();
-        placeAssignmentMarker(new NPGAssignmentItem("big d's crib",location,0,0)); //test
+        //placeAssignmentMarker(new NPGAssignmentItem("big d's crib",location,0,0)); //test
 
         centerMapOnUserLoc(mMap);
     }
