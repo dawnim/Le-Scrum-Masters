@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -53,7 +54,7 @@ public class NPGPOIDirector implements GoogleApiClient.OnConnectionFailedListene
         final NeededForPlaceStuff nfps = new NeededForPlaceStuff();
 
         if (ActivityCompat.checkSelfPermission(this.context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return null;
+            Log.e("ERROR!!!!", "ACCESS DEEEENIEEED!");
         }
 
         PendingResult<PlaceLikelihoodBuffer> tmp_result = Places.PlaceDetectionApi
@@ -62,7 +63,7 @@ public class NPGPOIDirector implements GoogleApiClient.OnConnectionFailedListene
             @Override
             public void onResult(PlaceLikelihoodBuffer likelyPlaces) {
                 for (PlaceLikelihood placeLikelihood : likelyPlaces) {
-                    if (placeLikelihood.getLikelihood() > 5){
+                    if (placeLikelihood.getLikelihood() > 1){
                         nfps.setPlace(placeLikelihood.getPlace());
                         break;
                     }
@@ -73,6 +74,9 @@ public class NPGPOIDirector implements GoogleApiClient.OnConnectionFailedListene
 
         Place currentPlace = nfps.getPlace();
 
+        NPGPointOfInterest gpoi = new NPGPointOfInterest(currentPlace.getName().toString(),currentPlace.getAddress().toString(), currentPlace.getId(), currentPlace.getLatLng());
+        return gpoi;
+        /*
         LatLngBounds bounds = NPGCoordinates.toBounds(currentPlace.getLatLng(), radius);
 
         AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
@@ -107,7 +111,7 @@ public class NPGPOIDirector implements GoogleApiClient.OnConnectionFailedListene
 
         NPGPointOfInterest poi = new NPGPointOfInterest(placeStuff.getPlace().getName().toString(), placeStuff.getPlace().getAddress().toString(), placeStuff.getPlace().getId(), placeStuff.getPlace().getLatLng());
 
-        return poi;
+        return poi;*/
     }
 
 }

@@ -24,7 +24,7 @@ public class NPGPointOfInterest implements PointOfInterest {
 
     @Override
     public String getName() {
-        return null;
+        return this.name;
     }
 
     @Override

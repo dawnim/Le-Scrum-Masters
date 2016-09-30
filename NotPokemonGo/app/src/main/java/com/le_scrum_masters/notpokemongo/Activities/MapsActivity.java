@@ -2,6 +2,7 @@ package com.le_scrum_masters.notpokemongo.Activities;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.maps.CameraUpdate;
@@ -35,9 +36,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        //NPGPOIDirector dir = new NPGPOIDirector(this, this);
+        NPGPOIDirector dir = new NPGPOIDirector(this, this);
 
-        //System.out.println(dir.findPlaceWithinRadius(1000, Place.TYPE_CAFE));
+        Log.e("meh", "" + dir.findPlaceWithinRadius(1000, Place.TYPE_CAFE));
 
     }
 
