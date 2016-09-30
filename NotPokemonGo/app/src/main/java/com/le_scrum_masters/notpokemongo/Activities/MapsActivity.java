@@ -1,5 +1,6 @@
 package com.le_scrum_masters.notpokemongo.Activities;
 
+import android.graphics.Bitmap;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,7 +51,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng chalmers = new LatLng(57.6884, 11.9778);
         mMap.addMarker(new MarkerOptions().position(chalmers).title("Marker on Chalmers"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chalmers, 11));
-        updateAssignments();
         //placeAssignmentMarker(new NPGAssignmentItem("big d's crib",location,0,0)); //test
 
         centerMapOnUserLoc(mMap);
@@ -66,14 +66,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //assignments =
     }
 
-    public void placeAssignmentMarker(NPGAssignmentItem Assignment){
-       // double[] coordinates = Assignment.getLocation().getCoordinates();
-        double[] coordinates = {57.706574 ,12.144207}; //test big d's crib
-
+    public void placeAssignmentMarker(double[] coordinates, String description, Bitmap icon){
         LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
-        Marker marker;
-        marker = mMap.addMarker(new MarkerOptions().position(latLng).title(Assignment.getName()));
-        marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+        Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(description));
+
+        // how to get Bitmap item from a .bmp in res/drawable
+        // icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.smiley);
+
+        marker.setIcon(BitmapDescriptorFactory.fromBitmap(icon));
         marker.showInfoWindow();
     }
 }
