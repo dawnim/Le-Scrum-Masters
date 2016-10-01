@@ -9,13 +9,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.le_scrum_masters.notpokemongo.R;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     TaskDatabase db;
     FloatingActionButton goToTask;
+    FloatingActionButton dbinfo;
     Intent intent;
 
     @Override
@@ -30,6 +36,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        db = new TaskDatabase(this);
+
+
+
+        dbinfo = (FloatingActionButton)findViewById(R.id.dbinfo);
+        dbinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db = new TaskDatabase(MainActivity.this);
+                db.openDataBase();
+                ArrayList<String> tasks = db.getTasks();
+                db.close();
+                TextView tekst = (TextView) findViewById(R.id.textView);
+                for(String s : tasks){
+                    tekst.setText(s);
+                }
+            }
+        });
+
+
     }
+
 }

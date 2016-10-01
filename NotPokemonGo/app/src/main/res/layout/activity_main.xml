@@ -15,4 +15,18 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_dialog_email" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:color/holo_blue_bright"
+        android:id="@+id/dbinfo" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="196dp"
+        android:layout_height="106dp"
+        android:id="@+id/textView" />
+
 </android.support.design.widget.CoordinatorLayout>
