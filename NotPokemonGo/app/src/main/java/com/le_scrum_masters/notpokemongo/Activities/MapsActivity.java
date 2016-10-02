@@ -1,7 +1,10 @@
 package com.le_scrum_masters.notpokemongo.Activities;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -17,6 +20,8 @@ import com.le_scrum_masters.notpokemongo.R;
 
 import model.NPGAssignmentItem;
 import model.Place;
+
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -44,20 +49,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng chalmers = new LatLng(57.6884, 11.9778);
         mMap.addMarker(new MarkerOptions().position(chalmers).title("Marker on Chalmers"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chalmers, 11));
-        updateAssignments();
         placeAssignmentMarker(new NPGAssignmentItem("big d's crib",location,0,0)); //test
 
-        centerMapOnUserLoc(mMap);
-    }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+            
+        }
 
-    public void centerMapOnUserLoc(GoogleMap map){
-
-        // map.setMyLocationEnabled(true);
-
-    }
-
-    public void updateAssignments(){
-        //assignments =
     }
 
     public void placeAssignmentMarker(NPGAssignmentItem Assignment){
