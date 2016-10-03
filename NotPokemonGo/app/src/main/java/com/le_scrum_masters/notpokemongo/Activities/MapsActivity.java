@@ -1,5 +1,6 @@
 package com.le_scrum_masters.notpokemongo.Activities;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -19,13 +20,15 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.le_scrum_masters.notpokemongo.R;
 
 import model.NPGPOIDirector;
+import model.NPGPointOfInterest;
 import model.old.NPGAssignmentItem;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private NPGAssignmentItem[] assignments;
+    private NPGPointOfInterest[] pointsOfInterest;
     private Place location;
+    Intent POIIntent;
 
 
     @Override
@@ -36,16 +39,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        POIIntent = new Intent(this, POIActivity.class);
 
         NPGPOIDirector dir = new NPGPOIDirector(this, this);
 
-        Log.e("meh", "" + dir.findPlaceWithinRadius(1000, Place.TYPE_CAFE));
+        //Log.e("meh", "" + dir.findPlaceWithinRadius(1000, Place.TYPE_CAFE));
 
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
+        {
+
+            @Override
+            public boolean onMarkerClick(Marker arg0) {
+                if(arg0.getTitle().equals("Marker on Chalmers")) // if marker source is clicked
+                    startActivity(POIIntent);
+                return true;
+            }
+
+        });
 
         // Add a marker in Chalmers and move the camera
         LatLng chalmers = new LatLng(57.6884, 11.9778);
