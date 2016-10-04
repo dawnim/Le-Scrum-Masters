@@ -2,11 +2,16 @@ package com.le_scrum_masters.notpokemongo.Activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -19,16 +24,21 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.le_scrum_masters.notpokemongo.R;
 
+import java.util.ArrayList;
+
 import model.NPGPOIDirector;
 import model.NPGPointOfInterest;
 import model.old.NPGAssignmentItem;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener {
+    private static final int GOOGLE_API_CLIENT_ID = 0;
 
     private GoogleMap mMap;
     private NPGPointOfInterest[] pointsOfInterest;
     private Place location;
     Intent POIIntent;
+
+    ArrayList<Place> places;
 
 
     @Override
@@ -41,9 +51,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         POIIntent = new Intent(this, POIActivity.class);
 
-        NPGPOIDirector dir = new NPGPOIDirector(this, this);
+        NPGPOIDirector dir = new NPGPOIDirector(new GoogleApiClient.Builder(MapsActivity.this)
+                .addApi(Places.GEO_DATA_API)
+                .addApi(Places.PLACE_DETECTION_API)
+                .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
+                .build());
 
-        //Log.e("meh", "" + dir.findPlaceWithinRadius(1000, Place.TYPE_CAFE));
+        places = dir.massiveSearch();
 
     }
 
@@ -56,7 +70,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(Marker arg0) {
                 if(arg0.getTitle().equals("Marker on Chalmers")) // if marker source is clicked
-                    startActivity(POIIntent);
+                    //startActivity(POIIntent);
+                    Log.e("Yeah", "places: " + places.size());
                 return true;
             }
 
@@ -90,5 +105,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         marker.setIcon(BitmapDescriptorFactory.fromBitmap(icon));
         marker.showInfoWindow();
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        Log.e("NPGPOIDirector", "Google Places API connection failed with error code: "
+                + connectionResult.getErrorCode());
+
+        Toast.makeText(this,
+                "Google Places API connection failed with error code:" +
+                        connectionResult.getErrorCode(),
+                Toast.LENGTH_LONG).show();
     }
 }
