@@ -52,7 +52,7 @@ public class MapsActivity extends FragmentActivity implements
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             map.setMyLocationEnabled(true);
-            mapBehaviour.enableLocationUpdates();
+            //mapBehaviour.enableLocationUpdates();
         }
     }
 
