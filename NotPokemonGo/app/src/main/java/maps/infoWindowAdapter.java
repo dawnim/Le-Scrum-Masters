@@ -12,7 +12,7 @@ import model.NPGAssignmentItem;
  * Created by David on 2016-09-27.
  */
 
-public class infoWindowAdapter implements GoogleMap.InfoWindowAdapter {
+public class InfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
     private NPGAssignmentItem assignment;
 
