@@ -25,6 +25,8 @@ public class NPGPOIDirector {
     private GoogleApiClient googleApiClient;
     private final String LOG_TAG = "NPGPOIDirector";
 
+    private ArrayList<Place> mPlaces = new ArrayList<>();
+
     public NPGPOIDirector(GoogleApiClient googleApiClient){
         this.googleApiClient = googleApiClient;
 
@@ -41,7 +43,7 @@ public class NPGPOIDirector {
 
     }
 
-    private Place findPlaceBy(final int TYPE, String phrase){
+    private void findPlaceBy(final int TYPE, String phrase){
         LatLngBounds bounds = new LatLngBounds(new LatLng(57.67524480400853, 11.946945190429688), new LatLng(57.71120876687646, 11.988036632537842));
 
 
@@ -70,6 +72,7 @@ public class NPGPOIDirector {
                                             tmp_place.setPlace(myPlace);
                                             tmp_place.setStr(myPlace.getName().toString());
                                             Log.e(LOG_TAG, "yeah: " + tmp_place.getPlace().getId());
+                                            addToPlaces(myPlace);
                                         }
                                     } else {
                                         Log.e(LOG_TAG, "Place not found");
@@ -81,29 +84,26 @@ public class NPGPOIDirector {
                 autocompletePredictions.release();
             }
         });
-
-        Log.e(LOG_TAG, "yeah: " + tmp_place.getStr());
-        return tmp_place.getPlace();
     }
 
-    public ArrayList<Place> massiveSearch(){
+    public void addToPlaces(Place place){
+        mPlaces.add(place);
+    }
+
+    public ArrayList<Place> getPlaces(){
+        return this.mPlaces;
+    }
+
+    public void massiveSearch(){
         String[] arr = new String[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
 
         int[] types = new int[]{15,16,29,38,50,55,1013};
 
-        ArrayList<Place> places = new ArrayList<>();
         for (int type : types){
             for (String tmp : arr){
-                Place tmp_place = findPlaceBy(type, tmp);
-                if (tmp_place != null){
-                    places.add(tmp_place);
-                }
+                findPlaceBy(type, tmp);
             }
         }
-
-        Log.e(LOG_TAG, "places: " + places.size());
-
-        return places;
 
     }
 

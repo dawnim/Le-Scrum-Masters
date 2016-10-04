@@ -39,6 +39,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Intent POIIntent;
 
     ArrayList<Place> places;
+    NPGPOIDirector dir;
 
 
     @Override
@@ -51,13 +52,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         POIIntent = new Intent(this, POIActivity.class);
 
-        NPGPOIDirector dir = new NPGPOIDirector(new GoogleApiClient.Builder(MapsActivity.this)
+        dir = new NPGPOIDirector(new GoogleApiClient.Builder(MapsActivity.this)
                 .addApi(Places.GEO_DATA_API)
                 .addApi(Places.PLACE_DETECTION_API)
                 .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
                 .build());
 
-        places = dir.massiveSearch();
+        dir.massiveSearch();
 
     }
 
@@ -70,8 +71,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(Marker arg0) {
                 if(arg0.getTitle().equals("Marker on Chalmers")) // if marker source is clicked
-                    //startActivity(POIIntent);
-                    Log.e("Yeah", "places: " + places.size());
+                    startActivity(POIIntent);
+
                 return true;
             }
 
@@ -96,15 +97,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //assignments =
     }
 
-    public void placeAssignmentMarker(double[] coordinates, String description, Bitmap icon){
-        LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
-        Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(description));
+    /*public void placeAssignmentMarker(LatLng coordinates, String description, Bitmap icon){
+        //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
+        Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description));
 
         // how to get Bitmap item from a .bmp in res/drawable
         // icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.smiley);
 
         marker.setIcon(BitmapDescriptorFactory.fromBitmap(icon));
         marker.showInfoWindow();
+    }*/
+
+    public void placeAssignmentMarker(LatLng coordinates, String description){
+        //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
+        Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description));
+
+        // how to get Bitmap item from a .bmp in res/drawable
+        // icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.smiley);
     }
 
     @Override
@@ -116,5 +125,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 "Google Places API connection failed with error code:" +
                         connectionResult.getErrorCode(),
                 Toast.LENGTH_LONG).show();
+    }
+
+    private void placeMarkersOnMap(){
+        places = dir.getPlaces();
+
+        ArrayList<NPGPointOfInterest> pois = new ArrayList<>();
+
+        for (int i = 0; i < places.size(); i++){
+            NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
+
+            pois.add(poi);
+        }
+
+        for (int i = 0; i < pois.size(); i++){
+            placeAssignmentMarker(pois.get(i).getCoords(), pois.get(i).getName());
+        }
+
+        /*for (Place place : places){
+            NPGPointOfInterest poi = new NPGPointOfInterest(place.getName().toString(), place.getAddress().toString(), place.getId(), place.getLatLng());
+
+            pois.add(poi);
+        }
+
+        for (NPGPointOfInterest poi : pois){
+            placeAssignmentMarker(poi.getCoords(), poi.getName());
+        }*/
+
+
+        Log.e("Yeah", "places: " + places.size());
     }
 }
