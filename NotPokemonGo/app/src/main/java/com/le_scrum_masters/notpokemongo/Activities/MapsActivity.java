@@ -2,6 +2,7 @@ package com.le_scrum_masters.notpokemongo.Activities;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -52,15 +53,15 @@ public class MapsActivity extends FragmentActivity implements
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             map.setMyLocationEnabled(true);
-            //mapBehaviour.enableLocationUpdates();
+            mapBehaviour.enableLocationUpdates();
         }
     }
 
-    public void placeAssignmentMarker(double[] coordinates, String description){
-        LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
-        Marker marker;
-        marker = map.addMarker(new MarkerOptions().position(latLng).title(description));
-        marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
-        marker.showInfoWindow();
+    public void placeAssignmentMarker(double[] coordinates, String description, Bitmap icon){
+
+        Marker marker = map.addMarker(new MarkerOptions()
+                .position(new LatLng(coordinates[0],coordinates[1]))
+                .title(description));
+        marker.setIcon(BitmapDescriptorFactory.fromBitmap(icon));
     }
 }
