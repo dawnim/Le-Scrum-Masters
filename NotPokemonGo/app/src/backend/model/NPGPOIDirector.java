@@ -25,7 +25,7 @@ public class NPGPOIDirector {
     private GoogleApiClient googleApiClient;
     private final String LOG_TAG = "NPGPOIDirector";
 
-    private ArrayList<Place> mPlaces = new ArrayList<>();
+    private ArrayList<NPGPointOfInterest> mPlaces = new ArrayList<>();
 
     public NPGPOIDirector(GoogleApiClient googleApiClient){
         this.googleApiClient = googleApiClient;
@@ -53,8 +53,6 @@ public class NPGPOIDirector {
                 Places.GeoDataApi.getAutocompletePredictions(googleApiClient, phrase,
                         bounds, filter);
 
-        final temporaryPlace tmp_place = new temporaryPlace();
-
         result1.setResultCallback(new ResultCallback<AutocompletePredictionBuffer>() {
             @Override
             public void onResult(AutocompletePredictionBuffer autocompletePredictions) {
@@ -67,12 +65,11 @@ public class NPGPOIDirector {
                                     if (places.getStatus().isSuccess() && places.getCount() > 0) {
                                         final Place myPlace = places.get(0);
                                         if (myPlace.getPlaceTypes().contains(TYPE)){
-                                            Log.i(LOG_TAG, "Place found: " + myPlace.getName() + " TYPE: " + myPlace.getPlaceTypes());
+                                            Log.i(LOG_TAG, "Place found: " + myPlace.getName() + " TYPE: " + myPlace.getPlaceTypes() + " LatLng: " + myPlace.getLatLng());
 
-                                            tmp_place.setPlace(myPlace);
-                                            tmp_place.setStr(myPlace.getName().toString());
-                                            Log.e(LOG_TAG, "yeah: " + tmp_place.getPlace().getId());
-                                            addToPlaces(myPlace);
+                                            final NPGPointOfInterest tmp = new NPGPointOfInterest(myPlace.getName().toString(), myPlace.getAddress().toString(), myPlace.getId(), myPlace.getLatLng());
+                                            Log.i(LOG_TAG, "Place found: " + tmp.getName() + " LatLng: " + tmp.getCoords());
+                                            addToPlaces(tmp);
                                         }
                                     } else {
                                         Log.e(LOG_TAG, "Place not found");
@@ -86,11 +83,11 @@ public class NPGPOIDirector {
         });
     }
 
-    public void addToPlaces(Place place){
+    public void addToPlaces(NPGPointOfInterest place){
         mPlaces.add(place);
     }
 
-    public ArrayList<Place> getPlaces(){
+    public ArrayList<NPGPointOfInterest> getPlaces(){
         return this.mPlaces;
     }
 
@@ -105,30 +102,6 @@ public class NPGPOIDirector {
             }
         }
 
-    }
-
-    static class temporaryPlace{
-        private static String str;
-        private static Place place;
-
-        public temporaryPlace(){
-        }
-
-        public void setPlace(Place place){
-            this.place = place;
-        }
-
-        public Place getPlace(){
-            return this.place;
-        }
-
-        public void setStr(String str){
-            this.str = str;
-        }
-
-        public String getStr(){
-            return this.str;
-        }
     }
 
 }

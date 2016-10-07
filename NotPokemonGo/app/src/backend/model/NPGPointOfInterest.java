@@ -15,11 +15,11 @@ public class NPGPointOfInterest implements PointOfInterest {
     private Boolean completed = false;
 
 
-    public NPGPointOfInterest(String name, String address, String id, LatLng coords){
+    public NPGPointOfInterest(String name, String address, String id, LatLng latlng){
         this.name = name;
         this.address = address;
         this.id = id;
-        this.coords = coords;
+        this.coords = latlng;
     }
 
     @Override
@@ -29,17 +29,17 @@ public class NPGPointOfInterest implements PointOfInterest {
 
     @Override
     public String getAddress() {
-        return null;
+        return this.address;
     }
 
     @Override
     public String getID() {
-        return null;
+        return this.id;
     }
 
     @Override
     public LatLng getCoords() {
-        return null;
+        return this.coords;
     }
 
     @Override

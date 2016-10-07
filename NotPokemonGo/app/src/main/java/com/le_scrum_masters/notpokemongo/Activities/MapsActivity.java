@@ -38,7 +38,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Place location;
     Intent POIIntent;
 
-    ArrayList<Place> places;
+    ArrayList<NPGPointOfInterest> places;
     NPGPOIDirector dir;
 
 
@@ -71,7 +71,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(Marker arg0) {
                 if(arg0.getTitle().equals("Marker on Chalmers")) // if marker source is clicked
-                    startActivity(POIIntent);
+                    //startActivity(POIIntent);
+                    placeMarkersOnMap();
 
                 return true;
             }
@@ -130,17 +131,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void placeMarkersOnMap(){
         places = dir.getPlaces();
 
-        ArrayList<NPGPointOfInterest> pois = new ArrayList<>();
+        //ArrayList<NPGPointOfInterest> pois = new ArrayList<>();
 
         for (int i = 0; i < places.size(); i++){
-            NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
+            Log.e("lol","place: " + places.get(i));
+            //NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
 
-            pois.add(poi);
+            //pois.add(poi);
+            placeAssignmentMarker(places.get(i).getCoords(), places.get(i).getName());
         }
-
+        /*
         for (int i = 0; i < pois.size(); i++){
             placeAssignmentMarker(pois.get(i).getCoords(), pois.get(i).getName());
-        }
+        }*/
 
         /*for (Place place : places){
             NPGPointOfInterest poi = new NPGPointOfInterest(place.getName().toString(), place.getAddress().toString(), place.getId(), place.getLatLng());
