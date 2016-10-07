@@ -42,7 +42,7 @@ public class MapBehaviour implements
     private static final int ANIMATE_SPEED_TURN = 1000;
     private static final int BEARING_OFFSET = 20;
     private int updateInterval = 5000; //ms
-    private int minUpdateInterval = 5000; //ms
+    private int minUpdateInterval = 3000; //ms
 
     public MapBehaviour(Context contextActivity, GoogleMap map){
         this.contextActivity = contextActivity;
@@ -112,7 +112,7 @@ public class MapBehaviour implements
                 CameraPosition cameraPosition =
                         new CameraPosition.Builder()
                                 .target(currentLocation)
-                                .bearing(getBearingBetweenCoords(lastLocation, currentLocation))
+                                .bearing(getBearingBetweenCoords(lastLocation, currentLocation) + BEARING_OFFSET)
                                 .tilt(map.getCameraPosition().tilt)
                                 .zoom(20)
                                 .build();

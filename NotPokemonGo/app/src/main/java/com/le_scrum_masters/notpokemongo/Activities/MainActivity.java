@@ -20,18 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     TaskDatabase db;
-    FloatingActionButton goToTask;
     private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 10;
 
-
     FloatingActionButton goToMap;
-    Intent intent;
     Intent mapsIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        intent = new Intent(this,TaskActivity.class);
 
         mapsIntent = new Intent(this, MapsActivity.class);
         goToMap = (FloatingActionButton)findViewById(R.id.mapFab);
