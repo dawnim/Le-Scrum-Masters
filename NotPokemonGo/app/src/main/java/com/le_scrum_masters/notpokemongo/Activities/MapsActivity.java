@@ -34,9 +34,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final int GOOGLE_API_CLIENT_ID = 0;
 
     private GoogleMap mMap;
-    private NPGPointOfInterest[] pointsOfInterest;
     private Place location;
     Intent POIIntent;
+    Bundle b;
 
     ArrayList<NPGPointOfInterest> places;
     NPGPOIDirector dir;
@@ -51,6 +51,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         POIIntent = new Intent(this, POIActivity.class);
+        b = new Bundle();
 
         dir = new NPGPOIDirector(new GoogleApiClient.Builder(MapsActivity.this)
                 .addApi(Places.GEO_DATA_API)
@@ -70,10 +71,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             @Override
             public boolean onMarkerClick(Marker arg0) {
-                if(arg0.getTitle().equals("Marker on Chalmers")) // if marker source is clicked
-                    //startActivity(POIIntent);
+                if(arg0.getTitle().equals("Marker on Chalmers")) { // if marker source is clicked
                     placeMarkersOnMap();
-
+                }
+                for(NPGPointOfInterest poi : places){
+                    if(arg0.getTitle().equals(poi.getName())){
+                        b.putString("Name", poi.getName());
+                        POIIntent.putExtras(b);
+                        startActivity(POIIntent);
+                    }
+                }
                 return true;
             }
 
