@@ -16,7 +16,7 @@ public class NPGPointOfInterest implements PointOfInterest {
     private String address;
     private String id;
     private String placeType;
-    private Bitmap bitmap;
+    private Bitmap image;
     private LatLng coords;
     private Boolean completed = false;
 
@@ -27,7 +27,7 @@ public class NPGPointOfInterest implements PointOfInterest {
         this.id = id;
         this.coords = latlng;
         this.placeType = placeType;
-        this.bitmap = bitmap;
+        this.image = image;
     }
 
     @Override
@@ -57,7 +57,7 @@ public class NPGPointOfInterest implements PointOfInterest {
 
     @Override
     public Bitmap getImage() {
-        return bitmap;
+        return image;
     }
 
     @Override
