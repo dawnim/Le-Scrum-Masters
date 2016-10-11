@@ -101,9 +101,12 @@ public class NPGPOIDirector extends Observable{
     }
 
     public void addToPlaces(NPGPointOfInterest place){
-        mPlaces.add(place);
-
-        notifyObservers();
+        if (mPlaces.size() < 10){
+            mPlaces.add(place);
+            setChanged();
+            notifyObservers();
+            clearChanged();
+        }
     }
 
     public ArrayList<NPGPointOfInterest> getPlaces(){
