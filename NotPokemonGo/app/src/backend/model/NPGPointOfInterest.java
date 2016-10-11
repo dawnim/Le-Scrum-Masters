@@ -6,6 +6,9 @@ import android.graphics.BitmapFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.le_scrum_masters.notpokemongo.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.le_scrum_masters.notpokemongo.R.drawable.parkis;
 
 /**
@@ -15,7 +18,7 @@ public class NPGPointOfInterest implements PointOfInterest {
     private String name;
     private String address;
     private String id;
-    private String placeType;
+    private List<Integer> placeType;
     private Bitmap image;
     private LatLng coords;
     private Boolean completed = false;
@@ -26,8 +29,6 @@ public class NPGPointOfInterest implements PointOfInterest {
         this.address = address;
         this.id = id;
         this.coords = latlng;
-        this.placeType = placeType;
-        this.image = image;
     }
 
     @Override
@@ -51,8 +52,18 @@ public class NPGPointOfInterest implements PointOfInterest {
     }
 
     @Override
-    public String getPlaceType() {
-        return this.placeType;
+    public void setPlaceTypes(List<Integer> types) {
+        this.placeType = types;
+    }
+
+    @Override
+    public List<Integer> getPlaceTypes() {
+        return placeType;
+    }
+
+    @Override
+    public void setImage(Bitmap image) {
+        this.image = image;
     }
 
     @Override
@@ -62,6 +73,11 @@ public class NPGPointOfInterest implements PointOfInterest {
 
     @Override
     public Boolean isCompleted() {
-        return null;
+        return completed;
+    }
+
+    @Override
+    public void setCompleted(Boolean bool){
+        completed = bool;
     }
 }

@@ -24,6 +24,10 @@ public class POIActivity extends AppCompatActivity {
         ImageView icon= (ImageView) findViewById(R.id.imageView3);
         //icon.setImageBitmap(bitmap depending on b.getString("Type"));
         ImageView img= (ImageView) findViewById(R.id.imageView4);
-        img.setImageBitmap((Bitmap)b.getParcelable("Image"));
+
+        if (b.getParcelable("Image") != null){
+            Bitmap image = (Bitmap)b.getParcelable("Image");
+            img.setImageBitmap(image);
+        }
     }
 }

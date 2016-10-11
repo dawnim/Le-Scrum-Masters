@@ -25,12 +25,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.le_scrum_masters.notpokemongo.R;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import model.NPGPOIDirector;
 import model.NPGPointOfInterest;
 import model.old.NPGAssignmentItem;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, Observer {
     private static final int GOOGLE_API_CLIENT_ID = 0;
 
     private GoogleMap mMap;
@@ -57,7 +59,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .addApi(Places.GEO_DATA_API)
                 .addApi(Places.PLACE_DETECTION_API)
                 .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
-                .build());
+                .build(), this);
 
         dir.massiveSearch();
 
@@ -77,8 +79,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 for(NPGPointOfInterest poi : places){
                     if(arg0.getTitle().equals(poi.getName())){
                         b.putString("Name", poi.getName());
-                        b.putString("Type", poi.getPlaceType());
-                        b.putParcelable("Image", poi.getImage());
+                        b.putString("Type", ""+poi.getPlaceTypes().get(0));
+
+                        Bitmap photo = Bitmap.createScaledBitmap(poi.getImage(), 200, 200, false);
+
+                        b.putParcelable("Image", photo);
+
                         POIIntent.putExtras(b);
                         startActivity(POIIntent);
                     }
@@ -140,31 +146,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void placeMarkersOnMap(){
         places = dir.getPlaces();
 
-        //ArrayList<NPGPointOfInterest> pois = new ArrayList<>();
-
-        for (int i = 0; i < places.size(); i++){
+        /*for (int i = 0; i < places.size(); i++){
             Log.e("lol","place: " + places.get(i));
             //NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
 
             //pois.add(poi);
             placeAssignmentMarker(places.get(i).getCoords(), places.get(i).getName());
-        }
-        /*
-        for (int i = 0; i < pois.size(); i++){
-            placeAssignmentMarker(pois.get(i).getCoords(), pois.get(i).getName());
         }*/
 
-        /*for (Place place : places){
-            NPGPointOfInterest poi = new NPGPointOfInterest(place.getName().toString(), place.getAddress().toString(), place.getId(), place.getLatLng());
+        for (NPGPointOfInterest place : places){
+            Log.e("lol","place: " + place.getImage());
+            //NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
 
-            pois.add(poi);
+            //pois.add(poi);
+            placeAssignmentMarker(place.getCoords(), place.getName());
         }
-
-        for (NPGPointOfInterest poi : pois){
-            placeAssignmentMarker(poi.getCoords(), poi.getName());
-        }*/
-
 
         Log.e("Yeah", "places: " + places.size());
+    }
+
+    @Override
+    public void update(Observable observable, Object data) {
+        Log.i("update", "update()");
+        if (observable.getClass() == NPGPOIDirector.class){
+            placeMarkersOnMap();
+            Log.i("update", "update() inner");
+        }
     }
 }

@@ -1,35 +1,46 @@
 package model;
 
+import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.data.DataBufferObserver;
 import com.google.android.gms.location.places.AutocompleteFilter;
 import com.google.android.gms.location.places.AutocompletePrediction;
 import com.google.android.gms.location.places.AutocompletePredictionBuffer;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.PlaceBuffer;
+import com.google.android.gms.location.places.PlacePhotoMetadata;
+import com.google.android.gms.location.places.PlacePhotoMetadataBuffer;
+import com.google.android.gms.location.places.PlacePhotoMetadataResult;
+import com.google.android.gms.location.places.PlacePhotoResult;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import static com.google.android.gms.location.places.AutocompleteFilter.TYPE_FILTER_NONE;
 
 /**
  * Created by Albin on 2016-09-29.
  */
-public class NPGPOIDirector {
+public class NPGPOIDirector extends Observable{
     private GoogleApiClient googleApiClient;
     private final String LOG_TAG = "NPGPOIDirector";
 
     private ArrayList<NPGPointOfInterest> mPlaces = new ArrayList<>();
 
-    public NPGPOIDirector(GoogleApiClient googleApiClient){
+
+    public NPGPOIDirector(GoogleApiClient googleApiClient, Observer observer){
         this.googleApiClient = googleApiClient;
 
+        addObserver(observer);
         /* The googleApiClient should look similar to this:
         mGoogleApiClient = new GoogleApiClient.Builder(MainActivity.this)
                 .addApi(Places.GEO_DATA_API)
@@ -58,33 +69,41 @@ public class NPGPOIDirector {
             public void onResult(AutocompletePredictionBuffer autocompletePredictions) {
                 for (AutocompletePrediction acp : autocompletePredictions){
                     String placeId = acp.getPlaceId();
-                    Places.GeoDataApi.getPlaceById(googleApiClient, placeId)
-                            .setResultCallback(new ResultCallback<PlaceBuffer>() {
-                                @Override
-                                public void onResult(PlaceBuffer places) {
-                                    if (places.getStatus().isSuccess() && places.getCount() > 0) {
-                                        final Place myPlace = places.get(0);
-                                        if (myPlace.getPlaceTypes().contains(TYPE)){
-                                            Log.i(LOG_TAG, "Place found: " + myPlace.getName() + " TYPE: " + myPlace.getPlaceTypes() + " LatLng: " + myPlace.getLatLng());
 
-                                            final NPGPointOfInterest tmp = new NPGPointOfInterest(myPlace.getName().toString(), myPlace.getAddress().toString(), myPlace.getId(), myPlace.getLatLng());
-                                            Log.i(LOG_TAG, "Place found: " + tmp.getName() + " LatLng: " + tmp.getCoords());
-                                            addToPlaces(tmp);
+                    if (mPlaces.size() < 10){
+                        Places.GeoDataApi.getPlaceById(googleApiClient, placeId)
+                                .setResultCallback(new ResultCallback<PlaceBuffer>() {
+                                    @Override
+                                    public void onResult(PlaceBuffer places) {
+                                        if (places.getStatus().isSuccess() && places.getCount() > 0) {
+                                            final Place myPlace = places.get(0);
+                                            if (myPlace.getPlaceTypes().contains(TYPE)){
+                                                Log.i(LOG_TAG, "Place found: " + myPlace.getName() + " TYPE: " + myPlace.getPlaceTypes() + " LatLng: " + myPlace.getLatLng());
+
+                                                final NPGPointOfInterest tmp = new NPGPointOfInterest(myPlace.getName().toString(), myPlace.getAddress().toString(), myPlace.getId(), myPlace.getLatLng());
+                                                tmp.setPlaceTypes(myPlace.getPlaceTypes());
+                                                getPlacePhoto(tmp);
+                                                Log.i(LOG_TAG, "Place found: " + tmp.getName() + " LatLng: " + tmp.getCoords());
+                                                addToPlaces(tmp);
+                                            }
+                                        } else {
+                                            Log.e(LOG_TAG, "Place not found");
                                         }
-                                    } else {
-                                        Log.e(LOG_TAG, "Place not found");
+                                        places.release();
                                     }
-                                    places.release();
-                                }
-                            });
+                                });
+                    }
                 }
                 autocompletePredictions.release();
             }
         });
+
     }
 
     public void addToPlaces(NPGPointOfInterest place){
         mPlaces.add(place);
+
+        notifyObservers();
     }
 
     public ArrayList<NPGPointOfInterest> getPlaces(){
@@ -96,12 +115,41 @@ public class NPGPOIDirector {
 
         int[] types = new int[]{15,16,29,38,50,55,1013};
 
+        int i = 0;
         for (int type : types){
             for (String tmp : arr){
                 findPlaceBy(type, tmp);
             }
         }
 
+    }
+
+    private void getPlacePhoto(final NPGPointOfInterest poi){
+        // Get a PlacePhotoMetadataResult containing metadata for the first 10 photos.
+        PendingResult<PlacePhotoMetadataResult> result = Places.GeoDataApi.getPlacePhotos(googleApiClient, poi.getID());
+        result.setResultCallback(new ResultCallback<PlacePhotoMetadataResult>() {
+            @Override
+            public void onResult(@NonNull PlacePhotoMetadataResult placePhotoMetadataResult) {
+                PlacePhotoMetadataBuffer photoMetadataBuffer = placePhotoMetadataResult.getPhotoMetadata();
+
+                // Get the first photo in the list.
+                if (photoMetadataBuffer.getCount() != 0){
+                    PlacePhotoMetadata photo = photoMetadataBuffer.get(0);
+                    // Get a full-size bitmap for the photo.
+
+
+                    PendingResult<PlacePhotoResult> tmp_result = photo.getPhoto(googleApiClient);
+                    tmp_result.setResultCallback(new ResultCallback<PlacePhotoResult>() {
+                        @Override
+                        public void onResult(@NonNull PlacePhotoResult placePhotoResult) {
+                            poi.setImage(placePhotoResult.getBitmap());
+                        }
+                    });
+                }
+
+                photoMetadataBuffer.release();
+            }
+        });
     }
 
 }
