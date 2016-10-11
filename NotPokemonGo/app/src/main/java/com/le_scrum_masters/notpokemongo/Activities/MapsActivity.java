@@ -79,7 +79,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 for(NPGPointOfInterest poi : places){
                     if(arg0.getTitle().equals(poi.getName())){
                         b.putString("Name", poi.getName());
-                        b.putString("Type", ""+poi.getPlaceTypes().get(0));
+                        b.putInt("Type", poi.getPlaceTypes().get(0));
+                        System.out.println(poi.getPlaceTypes().get(0));
 
                         Bitmap photo = Bitmap.createScaledBitmap(poi.getImage(), 200, 200, false);
 
