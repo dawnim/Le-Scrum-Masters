@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
         intent = new Intent(this,TaskActivity.class);
 
         mapsIntent = new Intent(this, MapsActivity.class);
-        goToMap = (FloatingActionButton)findViewById(R.id.mapFab);
-        goToMap.setOnClickListener(new View.OnClickListener() {
+        //goToMap = (FloatingActionButton)findViewById(R.id.mapFab);
+        /*goToMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(mapsIntent);
             }
-        });
+        });*/
 
 
         db = new TaskDatabase(this);
