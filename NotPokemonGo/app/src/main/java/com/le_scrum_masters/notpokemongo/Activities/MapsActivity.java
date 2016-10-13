@@ -10,15 +10,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.Places;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -30,19 +26,16 @@ import java.util.Observer;
 
 import model.NPGPOIDirector;
 import model.NPGPointOfInterest;
-import model.old.NPGAssignmentItem;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, Observer {
     private static final int GOOGLE_API_CLIENT_ID = 0;
 
     private GoogleMap mMap;
-    private Place location;
     Intent POIIntent;
     Bundle b;
 
     ArrayList<NPGPointOfInterest> places;
     NPGPOIDirector dir;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +55,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .build(), this);
 
         dir.massiveSearch();
-
     }
 
     @Override
@@ -70,12 +62,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
         {
-
             @Override
             public boolean onMarkerClick(Marker arg0) {
-                /*if(arg0.getTitle().equals("Marker on Chalmers")) { // if marker source is clicked
-                    placeMarkersOnMap();
-                }*/
+
                 for(NPGPointOfInterest poi : places){
                     if(arg0.getTitle().equals(poi.getName())){
                         b.putString("Name", poi.getName());
@@ -92,38 +81,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 return true;
             }
-
         });
-
-        // Add a marker in Chalmers and move the camera
-        /*LatLng chalmers = new LatLng(57.6884, 11.9778);
-        mMap.addMarker(new MarkerOptions().position(chalmers).title("Marker on Chalmers"));*/
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(57.6884, 11.9778), 11));
-        //placeAssignmentMarker(new NPGAssignmentItem("big d's crib",location,0,0)); //test
-
-        centerMapOnUserLoc(mMap);
     }
-
-    public void centerMapOnUserLoc(GoogleMap map){
-
-        // map.setMyLocationEnabled(true);
-
-    }
-
-    public void updateAssignments(){
-        //assignments =
-    }
-
-    /*public void placeAssignmentMarker(LatLng coordinates, String description, Bitmap icon){
-        //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
-        Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description));
-
-        // how to get Bitmap item from a .bmp in res/drawable
-        // icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.smiley);
-
-        marker.setIcon(BitmapDescriptorFactory.fromBitmap(icon));
-        marker.showInfoWindow();
-    }*/
 
     public void placeAssignmentMarker(LatLng coordinates, String description){
         //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
