@@ -17,11 +17,11 @@ import android.view.MenuItem;
 import com.le_scrum_masters.notpokemongo.R;
 
 public class MainActivity extends AppCompatActivity {
-    private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 10;
+
 
     TaskDatabase db;
     FloatingActionButton goToTask;
-
+    private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 10;
 
 
     FloatingActionButton goToMap;
@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         db = new TaskDatabase(this);
-
 
         //Places
         if (ContextCompat.checkSelfPermission(this,
@@ -79,5 +78,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 }
