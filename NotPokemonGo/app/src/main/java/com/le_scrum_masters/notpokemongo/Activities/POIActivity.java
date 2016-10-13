@@ -12,22 +12,25 @@ import android.widget.TextView;
 import com.google.android.gms.location.places.Place;
 import com.le_scrum_masters.notpokemongo.R;
 
-public class POIActivity extends AppCompatActivity {
+import model.POICallback;
+
+public class POIActivity extends AppCompatActivity{
 
     TextView t;
     ImageView icon;
-    ImageView img;
+    static POICallback poiCallback;
+    static ImageView placePhoto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle b = getIntent().getExtras();
 
-        setContentView(R.layout.activity_poi);
+        setContentView(R.layout.activity_poi_info);
         getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                 WindowManager.LayoutParams.MATCH_PARENT);
-        t = (TextView)findViewById(R.id.textView);
+        t = (TextView)findViewById(R.id.titleView);
         t.setText(b.getString("Name"));
-        icon= (ImageView) findViewById(R.id.imageView3);
+        icon= (ImageView) findViewById(R.id.categoryImageView);
 
         int type = b.getInt("Type");
         switch(type){
@@ -42,15 +45,25 @@ public class POIActivity extends AppCompatActivity {
             case Place.TYPE_PARK: setTypeIcon(R.drawable.tree);
         }
 
-        img= (ImageView) findViewById(R.id.imageView4);
+        placePhoto = (ImageView) findViewById(R.id.placePhotoView);
 
         if (b.getParcelable("Image") != null){
             Bitmap image = (Bitmap)b.getParcelable("Image");
-            img.setImageBitmap(image);
+            placePhoto.setImageBitmap(image);
         }
+
+        poiCallback.returnPlacephoto();
     }
 
     private void setTypeIcon(int id){
         icon.setImageBitmap(BitmapFactory.decodeResource(getApplicationContext().getResources(), id));
+    }
+
+    public static void setPlacephoto(Bitmap photo) {
+        placePhoto.setImageBitmap(photo);
+    }
+
+    public static void setPoiCallback(POICallback poiCallback1){
+        poiCallback = poiCallback1;
     }
 }

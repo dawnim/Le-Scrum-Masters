@@ -26,8 +26,9 @@ import java.util.Observer;
 
 import model.NPGPOIDirector;
 import model.NPGPointOfInterest;
+import model.POICallback;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, Observer {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, Observer, POICallback {
     private static final int GOOGLE_API_CLIENT_ID = 0;
 
     private GoogleMap mMap;
@@ -37,6 +38,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     ArrayList<NPGPointOfInterest> places;
     NPGPOIDirector dir;
 
+    Bitmap currentPlacePhoto;
+
+    POICallback poiCallback;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +49,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
         mapFragment.getMapAsync(this);
         POIIntent = new Intent(this, POIActivity.class);
+
+        poiCallback = this;
+
         b = new Bundle();
 
         dir = new NPGPOIDirector(new GoogleApiClient.Builder(MapsActivity.this)
@@ -76,7 +85,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         b.putParcelable("Image", photo);
 
                         POIIntent.putExtras(b);
+                        currentPlacePhoto = poi.getImage();
                         startActivity(POIIntent);
+
+                        POIActivity.setPoiCallback(poiCallback);
                     }
                 }
                 return true;
@@ -133,5 +145,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             placeMarkersOnMap();
             Log.i("update", "update() inner");
         }
+    }
+
+    @Override
+    public void returnPlacephoto() {
+        POIActivity.setPlacephoto(currentPlacePhoto);
     }
 }
