@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.le_scrum_masters.notpokemongo"
-    >
+    package="com.le_scrum_masters.notpokemongo">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
+        android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -22,21 +22,20 @@
             android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name="com.le_scrum_masters.notpokemongo.Activities.TaskActivity"
-            android:label="@string/title_activity_task" >
-        </activity>
+            android:name=".Activities.TaskActivity"
+            android:label="@string/title_activity_task"></activity>
         <activity
-            android:name="com.le_scrum_masters.notpokemongo.Activities.MapsActivity"
-            android:label="@string/title_activity_maps" >
+            android:name=".Activities.MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
+        <activity android:name=".Activities.POIActivity"
+                    android:theme="@style/POI">
 
         </activity>
     </application>
