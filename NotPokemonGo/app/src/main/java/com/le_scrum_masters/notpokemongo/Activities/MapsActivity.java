@@ -73,9 +73,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             @Override
             public boolean onMarkerClick(Marker arg0) {
-                if(arg0.getTitle().equals("Marker on Chalmers")) { // if marker source is clicked
+                /*if(arg0.getTitle().equals("Marker on Chalmers")) { // if marker source is clicked
                     placeMarkersOnMap();
-                }
+                }*/
                 for(NPGPointOfInterest poi : places){
                     if(arg0.getTitle().equals(poi.getName())){
                         b.putString("Name", poi.getName());
@@ -96,9 +96,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
         // Add a marker in Chalmers and move the camera
-        LatLng chalmers = new LatLng(57.6884, 11.9778);
-        mMap.addMarker(new MarkerOptions().position(chalmers).title("Marker on Chalmers"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chalmers, 11));
+        /*LatLng chalmers = new LatLng(57.6884, 11.9778);
+        mMap.addMarker(new MarkerOptions().position(chalmers).title("Marker on Chalmers"));*/
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(57.6884, 11.9778), 11));
         //placeAssignmentMarker(new NPGAssignmentItem("big d's crib",location,0,0)); //test
 
         centerMapOnUserLoc(mMap);
