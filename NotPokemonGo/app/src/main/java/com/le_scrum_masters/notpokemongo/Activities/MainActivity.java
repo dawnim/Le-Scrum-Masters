@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             // MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION is an
             // app-defined int constant. The callback method gets the
             // result of the request.
+        } else{
+            startActivity(mapsIntent);
         }
     }
 
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
+                    startActivity(mapsIntent);
                     // permission was granted, yay! Do the task you need to do.
 
                 } else {
