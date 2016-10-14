@@ -2,6 +2,7 @@ package com.le_scrum_masters.notpokemongo.Activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -10,11 +11,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -78,6 +82,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     if(arg0.getTitle().equals(poi.getName())){
                         b.putString("Name", poi.getName());
                         b.putInt("Type", poi.getPlaceTypes().get(0));
+
+                        //testing
+                        poi.setType(poi.getPlaceTypes().get(0));
+
                         System.out.println(poi.getPlaceTypes().get(0));
 
                         Bitmap photo = Bitmap.createScaledBitmap(poi.getImage(), 200, 200, false);
@@ -97,12 +105,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(57.6884, 11.9778), 11));
     }
 
-    public void placeAssignmentMarker(LatLng coordinates, String description){
-        //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
-        Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description));
+    public void placeAssignmentMarker(NPGPointOfInterest place){
+        Marker marker = mMap.addMarker(new MarkerOptions()
+                .position(place.getCoords())
+                .title(place.getName()));
 
-        // how to get Bitmap item from a .bmp in res/drawable
-        // icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.smiley);
+        int icon = place.getIcon();
+        if(icon != 0) {
+            marker.setIcon(BitmapDescriptorFactory.fromBitmap(
+                    BitmapFactory.decodeResource(getApplicationContext()
+                    .getResources(),place.getIcon())));
+        }
     }
 
     @Override
@@ -132,7 +145,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
 
             //pois.add(poi);
-            placeAssignmentMarker(place.getCoords(), place.getName());
+
+            setIcon(place);
+            placeAssignmentMarker(place);
         }
 
         Log.e("Yeah", "places: " + places.size());
@@ -150,5 +165,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void returnPlacephoto() {
         POIActivity.setPlacephoto(currentPlacePhoto);
+    }
+
+    public void setIcon(NPGPointOfInterest place) {
+
+        switch(place.getType()){
+            case Place.TYPE_RESTAURANT: place.setIcon(R.drawable.cutlery);
+                break;
+            case Place.TYPE_AIRPORT: place.setIcon(R.drawable.airport);
+                break;
+            case Place.TYPE_CAFE: place.setIcon(R.drawable.cafe);
+                break;
+            case Place.TYPE_BUS_STATION: place.setIcon(R.drawable.trolleybus);
+                break;
+            case Place.TYPE_PARK: place.setIcon(R.drawable.tree);
+        }
+
     }
 }

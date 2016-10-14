@@ -25,4 +25,8 @@ public interface PointOfInterest {
     Boolean isCompleted();
 
     void setCompleted(Boolean bool);
+
+    void setType(int type);
+    int getType();
+
 }

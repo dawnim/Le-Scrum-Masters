@@ -34,7 +34,7 @@ public class POIActivity extends AppCompatActivity{
 
         int type = b.getInt("Type");
         switch(type){
-            case Place.TYPE_RESTAURANT: setTypeIcon(R.drawable.cutlery);
+            case Place.TYPE_RESTAURANT:setTypeIcon(R.drawable.cutlery);
                 break;
             case Place.TYPE_AIRPORT: setTypeIcon(R.drawable.airport);
                 break;

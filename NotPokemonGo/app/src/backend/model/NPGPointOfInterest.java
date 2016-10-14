@@ -1,15 +1,8 @@
 package model;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-
 import com.google.android.gms.maps.model.LatLng;
-import com.le_scrum_masters.notpokemongo.R;
-
-import java.util.ArrayList;
 import java.util.List;
-
-import static com.le_scrum_masters.notpokemongo.R.drawable.parkis;
 
 /**
  * Created by Albin on 2016-09-29.
@@ -22,13 +15,16 @@ public class NPGPointOfInterest implements PointOfInterest {
     private Bitmap image;
     private LatLng coords;
     private Boolean completed = false;
+    private int icon;
+    private int type;
 
-
-    public NPGPointOfInterest(String name, String address, String id, LatLng latlng){
+    public NPGPointOfInterest(String name, String address, String id, LatLng latlng, int type){
         this.name = name;
         this.address = address;
         this.id = id;
         this.coords = latlng;
+        this.type = type;
+        this.icon = 0;
     }
 
     @Override
@@ -80,4 +76,13 @@ public class NPGPointOfInterest implements PointOfInterest {
     public void setCompleted(Boolean bool){
         completed = bool;
     }
+
+    @Override
+    public void setType(int type) {this.type = type;}
+
+    @Override
+    public int getType() {return type;}
+
+    public void setIcon(int icon){this.icon = icon;}
+    public int getIcon(){return icon;}
 }

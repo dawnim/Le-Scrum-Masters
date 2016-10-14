@@ -79,8 +79,12 @@ public class NPGPOIDirector extends Observable{
                                             final Place myPlace = places.get(0);
                                             if (myPlace.getPlaceTypes().contains(TYPE)){
                                                 Log.i(LOG_TAG, "Place found: " + myPlace.getName() + " TYPE: " + myPlace.getPlaceTypes() + " LatLng: " + myPlace.getLatLng());
-
-                                                final NPGPointOfInterest tmp = new NPGPointOfInterest(myPlace.getName().toString(), myPlace.getAddress().toString(), myPlace.getId(), myPlace.getLatLng());
+                                                final NPGPointOfInterest tmp = new NPGPointOfInterest(
+                                                        myPlace.getName().toString()
+                                                        , myPlace.getAddress().toString()
+                                                        , myPlace.getId()
+                                                        , myPlace.getLatLng()
+                                                        , TYPE );
                                                 tmp.setPlaceTypes(myPlace.getPlaceTypes());
                                                 getPlacePhoto(tmp);
                                                 Log.i(LOG_TAG, "Place found: " + tmp.getName() + " LatLng: " + tmp.getCoords());
