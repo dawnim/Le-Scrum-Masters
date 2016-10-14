@@ -10,11 +10,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -78,11 +80,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     if(arg0.getTitle().equals(poi.getName())){
                         b.putString("Name", poi.getName());
                         b.putInt("Type", poi.getPlaceTypes().get(0));
-                        System.out.println(poi.getPlaceTypes().get(0));
+                        b.putInt("Icon", poi.getIcon());
 
-                        Bitmap photo = Bitmap.createScaledBitmap(poi.getImage(), 200, 200, false);
+                        if(poi.getImage() != null){
+                            Bitmap photo = Bitmap.createScaledBitmap(poi.getImage(), 200, 200, false);
+                            b.putParcelable("Image", photo);
+                        }
 
-                        b.putParcelable("Image", photo);
+
+
 
                         POIIntent.putExtras(b);
                         currentPlacePhoto = poi.getImage();
@@ -97,9 +103,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(57.6884, 11.9778), 11));
     }
 
-    public void placeAssignmentMarker(LatLng coordinates, String description){
+    public void placeAssignmentMarker(LatLng coordinates, String description, int drawableID){
         //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
-        Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description));
+        int id = drawableID;
+        if(id == 0){
+            id = R.drawable.airport;
+        }
+        Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description).icon(BitmapDescriptorFactory.fromResource(id)));
 
         // how to get Bitmap item from a .bmp in res/drawable
         // icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.smiley);
@@ -132,7 +142,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
 
             //pois.add(poi);
-            placeAssignmentMarker(place.getCoords(), place.getName());
+
+            //System.out.println("Icon ID is: " + place.getIcon());
+
+            placeAssignmentMarker(place.getCoords(), place.getName(), place.getIcon());
         }
 
         Log.e("Yeah", "places: " + places.size());

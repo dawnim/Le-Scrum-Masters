@@ -32,18 +32,11 @@ public class POIActivity extends AppCompatActivity{
         t.setText(b.getString("Name"));
         icon= (ImageView) findViewById(R.id.categoryImageView);
 
-        int type = b.getInt("Type");
-        switch(type){
-            case Place.TYPE_RESTAURANT: setTypeIcon(R.drawable.cutlery);
-                break;
-            case Place.TYPE_AIRPORT: setTypeIcon(R.drawable.airport);
-                break;
-            case Place.TYPE_CAFE: setTypeIcon(R.drawable.cafe);
-                break;
-            case Place.TYPE_BUS_STATION: setTypeIcon(R.drawable.trolleybus);
-                break;
-            case Place.TYPE_PARK: setTypeIcon(R.drawable.tree);
+        if(b.getInt("Icon") != 0){
+            setTypeIcon(b.getInt("Icon"));
+
         }
+
 
         placePhoto = (ImageView) findViewById(R.id.placePhotoView);
 

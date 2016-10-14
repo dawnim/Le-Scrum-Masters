@@ -22,6 +22,8 @@ public interface PointOfInterest {
     void setImage(Bitmap image);
     Bitmap getImage();
 
+    int getIcon();
+
     Boolean isCompleted();
 
     void setCompleted(Boolean bool);
