@@ -67,6 +67,8 @@ public class NPGPointOfInterest implements PointOfInterest {
             case Place.TYPE_BUS_STATION: setIcon(R.drawable.trolleybus);
                 break;
             case Place.TYPE_PARK: setIcon(R.drawable.tree);
+                break;
+            default: setIcon(R.drawable.airport);
         }
         System.out.println("Icon ID: " + icon);
     }

@@ -2,15 +2,14 @@ package com.le_scrum_masters.notpokemongo.Activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -26,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+import maps.MapBehaviour;
 import model.NPGPOIDirector;
 import model.NPGPointOfInterest;
 import model.POICallback;
@@ -41,9 +41,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     NPGPOIDirector dir;
 
     Bitmap currentPlacePhoto;
+    MapBehaviour mapBehaviour;
+    Observer observer;
 
     POICallback poiCallback;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +72,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mapBehaviour = new MapBehaviour(this,observer, mMap);
+
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
         {
             @Override
@@ -87,9 +90,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             b.putParcelable("Image", photo);
                         }
 
-
-
-
                         POIIntent.putExtras(b);
                         currentPlacePhoto = poi.getImage();
                         startActivity(POIIntent);
@@ -100,19 +100,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return true;
             }
         });
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(57.6884, 11.9778), 11));
+
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(57.6884, 11.9778), 11));
+
     }
 
     public void placeAssignmentMarker(LatLng coordinates, String description, int drawableID){
         //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
         int id = drawableID;
-        if(id == 0){
-            id = R.drawable.airport;
-        }
+
         Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description).icon(BitmapDescriptorFactory.fromResource(id)));
 
-        // how to get Bitmap item from a .bmp in res/drawable
-        // icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.smiley);
     }
 
     @Override
@@ -164,4 +162,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void returnPlacephoto() {
         POIActivity.setPlacephoto(currentPlacePhoto);
     }
+
 }

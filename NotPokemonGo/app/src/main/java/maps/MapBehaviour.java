@@ -11,21 +11,29 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Result;
+import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
+import com.google.android.gms.location.internal.FusedLocationProviderResult;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 
-public class MapBehaviour implements
+import java.util.Observable;
+import java.util.Observer;
+
+public class MapBehaviour extends Observable
+        implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
@@ -36,29 +44,32 @@ public class MapBehaviour implements
     private LatLng currentLocation;
     private Context contextActivity;
     private GoogleMap map;
-    private boolean requestingLocationUpdates;
+    private boolean requestingCameraUpdates;
     private boolean connectedToApi = false;
 
     private static final int ANIMATE_SPEED_TURN = 1000;
     private static final int BEARING_OFFSET = 20;
-    private int updateInterval = 5000; //ms
-    private int minUpdateInterval = 3000; //ms
+    private int updateInterval = 3000; //ms
+    private int minUpdateInterval = 1500; //ms
+    private int scale = 13;
 
-    public MapBehaviour(Context contextActivity, GoogleMap map){
+    public MapBehaviour(Context contextActivity, Observer observer, GoogleMap map){
         this.contextActivity = contextActivity;
         this.map = map;
 
+        addObserver(observer);
         connectToLocationServices();
     }
 
-    public void enableLocationUpdates(){
-        requestingLocationUpdates = true;
-        connectToLocationServices();
+    public void enableCameraUpdates(){
+        requestingCameraUpdates = true;
+        if(connectedToApi){
+            connectToLocationServices();
+        }
     }
 
-    public void disableLocationUpdates(){
-        requestingLocationUpdates = false;
-        googleApiClient.disconnect();
+    public void disableCameraUpdates(){
+        requestingCameraUpdates = false;
     }
 
     public void connectToLocationServices(){
@@ -87,31 +98,42 @@ public class MapBehaviour implements
                 LocationServices.SettingsApi.checkLocationSettings(googleApiClient,
                         builder.build());
 
-        if(requestingLocationUpdates){
             requestLocationUpdates();
-        }
+
+        setMapPositionToCurrentLocation(scale);
     }
 
     private void requestLocationUpdates() {
-        requestingLocationUpdates = true;
+        PendingResult pendingResult = null;
+
         if (ContextCompat.checkSelfPermission(contextActivity, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
-            LocationServices.FusedLocationApi.requestLocationUpdates(
+            pendingResult = LocationServices.FusedLocationApi.requestLocationUpdates(
                     googleApiClient, locationRequestHighAccuracy, this);
         }
+        pendingResult.setResultCallback(new ResultCallback() {
+            @Override
+            public void onResult(@NonNull Result result) {
+                isConnectedToApi();
+                if(currentLocation==null){
+                    Log.i("CURRENTLOCATION NULL", "In resultcallback");
+                }
+
+            }
+        });
+
+
     }
 
     @Override
     public void onLocationChanged(Location location) {
 
-        if(currentLocation != null){
-            lastLocation = currentLocation;
-        }
-        currentLocation =  new LatLng(location.getLatitude(),location.getLongitude());
+        if(currentLocation != null){lastLocation = currentLocation;}
+        currentLocation = new LatLng(location.getLatitude(),location.getLongitude());
 
         if(lastLocation != null) {
 
-            if (requestingLocationUpdates) {
+            if (requestingCameraUpdates) {
                 CameraPosition cameraPosition =
                         new CameraPosition.Builder()
                                 .target(currentLocation)
@@ -119,7 +141,6 @@ public class MapBehaviour implements
                                 .tilt(map.getCameraPosition().tilt)
                                 .zoom(20)
                                 .build();
-
                 map.animateCamera(
                         CameraUpdateFactory.newCameraPosition(cameraPosition),
                         ANIMATE_SPEED_TURN,
@@ -127,6 +148,9 @@ public class MapBehaviour implements
                 );
             }
         }
+        hasChanged();
+        notifyObservers();
+        clearChanged();
     }
     @Override
     public void onConnectionSuspended(int i) {
@@ -141,17 +165,16 @@ public class MapBehaviour implements
         return connectedToApi;
     }
 
-    public void setMapPositionToCurrentLocation(){
-        if(currentLocation!=null) {
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 15));
+    public void setMapPositionToCurrentLocation(int scale){
+
+        if(currentLocation!=null){
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, scale));
         }
     }
 
-
-    public boolean isRequestingLocationUpdates(){
-        return requestingLocationUpdates;
+    public boolean isRequestingCameraUpdates(){
+        return requestingCameraUpdates;
     }
-
 
     public LatLng getCurrentLocation(){
         return new LatLng(currentLocation.latitude, currentLocation.longitude);

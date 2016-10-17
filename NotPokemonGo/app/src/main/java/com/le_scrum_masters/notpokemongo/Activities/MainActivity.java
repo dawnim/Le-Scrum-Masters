@@ -29,7 +29,6 @@ import java.io.IOException;
 public class MainActivity extends Activity {
 
 
-    TaskDatabase db;
     private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 10;
 
 
@@ -42,15 +41,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mapsIntent = new Intent(this, MapsActivity.class);
-
-
-
-        db = new TaskDatabase(this);
-
-
-
-
-        db = new TaskDatabase(this);
 
         //Places
         if (ContextCompat.checkSelfPermission(this,
@@ -79,15 +69,6 @@ public class MainActivity extends Activity {
                     startActivity(mapsIntent);
                     // permission was granted, yay! Do the task you need to do.
         mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
-
-        Button tstBtn = (Button)findViewById(R.id.tstvid_btn);
-        tstBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mediaPlayer.start();
-            }
-        });
 
                 } else {
 
