@@ -1,15 +1,26 @@
 package com.le_scrum_masters.notpokemongo.Activities;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -28,7 +39,7 @@ import model.NPGPOIDirector;
 import model.NPGPointOfInterest;
 import model.POICallback;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, Observer, POICallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, Observer, POICallback, GoogleApiClient.ConnectionCallbacks {
     private static final int GOOGLE_API_CLIENT_ID = 0;
 
     private GoogleMap mMap;
@@ -42,6 +53,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     POICallback poiCallback;
 
+    Location myLocation;
+
+    GoogleApiClient mGoogleApiClient;
+
+    LocationRequest mLocationRequest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,31 +68,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
+
+
         POIIntent = new Intent(this, POIActivity.class);
 
         poiCallback = this;
 
         b = new Bundle();
 
-        dir = new NPGPOIDirector(new GoogleApiClient.Builder(MapsActivity.this)
-                .addApi(Places.GEO_DATA_API)
-                .addApi(Places.PLACE_DETECTION_API)
-                .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
-                .build(), this);
+        buildGoogleApiClient();
 
-        dir.massiveSearch();
+        dir = new NPGPOIDirector(mGoogleApiClient, this);
+
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
-        {
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker arg0) {
 
-                for(NPGPointOfInterest poi : places){
-                    if(arg0.getTitle().equals(poi.getName())){
+                for (NPGPointOfInterest poi : places) {
+                    if (arg0.getTitle().equals(poi.getName())) {
                         b.putString("Name", poi.getName());
                         b.putInt("Type", poi.getPlaceTypes().get(0));
                         System.out.println(poi.getPlaceTypes().get(0));
@@ -94,7 +109,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return true;
             }
         });
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(57.6884, 11.9778), 11));
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+
+        } else {
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(57.6884, 11.9778), 11));
+        }
+
+    }
+
+    protected synchronized void buildGoogleApiClient() {
+        mGoogleApiClient = new GoogleApiClient.Builder(MapsActivity.this)
+                .addApi(Places.GEO_DATA_API)
+                .addApi(Places.PLACE_DETECTION_API)
+                .addApi(LocationServices.API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
+                .build();
+        mGoogleApiClient.connect();
+
+        Log.e("Connection", "Trying to connect");
     }
 
     public void placeAssignmentMarker(LatLng coordinates, String description){
@@ -150,5 +187,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void returnPlacephoto() {
         POIActivity.setPlacephoto(currentPlacePhoto);
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        Log.e("Connection", "Suspended");
     }
 }

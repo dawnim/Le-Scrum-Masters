@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+import services.NPGCoordinates;
+
 import static com.google.android.gms.location.places.AutocompleteFilter.TYPE_FILTER_NONE;
 
 /**
@@ -54,8 +56,8 @@ public class NPGPOIDirector extends Observable{
 
     }
 
-    private void findPlaceBy(final int TYPE, String phrase){
-        LatLngBounds bounds = new LatLngBounds(new LatLng(57.67524480400853, 11.946945190429688), new LatLng(57.71120876687646, 11.988036632537842));
+    private void findPlaceBy(final int TYPE, String phrase, LatLngBounds bounds){
+        //LatLngBounds bounds = new LatLngBounds(new LatLng(57.67524480400853, 11.946945190429688), new LatLng(57.71120876687646, 11.988036632537842));
 
 
         AutocompleteFilter filter = new AutocompleteFilter.Builder().setTypeFilter(TYPE_FILTER_NONE).build();
@@ -113,7 +115,10 @@ public class NPGPOIDirector extends Observable{
         return this.mPlaces;
     }
 
-    public void massiveSearch(){
+    public void massiveSearch(LatLng coords){
+
+        LatLngBounds bounds = NPGCoordinates.toBounds(coords, 5000);
+
         String[] arr = new String[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
 
         int[] types = new int[]{15,16,29,38,50,55,1013};
@@ -121,7 +126,7 @@ public class NPGPOIDirector extends Observable{
         int i = 0;
         for (int type : types){
             for (String tmp : arr){
-                findPlaceBy(type, tmp);
+                findPlaceBy(type, tmp, bounds);
             }
         }
 
