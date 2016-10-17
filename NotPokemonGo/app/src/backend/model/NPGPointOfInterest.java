@@ -53,23 +53,37 @@ public class NPGPointOfInterest implements PointOfInterest {
         return this.coords;
     }
 
+
+    /*
+    Existing placetypes:
+        cafe - 15
+        Campground - 16
+        Department store - 29
+        Food - 38
+        Hospital - 50
+        Library - 55
+
+     */
     @Override
     public void setPlaceTypes(List<Integer> types) {
         this.placeType = types;
-        int type = placeType.get(0);
-        switch(type){
-            case Place.TYPE_RESTAURANT: setIcon(R.drawable.cutlery);
-                break;
-            case Place.TYPE_AIRPORT: setIcon(R.drawable.airport);
-                break;
-            case Place.TYPE_CAFE: setIcon(R.drawable.cafe);
-                break;
-            case Place.TYPE_BUS_STATION: setIcon(R.drawable.trolleybus);
-                break;
-            case Place.TYPE_PARK: setIcon(R.drawable.tree);
-                break;
-            default: setIcon(R.drawable.airport);
+
+        if (placeType.contains(Place.TYPE_CAFE)){
+            setIcon(R.drawable.cafe);
+        } else if (placeType.contains(Place.TYPE_CAMPGROUND)){
+            setIcon(R.drawable.tree);
+        } else if (placeType.contains(Place.TYPE_DEPARTMENT_STORE)){
+            setIcon(R.drawable.mmonument);
+        } else if (placeType.contains(Place.TYPE_FOOD)){
+            setIcon(R.drawable.cutlery);
+        } else if (placeType.contains(Place.TYPE_HOSPITAL)){
+            setIcon(R.drawable.ffountain_2);
+        } else if (placeType.contains(Place.TYPE_LIBRARY)){
+            setIcon(R.drawable.cchapel);
+        } else{
+            setIcon(R.drawable.pplayground);
         }
+        
         System.out.println("Icon ID: " + icon);
     }
 

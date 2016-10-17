@@ -50,7 +50,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     Bitmap currentPlacePhoto;
     MapBehaviour mapBehaviour;
-    Observer observer;
 
     POICallback poiCallback;
 
@@ -82,7 +81,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mapBehaviour = new MapBehaviour(this,observer, mMap);
+        mapBehaviour = new MapBehaviour(this, this, mMap);
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
         {
@@ -126,12 +125,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mGoogleApiClient = new GoogleApiClient.Builder(MapsActivity.this)
                 .addApi(Places.GEO_DATA_API)
                 .addApi(Places.PLACE_DETECTION_API)
-                .addApi(LocationServices.API)
+                //.addApi(LocationServices.API)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
                 .build();
-        mGoogleApiClient.connect();
+        //mGoogleApiClient.connect();
 
         Log.e("Connection", "Trying to connect");
     }
@@ -158,21 +157,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void placeMarkersOnMap(){
         places = dir.getPlaces();
 
-        /*for (int i = 0; i < places.size(); i++){
-            Log.e("lol","place: " + places.get(i));
-            //NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
-
-            //pois.add(poi);
-            placeAssignmentMarker(places.get(i).getCoords(), places.get(i).getName());
-        }*/
-
         for (NPGPointOfInterest place : places){
             Log.e("lol","place: " + place.getImage());
-            //NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
-
-            //pois.add(poi);
-
-            //System.out.println("Icon ID is: " + place.getIcon());
 
             placeAssignmentMarker(place.getCoords(), place.getName(), place.getIcon());
         }
@@ -186,6 +172,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (observable.getClass() == NPGPOIDirector.class){
             placeMarkersOnMap();
             Log.i("update", "update() inner");
+        }
+        if (observable.getClass() == MapBehaviour.class){
+            Log.e("Update: ", "Update... MapBehaviour");
+            dir.massiveSearch(mapBehaviour.getCurrentLocation());
         }
     }
 

@@ -24,6 +24,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.internal.FusedLocationProviderResult;
+import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -57,7 +58,7 @@ public class MapBehaviour extends Observable
         this.contextActivity = contextActivity;
         this.map = map;
 
-       // addObserver(observer);
+        addObserver(observer);
         connectToLocationServices();
     }
 
@@ -148,10 +149,10 @@ public class MapBehaviour extends Observable
                 );
             }
         }
-        /*
-        hasChanged();
+
+        setChanged();
         notifyObservers();
-        clearChanged();*/
+        clearChanged();
     }
     @Override
     public void onConnectionSuspended(int i) {
