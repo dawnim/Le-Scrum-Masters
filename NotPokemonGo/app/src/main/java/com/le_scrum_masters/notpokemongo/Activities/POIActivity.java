@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -42,7 +43,6 @@ public class POIActivity extends AppCompatActivity{
 
         if(b.getInt("Icon") != 0){
             setTypeIcon(b.getInt("Icon"));
-
         }
 
 
@@ -63,12 +63,21 @@ public class POIActivity extends AppCompatActivity{
                 VideoView videoView = (VideoView)findViewById(R.id.videoView);
                 controller.setAnchorView(videoView);
                 controller.setMediaPlayer(videoView);
-                videoView.setMediaController(controller);
-                String path = "android.resource://" + getPackageName() + "/" + R.raw.allweknow;
-                assert videoView != null;
-                videoView.setVideoURI(Uri.parse(path));
-                videoView.start();
-                videoBtn.setVisibility(View.INVISIBLE);
+                if (videoView != null) {
+                    videoView.setMediaController(controller);
+                    String path = "android.resource://" + getPackageName() + "/" + R.raw.allweknow;
+                    videoView.setVideoURI(Uri.parse(path));
+
+                    DisplayMetrics metrics = new DisplayMetrics(); getWindowManager().getDefaultDisplay().getMetrics(metrics);
+                    android.widget.RelativeLayout.LayoutParams params = (android.widget.RelativeLayout.LayoutParams) videoView.getLayoutParams();
+                    params.width =  metrics.widthPixels;
+                    params.height = metrics.heightPixels;
+                    params.leftMargin = 0;
+                    videoView.setLayoutParams(params);
+
+                    videoView.start();
+                    videoBtn.setVisibility(View.INVISIBLE);
+                }
             }
         });
 

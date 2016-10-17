@@ -82,6 +82,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         b.putInt("Type", poi.getPlaceTypes().get(0));
                         b.putInt("Icon", poi.getIcon());
 
+
                         if(poi.getImage() != null){
                             Bitmap photo = Bitmap.createScaledBitmap(poi.getImage(), 200, 200, false);
                             b.putParcelable("Image", photo);
