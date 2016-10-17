@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import adapters.CardListAdapter;
+
+import model.NPGPointOfInterest;
 import model.POICallback;
 
 public class POIActivity extends AppCompatActivity{
@@ -32,6 +34,7 @@ public class POIActivity extends AppCompatActivity{
     TextView t;
     ImageView icon;
     ImageButton videoBtn;
+    ImageButton completeBtn;
     MediaController controller;
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
@@ -45,7 +48,7 @@ public class POIActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle b = getIntent().getExtras();
+        final Bundle b = getIntent().getExtras();
 
         setContentView(R.layout.activity_poi_info);
         getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
@@ -65,6 +68,21 @@ public class POIActivity extends AppCompatActivity{
             Bitmap image = (Bitmap)b.getParcelable("Image");
             placePhoto.setImageBitmap(image);
         }
+
+        completeBtn = (ImageButton)findViewById(R.id.imageButton);
+        completeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ArrayList<NPGPointOfInterest> places = poiCallback.getPlaces();
+                for (NPGPointOfInterest poi : places) {
+                    if (b.getString("Name").equals(poi.getName())) {
+                        poiCallback.completePOI(poi);
+                    }
+                }
+                finish();
+            }
+        });
 
         //PLAY VIDEO ON CLICK
         videoBtn = (ImageButton)findViewById(R.id.play_video_btn);

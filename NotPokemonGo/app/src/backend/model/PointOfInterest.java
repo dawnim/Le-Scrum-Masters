@@ -25,6 +25,9 @@ public interface PointOfInterest {
     int getIcon();
 
     Boolean isCompleted();
+    Boolean isOnMap();
+
 
     void setCompleted(Boolean bool);
+    void setIsOnMap(Boolean bool);
 }

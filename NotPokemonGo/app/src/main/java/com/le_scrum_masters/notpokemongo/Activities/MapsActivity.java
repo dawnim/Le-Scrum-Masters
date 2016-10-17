@@ -46,7 +46,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Intent POIIntent;
     Bundle b;
 
+
     ArrayList<NPGPointOfInterest> places;
+    ArrayList<Marker> markers;
     NPGPOIDirector dir;
 
     Bitmap currentPlacePhoto;
@@ -71,6 +73,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         POIIntent = new Intent(this, POIActivity.class);
 
         poiCallback = this;
+
+        markers = new ArrayList<Marker>();
 
         b = new Bundle();
 
@@ -106,6 +110,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         currentPlacePhoto = poi.getImage();
                         startActivity(POIIntent);
 
+
                         POIActivity.setPoiCallback(poiCallback);
                     }
                 }
@@ -137,9 +142,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void placeAssignmentMarker(LatLng coordinates, String description, int drawableID){
         //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
         int id = drawableID;
-
-        Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description).icon(BitmapDescriptorFactory.fromResource(id)));
-
+        markers.add(mMap.addMarker(new MarkerOptions().position(coordinates).title(description).icon(BitmapDescriptorFactory.fromResource(id))));
+        System.out.println(description + " has been placed.");
+        System.out.println(markers.size());
     }
 
     @Override
@@ -158,8 +163,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         for (NPGPointOfInterest place : places){
             Log.e("lol","place: " + place.getImage());
-
-            placeAssignmentMarker(place.getCoords(), place.getName(), place.getIcon());
+            if(place.isOnMap() != true){
+                placeAssignmentMarker(place.getCoords(), place.getName(), place.getIcon());
+                place.setIsOnMap(true);
+            }
         }
 
         Log.e("Yeah", "places: " + places.size());
@@ -193,8 +200,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    public void completePOI(NPGPointOfInterest poi){
+        poi.setCompleted(true);
+        Marker marker = null;
+        for (Marker m : markers){
+            if(m.getTitle().equals(poi.getName())){
+                marker = m;
+            }
+        }
+        marker.remove();
+        markers.remove(marker);
+        markers.add(mMap.addMarker(new MarkerOptions().position(poi.getCoords()).title(poi.getName()).icon(BitmapDescriptorFactory.fromResource(poi.getIcon()))));
+    }
+
     @Override
     public void onConnectionSuspended(int i) {
         Log.e("Connection", "Suspended");
     }
+
+    public ArrayList<NPGPointOfInterest> getPlaces() {
+        return places;
+    }
+
 }
