@@ -143,8 +143,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
         int id = drawableID;
         markers.add(mMap.addMarker(new MarkerOptions().position(coordinates).title(description).icon(BitmapDescriptorFactory.fromResource(id))));
-        System.out.println(description + " has been placed.");
-        System.out.println(markers.size());
     }
 
     @Override

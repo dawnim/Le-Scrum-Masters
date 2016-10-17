@@ -121,6 +121,11 @@ public class NPGPointOfInterest implements PointOfInterest {
     public void setCompleted(Boolean bool){
         completed = bool;
         setIcon(R.drawable.checkgreen);
+        if (placeType.contains(Place.TYPE_FOOD)) {
+            setIcon(R.drawable.cutlerygold);
+        } else {
+            setIcon(R.drawable.checkgreen);
+        }
     }
 
     public void setIsOnMap(Boolean bool){
