@@ -156,11 +156,13 @@ public class MapBehaviour extends Observable
     }
     @Override
     public void onConnectionSuspended(int i) {
+        Log.e("API", "CONNECTION SUSPENDED TO API!");
         connectedToApi = false;
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        Log.e("API", "FAILED TO CONNECT TO API!");
         connectedToApi = false;
     }
     public boolean isConnectedToApi(){
