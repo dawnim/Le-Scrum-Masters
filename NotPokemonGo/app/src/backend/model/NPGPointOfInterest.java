@@ -84,8 +84,7 @@ public class NPGPointOfInterest implements PointOfInterest {
         } else{
             setIcon(R.drawable.pplayground);
         }
-        
-        System.out.println("Icon ID: " + icon);
+
     }
 
     @Override

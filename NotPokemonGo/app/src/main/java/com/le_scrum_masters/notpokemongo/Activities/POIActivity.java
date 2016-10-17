@@ -1,11 +1,14 @@
 package com.le_scrum_masters.notpokemongo.Activities;
 
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,6 +22,9 @@ import com.google.android.gms.location.places.Place;
 import com.le_scrum_masters.notpokemongo.R;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import adapters.CardListAdapter;
 
 import model.NPGPointOfInterest;
 import model.POICallback;
@@ -30,6 +36,12 @@ public class POIActivity extends AppCompatActivity{
     ImageButton videoBtn;
     ImageButton completeBtn;
     MediaController controller;
+    RecyclerView mRecyclerView;
+    RecyclerView.LayoutManager mLayoutManager;
+
+    List<Bitmap> images = new ArrayList<>();
+    List<String> mp3filenames = new ArrayList<>();
+
     static POICallback poiCallback;
     static ImageView placePhoto;
 
@@ -101,6 +113,28 @@ public class POIActivity extends AppCompatActivity{
         });
 
         poiCallback.returnPlacephoto();
+
+
+        //Card list shit going on here :)
+        mRecyclerView = (RecyclerView) findViewById(R.id.cardList);
+
+        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        Bitmap image = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.cchapel);
+
+        images.add(image);
+        images.add(image);
+        images.add(image);
+
+        mp3filenames.add("test");
+        mp3filenames.add("test");
+        mp3filenames.add("test");
+
+        CardListAdapter cardListAdapter = new CardListAdapter(images,mp3filenames);
+
+        mRecyclerView.setAdapter(cardListAdapter);
     }
 
     private void setTypeIcon(int id){

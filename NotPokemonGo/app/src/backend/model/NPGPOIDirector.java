@@ -120,7 +120,7 @@ public class NPGPOIDirector extends Observable{
 
         String[] arr = new String[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
 
-        int[] types = new int[]{15,16,29,38,50,55};
+        int[] types = new int[]{15,16,29,38,50,55, 1035};
 
         int i = 0;
         for (int type : types){

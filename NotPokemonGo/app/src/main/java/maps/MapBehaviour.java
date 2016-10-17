@@ -94,10 +94,12 @@ public class MapBehaviour extends Observable
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(locationRequestHighAccuracy);
 
-        //can be used to check if user settings allow for specific LocationSettingsRequest
+
+        /* //can be used to check if user settings allow for specific LocationSettingsRequest
         PendingResult<LocationSettingsResult> result =
                 LocationServices.SettingsApi.checkLocationSettings(googleApiClient,
                         builder.build());
+        */
 
             requestLocationUpdates();
 
@@ -115,7 +117,6 @@ public class MapBehaviour extends Observable
         pendingResult.setResultCallback(new ResultCallback() {
             @Override
             public void onResult(@NonNull Result result) {
-                isConnectedToApi();
                 if(currentLocation==null){
                     Log.i("CURRENTLOCATION NULL", "In resultcallback");
                 }
@@ -156,11 +157,13 @@ public class MapBehaviour extends Observable
     }
     @Override
     public void onConnectionSuspended(int i) {
+        Log.e("API", "CONNECTION SUSPENDED TO API!");
         connectedToApi = false;
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        Log.e("API", "FAILED TO CONNECT TO API!");
         connectedToApi = false;
     }
     public boolean isConnectedToApi(){
