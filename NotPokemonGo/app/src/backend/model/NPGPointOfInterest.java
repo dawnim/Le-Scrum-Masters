@@ -3,6 +3,7 @@ package model;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import com.google.android.gms.location.places.Place;
 import com.google.android.gms.maps.model.LatLng;
 import com.le_scrum_masters.notpokemongo.R;
 
@@ -20,6 +21,7 @@ public class NPGPointOfInterest implements PointOfInterest {
     private String id;
     private List<Integer> placeType;
     private Bitmap image;
+    private int icon;
     private LatLng coords;
     private Boolean completed = false;
 
@@ -54,6 +56,21 @@ public class NPGPointOfInterest implements PointOfInterest {
     @Override
     public void setPlaceTypes(List<Integer> types) {
         this.placeType = types;
+        int type = placeType.get(0);
+        switch(type){
+            case Place.TYPE_RESTAURANT: setIcon(R.drawable.cutlery);
+                break;
+            case Place.TYPE_AIRPORT: setIcon(R.drawable.airport);
+                break;
+            case Place.TYPE_CAFE: setIcon(R.drawable.cafe);
+                break;
+            case Place.TYPE_BUS_STATION: setIcon(R.drawable.trolleybus);
+                break;
+            case Place.TYPE_PARK: setIcon(R.drawable.tree);
+                break;
+            default: setIcon(R.drawable.airport);
+        }
+        System.out.println("Icon ID: " + icon);
     }
 
     @Override
@@ -64,6 +81,15 @@ public class NPGPointOfInterest implements PointOfInterest {
     @Override
     public void setImage(Bitmap image) {
         this.image = image;
+    }
+
+    private void setIcon(int drawableID) {
+        this.icon = drawableID;
+    }
+
+    @Override
+    public int getIcon(){
+        return this.icon;
     }
 
     @Override

@@ -141,7 +141,7 @@ public class NPGPOIDirector extends Observable{
                 PlacePhotoMetadataBuffer photoMetadataBuffer = placePhotoMetadataResult.getPhotoMetadata();
 
                 // Get the first photo in the list.
-                if (photoMetadataBuffer.getCount() != 0){
+                if (photoMetadataBuffer != null && photoMetadataBuffer.getCount() != 0){
                     PlacePhotoMetadata photo = photoMetadataBuffer.get(0);
                     // Get a full-size bitmap for the photo.
 

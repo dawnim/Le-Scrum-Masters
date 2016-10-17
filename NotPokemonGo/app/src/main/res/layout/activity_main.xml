@@ -31,6 +31,28 @@
             android:layout_alignParentBottom="false"
             android:scaleType="centerCrop" />
 
+        <android.support.design.widget.FloatingActionButton
+            android:clickable="true"
+            app:srcCompat="@android:drawable/checkbox_off_background"
+            android:id="@+id/mapFab"
+            android:layout_width="314dp"
+            android:layout_height="342dp"
+            android:layout_weight="0.11"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="64dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginRight="51dp"
+            android:layout_marginEnd="51dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

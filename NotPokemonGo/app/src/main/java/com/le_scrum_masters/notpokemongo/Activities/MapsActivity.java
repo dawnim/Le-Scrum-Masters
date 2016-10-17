@@ -5,13 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
@@ -26,6 +23,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -35,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+import maps.MapBehaviour;
 import model.NPGPOIDirector;
 import model.NPGPointOfInterest;
 import model.POICallback;
@@ -50,14 +49,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     NPGPOIDirector dir;
 
     Bitmap currentPlacePhoto;
+    MapBehaviour mapBehaviour;
+    Observer observer;
 
     POICallback poiCallback;
 
-    Location myLocation;
-
     GoogleApiClient mGoogleApiClient;
-
-    LocationRequest mLocationRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +82,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+        mapBehaviour = new MapBehaviour(this,observer, mMap);
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
+        {
             @Override
             public boolean onMarkerClick(Marker arg0) {
 
@@ -93,11 +93,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     if (arg0.getTitle().equals(poi.getName())) {
                         b.putString("Name", poi.getName());
                         b.putInt("Type", poi.getPlaceTypes().get(0));
-                        System.out.println(poi.getPlaceTypes().get(0));
+                        b.putInt("Icon", poi.getIcon());
 
-                        Bitmap photo = Bitmap.createScaledBitmap(poi.getImage(), 200, 200, false);
 
-                        b.putParcelable("Image", photo);
+                        if(poi.getImage() != null){
+                            Bitmap photo = Bitmap.createScaledBitmap(poi.getImage(), 200, 200, false);
+                            b.putParcelable("Image", photo);
+                        }
 
                         POIIntent.putExtras(b);
                         currentPlacePhoto = poi.getImage();
@@ -134,12 +136,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Log.e("Connection", "Trying to connect");
     }
 
-    public void placeAssignmentMarker(LatLng coordinates, String description){
+    public void placeAssignmentMarker(LatLng coordinates, String description, int drawableID){
         //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
-        Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description));
+        int id = drawableID;
 
-        // how to get Bitmap item from a .bmp in res/drawable
-        // icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.smiley);
+        Marker marker = mMap.addMarker(new MarkerOptions().position(coordinates).title(description).icon(BitmapDescriptorFactory.fromResource(id)));
+
     }
 
     @Override
@@ -169,7 +171,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //NPGPointOfInterest poi = new NPGPointOfInterest(places.get(i).getName().toString(), places.get(i).getAddress().toString(), places.get(i).getId(), places.get(i).getLatLng());
 
             //pois.add(poi);
-            placeAssignmentMarker(place.getCoords(), place.getName());
+
+            //System.out.println("Icon ID is: " + place.getIcon());
+
+            placeAssignmentMarker(place.getCoords(), place.getName(), place.getIcon());
         }
 
         Log.e("Yeah", "places: " + places.size());
