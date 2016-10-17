@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
                     startActivity(mapsIntent);
                     // permission was granted, yay! Do the task you need to do.
         mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
-                    
+
         /*Button tstBtn = (Button)findViewById(R.id.tstvid_btn);
         tstBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -57,7 +57,7 @@ public class MapBehaviour extends Observable
         this.contextActivity = contextActivity;
         this.map = map;
 
-        addObserver(observer);
+       // addObserver(observer);
         connectToLocationServices();
     }
 
@@ -148,9 +148,10 @@ public class MapBehaviour extends Observable
                 );
             }
         }
+        /*
         hasChanged();
         notifyObservers();
-        clearChanged();
+        clearChanged();*/
     }
     @Override
     public void onConnectionSuspended(int i) {
