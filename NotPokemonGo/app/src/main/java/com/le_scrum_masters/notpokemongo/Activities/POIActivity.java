@@ -18,6 +18,9 @@ import android.widget.VideoView;
 import com.google.android.gms.location.places.Place;
 import com.le_scrum_masters.notpokemongo.R;
 
+import java.util.ArrayList;
+
+import model.NPGPointOfInterest;
 import model.POICallback;
 
 public class POIActivity extends AppCompatActivity{
@@ -25,6 +28,7 @@ public class POIActivity extends AppCompatActivity{
     TextView t;
     ImageView icon;
     ImageButton videoBtn;
+    ImageButton completeBtn;
     MediaController controller;
     static POICallback poiCallback;
     static ImageView placePhoto;
@@ -32,7 +36,7 @@ public class POIActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle b = getIntent().getExtras();
+        final Bundle b = getIntent().getExtras();
 
         setContentView(R.layout.activity_poi_info);
         getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
@@ -52,6 +56,21 @@ public class POIActivity extends AppCompatActivity{
             Bitmap image = (Bitmap)b.getParcelable("Image");
             placePhoto.setImageBitmap(image);
         }
+
+        completeBtn = (ImageButton)findViewById(R.id.imageButton);
+        completeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ArrayList<NPGPointOfInterest> places = poiCallback.getPlaces();
+                for (NPGPointOfInterest poi : places) {
+                    if (b.getString("Name").equals(poi.getName())) {
+                        poiCallback.completePOI(poi);
+                    }
+                }
+                finish();
+            }
+        });
 
         //PLAY VIDEO ON CLICK
         videoBtn = (ImageButton)findViewById(R.id.play_video_btn);

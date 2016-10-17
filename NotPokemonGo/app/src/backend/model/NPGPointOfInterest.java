@@ -24,6 +24,7 @@ public class NPGPointOfInterest implements PointOfInterest {
     private int icon;
     private LatLng coords;
     private Boolean completed = false;
+    private Boolean isOnMap = false;
 
 
     public NPGPointOfInterest(String name, String address, String id, LatLng latlng){
@@ -119,5 +120,14 @@ public class NPGPointOfInterest implements PointOfInterest {
     @Override
     public void setCompleted(Boolean bool){
         completed = bool;
+        setIcon(R.drawable.checkgreen);
+    }
+
+    public void setIsOnMap(Boolean bool){
+        isOnMap = bool;
+    }
+
+    public Boolean isOnMap(){
+        return this.isOnMap;
     }
 }
