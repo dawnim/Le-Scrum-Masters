@@ -40,6 +40,7 @@ import model.POICallback;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, Observer, POICallback, GoogleApiClient.ConnectionCallbacks {
     private static final int GOOGLE_API_CLIENT_ID = 0;
+    boolean isStartingUp = true;
 
     private GoogleMap mMap;
     Intent POIIntent;
@@ -56,6 +57,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     POICallback poiCallback;
 
     GoogleApiClient mGoogleApiClient;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,9 +121,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
-
-        } else {
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(57.6884, 11.9778), 11));
         }
 
     }
@@ -182,7 +181,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         if (observable.getClass() == MapBehaviour.class){
             Log.e("Update: ", "Update... MapBehaviour");
-            dir.massiveSearch(mapBehaviour.getCurrentLocation());
+
+            if(isStartingUp) {
+                isStartingUp = false;
+                dir.massiveSearch(mapBehaviour.getCurrentLocation());
+                mapBehaviour.setMapPositionToCurrentLocation(10);
+            }
         }
     }
 

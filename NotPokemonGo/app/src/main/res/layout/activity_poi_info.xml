@@ -73,7 +73,7 @@
             android:gravity="center_vertical"
             android:shadowDx="1"
             android:shadowDy="1"
-            android:shadowRadius="50"
+            android:shadowRadius="25"
             android:shadowColor="#000000" />
 
     </RelativeLayout>
