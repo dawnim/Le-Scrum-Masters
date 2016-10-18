@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -42,6 +43,10 @@ import static android.R.attr.path;
 
 public class POIActivity extends AppCompatActivity{
 
+    private static String placeID;
+
+    private NPGPointOfInterest poi;
+
     TextView t;
     ImageView icon;
     ImageButton videoBtn, doneBtn;
@@ -66,47 +71,26 @@ public class POIActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        b = getIntent().getExtras();
 
+        this.poi = poiCallback.getPointOfInterest(this.placeID);
+
+        //Get some vars setup some wins
         setContentView(R.layout.activity_poi_info);
         getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                 WindowManager.LayoutParams.MATCH_PARENT);
+
         t = (TextView)findViewById(R.id.titleView);
-        t.setText(b.getString("Name"));
-        icon= (ImageView) findViewById(R.id.categoryImageView);
+        t.setText(this.poi.getName());
 
-        if(b.getInt("Icon") != 0){
-            setTypeIcon(b.getInt("Icon"));
+        icon = (ImageView) findViewById(R.id.categoryImageView);
+
+        if (this.poi.getIcon() != 0){
+            setTypeIcon(this.poi.getIcon());
         }
-
 
         placePhoto = (ImageView) findViewById(R.id.placePhotoView);
 
-        if (b.getParcelable("Image") != null){
-            Bitmap image = b.getParcelable("Image");
-            placePhoto.setImageBitmap(image);
-        }
-
-        /*completeBtn = (ImageButton)findViewById(R.id.imageButton);
-        completeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                ArrayList<NPGPointOfInterest> places = poiCallback.getPlaces();
-                for (NPGPointOfInterest poi : places) {
-                    if (b.getString("Name").equals(poi.getName()) && !poi.isCompleted()) {
-                        poiCallback.completePOI(poi);
-                        finish();
-                    }
-                }
-
-            }
-        });*/
-
-        videoBtn = (ImageButton)findViewById(R.id.play_video_btn);
-
-
-        poiCallback.returnPlacephoto();
+        placePhoto.setImageBitmap(this.poi.getImage());
 
 
         //Card list shit going on here :)
@@ -118,11 +102,20 @@ public class POIActivity extends AppCompatActivity{
 
         NPGPlaceBasedListHelper.context = this;
 
-        images = NPGPlaceBasedListHelper.getImagesForPlaceType(b.getInt("ActiveType"));
+        images = NPGPlaceBasedListHelper.getImagesForPlaceType(this.poi.getActivePlaceType());
 
-        mp3fileInt = NPGPlaceBasedListHelper.getMp3FilenamesForPlaceType(b.getInt("ActiveType"));
+        mp3fileInt = NPGPlaceBasedListHelper.getMp3FilenamesForPlaceType(this.poi.getActivePlaceType());
 
-        videofileInt = NPGPlaceBasedListHelper.getVideoFileIntegerForPlaceType(b.getInt("ActiveType"));
+        CardListAdapter cardListAdapter = new CardListAdapter(images,mp3fileInt,this);
+
+        mRecyclerView.setAdapter(cardListAdapter);
+
+
+        //Video shit -------------------------------------
+
+        videoBtn = (ImageButton)findViewById(R.id.play_video_btn);
+
+        videofileInt = NPGPlaceBasedListHelper.getVideoFileIntegerForPlaceType(this.poi.getActivePlaceType());
 
         //PLAY VIDEO ON CLICK
         controller = new MediaController(this);
@@ -161,19 +154,22 @@ public class POIActivity extends AppCompatActivity{
             noVideoTxt.setVisibility(View.VISIBLE);
         }
 
-        CardListAdapter cardListAdapter = new CardListAdapter(images,mp3fileInt,this);
-
-        mRecyclerView.setAdapter(cardListAdapter);
+        //Video shit end ---------------------------------------
 
 
         pref = this.getSharedPreferences(getString(R.string.shared_pref_name), Context.MODE_PRIVATE);
 
         //DONE BUTTON
         doneBtn = (ImageButton)findViewById(R.id.done_button);
+
+        if (poi.isCompleted()){
+            doneBtn.setBackgroundColor(Color.parseColor("#fdcc32"));
+        }
+
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String locationID = b.getString("LocationID");
+                String locationID = poi.getID();
 
                 //SAVE FINNISHED LOCATION
                 SharedPreferences.Editor editor = pref.edit();
@@ -186,6 +182,7 @@ public class POIActivity extends AppCompatActivity{
                     finnishedLocations.add(locationID);
                     editor.putStringSet(getString(R.string.finnishLoc_name),finnishedLocations);
                     editor.apply();
+                    poiCallback.completePOI(poi);
                 }
             }
         });
@@ -195,11 +192,15 @@ public class POIActivity extends AppCompatActivity{
         icon.setImageBitmap(BitmapFactory.decodeResource(getApplicationContext().getResources(), id));
     }
 
-    public static void setPlacephoto(Bitmap photo) {
+    /*public static void setPlacephoto(Bitmap photo) {
         placePhoto.setImageBitmap(photo);
-    }
+    }*/
 
     public static void setPoiCallback(POICallback poiCallback1){
         poiCallback = poiCallback1;
+    }
+
+    public static void setPlaceID(String id){
+        placeID = id;
     }
 }

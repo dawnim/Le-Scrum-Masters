@@ -13,4 +13,6 @@ public interface POICallback {
     ArrayList<NPGPointOfInterest> getPlaces();
     void completePOI(NPGPointOfInterest poi);
 
+    NPGPointOfInterest getPointOfInterest(String id);
+
 }

@@ -22,6 +22,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -37,6 +38,7 @@ public class NPGPOIDirector extends Observable{
     private final String LOG_TAG = "NPGPOIDirector";
 
     private ArrayList<NPGPointOfInterest> mPlaces = new ArrayList<>();
+    private ArrayList<NPGPointOfInterest> cPlaces = new ArrayList<>();
 
 
     public NPGPOIDirector(GoogleApiClient googleApiClient, Observer observer){
@@ -84,8 +86,11 @@ public class NPGPOIDirector extends Observable{
 
                                                 final NPGPointOfInterest tmp = new NPGPointOfInterest(myPlace.getName().toString(), myPlace.getAddress().toString(), myPlace.getId(), myPlace.getLatLng());
                                                 tmp.setPlaceTypes(myPlace.getPlaceTypes());
-                                                getPlacePhoto(tmp);
-                                                addToPlaces(tmp);
+
+                                                if (!completedListContainsPlaceID(tmp.getID())){
+                                                    getPlacePhoto(tmp);
+                                                    addToPlaces(tmp);
+                                                }
                                             }
                                         } else {
                                             Log.e(LOG_TAG, "Place not found");
@@ -168,6 +173,54 @@ public class NPGPOIDirector extends Observable{
                 photoMetadataBuffer.release();
             }
         });
+    }
+
+    public List<NPGPointOfInterest> getCompletedPOIList(){
+        return this.cPlaces;
+    }
+
+    public boolean completedListContainsPlaceID(String placeID){
+        boolean tmp = false;
+
+        for (NPGPointOfInterest poi : cPlaces){
+            if (poi.getID().equals(placeID)){
+                tmp = true;
+                break;
+            }
+        }
+
+        return tmp;
+    }
+
+    public void addPlaceToCompletedList(NPGPointOfInterest poi){
+        cPlaces.add(poi);
+        setChanged();
+        notifyObservers();
+        clearChanged();
+    }
+
+    public void addPlaceToCompletedList(String placeID){
+
+        Places.GeoDataApi.getPlaceById(googleApiClient, placeID)
+                .setResultCallback(new ResultCallback<PlaceBuffer>() {
+                    @Override
+                    public void onResult(PlaceBuffer places) {
+                        if (places.getStatus().isSuccess() && places.getCount() > 0) {
+                            final Place myPlace = places.get(0);
+
+                            Log.i(LOG_TAG, "Place found: " + myPlace.getName() + " TYPE: " + myPlace.getPlaceTypes() + " LatLng: " + myPlace.getLatLng());
+
+                            final NPGPointOfInterest tmp = new NPGPointOfInterest(myPlace.getName().toString(), myPlace.getAddress().toString(), myPlace.getId(), myPlace.getLatLng());
+                            tmp.setPlaceTypes(myPlace.getPlaceTypes());
+                            tmp.setCompleted(true);
+                            getPlacePhoto(tmp);
+                            addPlaceToCompletedList(tmp);
+                        } else {
+                            Log.e(LOG_TAG, "Place not found");
+                        }
+                        places.release();
+                    }
+                });
     }
 
 }

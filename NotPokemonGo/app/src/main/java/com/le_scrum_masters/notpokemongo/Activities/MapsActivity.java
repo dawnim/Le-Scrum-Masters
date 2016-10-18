@@ -55,7 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     int completedAmount;
 
     ArrayList<NPGPointOfInterest> places;
-    ArrayList<Marker> markers;
+    ArrayList<Marker> markers = new ArrayList<Marker>();
     NPGPOIDirector dir;
 
     Bitmap currentPlacePhoto;
@@ -83,8 +83,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         counter = (TextView)findViewById(R.id.counter);
 
-        markers = new ArrayList<Marker>();
-
         b = new Bundle();
 
         buildGoogleApiClient();
@@ -95,7 +93,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SharedPreferences pref = getSharedPreferences(getString(R.string.shared_pref_name),Context.MODE_PRIVATE);
         Set<String> finnishedLocations = pref.getStringSet(getString(R.string.finnishLoc_name),null);
         if(finnishedLocations != null) {
-
+            for (String place : finnishedLocations) {
+                dir.addPlaceToCompletedList(place);
+            }
         }
 
     }
@@ -111,25 +111,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public boolean onMarkerClick(Marker arg0) {
 
                 for (NPGPointOfInterest poi : places) {
-                    if (arg0.getTitle().equals(poi.getName())) {
-                        b.putString("Name", poi.getName());
-                        b.putInt("ActiveType", poi.getActivePlaceType());
-                        b.putInt("Type", poi.getPlaceTypes().get(0));
-                        b.putInt("Icon", poi.getIcon());
-                        b.putString("LocationID",poi.getID());
-
-
-                        if(poi.getImage() != null){
-                            Bitmap photo = Bitmap.createScaledBitmap(poi.getImage(), 200, 200, false);
-                            b.putParcelable("Image", photo);
-                        }
-
-                        POIIntent.putExtras(b);
-                        currentPlacePhoto = poi.getImage();
-                        startActivity(POIIntent);
-
+                    if (poi.getID().equals((String) arg0.getTag())){
+                        POIActivity.setPlaceID((String)arg0.getTag());
 
                         POIActivity.setPoiCallback(poiCallback);
+
+                        startActivity(POIIntent);
                     }
                 }
                 return true;
@@ -157,10 +144,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Log.e("Connection", "Trying to connect");
     }
 
-    public void placeAssignmentMarker(LatLng coordinates, String description, int drawableID){
+    public void placeAssignmentMarker(NPGPointOfInterest poi){
         //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
-        int id = drawableID;
-        markers.add(mMap.addMarker(new MarkerOptions().position(coordinates).title(description).icon(BitmapDescriptorFactory.fromResource(id))));
+        //int id = drawableID;
+        Marker mMarker = mMap.addMarker(new MarkerOptions().position(poi.getCoords()).title(poi.getName()).icon(BitmapDescriptorFactory.fromResource(poi.getIcon())));
+        mMarker.setTag(poi.getID());
+        markers.add(mMarker);
+        //markers.add(mMap.addMarker(new MarkerOptions().position(coordinates).title(description).icon(BitmapDescriptorFactory.fromResource(id))));
     }
 
     @Override
@@ -176,13 +166,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void placeMarkersOnMap(){
         places = dir.getPlaces();
+        places.addAll(dir.getCompletedPOIList());
+
+        if (markers != null){
+            for (Marker marker : markers){
+                marker.remove();
+            }
+            ArrayList<Marker> tmpMarkers = markers;
+            markers.removeAll(tmpMarkers);
+        }
 
         for (NPGPointOfInterest place : places){
-            Log.e("lol","place: " + place.getImage());
-            if(place.isOnMap() != true){
-                placeAssignmentMarker(place.getCoords(), place.getName(), place.getIcon());
+            placeAssignmentMarker(place);
+            /*if(place.isOnMap() != true){
+                placeAssignmentMarker(place);
                 place.setIsOnMap(true);
-            }
+            }*/
         }
 
         Log.e("Yeah", "places: " + places.size());
@@ -193,6 +192,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Log.i("update", "update()");
         if (observable.getClass() == NPGPOIDirector.class){
             placeMarkersOnMap();
+            updateCounterText();
             Log.i("update", "update() inner");
         }
         if (observable.getClass() == MapBehaviour.class){
@@ -208,7 +208,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void returnPlacephoto() {
-        POIActivity.setPlacephoto(currentPlacePhoto);
+        //POIActivity.setPlacephoto(currentPlacePhoto);
     }
 
     @Override
@@ -218,17 +218,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void completePOI(NPGPointOfInterest poi){
         poi.setCompleted(true);
-        Marker marker = null;
-        for (Marker m : markers){
-            if(m.getTitle().equals(poi.getName())){
-                marker = m;
+        poi.setIsOnMap(false);
+
+        Marker tmpMarker = null;
+        for (Marker marker : markers){
+            if (poi.getID().equals((String)marker.getTag())){
+                tmpMarker = marker;
+                marker.remove();
             }
         }
-        marker.remove();
-        markers.remove(marker);
-        markers.add(mMap.addMarker(new MarkerOptions().position(poi.getCoords()).title(poi.getName()).icon(BitmapDescriptorFactory.fromResource(poi.getIcon()))));
-        completedAmount += 1;
-        counter.setText(Integer.toString(completedAmount));
+        this.markers.remove(tmpMarker);
+
+        //markers.add(mMap.addMarker(new MarkerOptions().position(poi.getCoords()).title(poi.getName()).icon(BitmapDescriptorFactory.fromResource(poi.getIcon()))));
+        dir.addPlaceToCompletedList(poi);
+
+        updateCounterText();
+    }
+
+    @Override
+    public NPGPointOfInterest getPointOfInterest(String id) {
+        NPGPointOfInterest tmp = null;
+        for (NPGPointOfInterest poi : places){
+            if (poi.getID().equals(id)){
+                tmp = poi;
+                break;
+            }
+        }
+
+        return tmp;
+    }
+
+    private void updateCounterText(){
+        counter.setText(Integer.toString(dir.getCompletedPOIList().size()));
     }
 
     @Override
