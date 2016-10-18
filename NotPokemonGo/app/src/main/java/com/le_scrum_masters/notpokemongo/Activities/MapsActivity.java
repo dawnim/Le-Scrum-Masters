@@ -3,6 +3,7 @@ package com.le_scrum_masters.notpokemongo.Activities;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -31,8 +32,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.le_scrum_masters.notpokemongo.R;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Set;
 
 import maps.MapBehaviour;
 import model.NPGPOIDirector;
@@ -88,6 +91,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         dir = new NPGPOIDirector(mGoogleApiClient, this);
 
+        //GET FINNISHED LOCATIONS
+        SharedPreferences pref = getSharedPreferences(getString(R.string.shared_pref_name),Context.MODE_PRIVATE);
+        Set<String> finnishedLocations = pref.getStringSet(getString(R.string.finnishLoc_name),null);
+        if(finnishedLocations != null) {
+
+        }
+
     }
 
     @Override
@@ -106,6 +116,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         b.putInt("ActiveType", poi.getActivePlaceType());
                         b.putInt("Type", poi.getPlaceTypes().get(0));
                         b.putInt("Icon", poi.getIcon());
+                        b.putString("LocationID",poi.getID());
 
 
                         if(poi.getImage() != null){

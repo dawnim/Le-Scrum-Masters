@@ -17,7 +17,6 @@ import com.le_scrum_masters.notpokemongo.R;
 public class MainActivity extends Activity {
 
 
-    private static final String MY_PREFERENCES = "firstStartUp";
     private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 10;
 
     Intent mapsIntent;
@@ -29,10 +28,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(getString(R.string.shared_pref_name), Context.MODE_PRIVATE);
 
         if(!sharedPreferences.getBoolean("first_startup", false)){
-            playTutorialVideo();
+            //playTutorialVideo();
             sharedPreferences.edit().putBoolean("first_startup",false).commit();
         }
 
@@ -57,10 +56,10 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void playTutorialVideo() {
+    /*private void playTutorialVideo() {
         mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
         mediaPlayer.start();
-    }
+    }*/
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
@@ -71,11 +70,9 @@ public class MainActivity extends Activity {
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     startActivity(mapsIntent);
                     // permission was granted, yay! Do the task you need to do.
-<<<<<<< HEAD
-        //mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
-=======
 
->>>>>>> origin/master
+        //mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
+
 
         /*Button tstBtn = (Button)findViewById(R.id.tstvid_btn);
         tstBtn.setOnClickListener(new View.OnClickListener() {

@@ -13,19 +13,15 @@
             android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            class="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_weight="0.06" />
+            class="com.google.android.gms.maps.SupportMapFragment" />
 
         <TextView
             android:text="0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/counter"
-            android:layout_weight="0.06"
             android:textSize="36sp"
-            android:textAlignment="textEnd"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:fontFamily="sans-serif"
             android:textStyle="normal|bold" />

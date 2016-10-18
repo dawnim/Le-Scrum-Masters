@@ -28,7 +28,6 @@ public interface PointOfInterest {
     Boolean isCompleted();
     Boolean isOnMap();
 
-
     void setCompleted(Boolean bool);
     void setIsOnMap(Boolean bool);
 }
