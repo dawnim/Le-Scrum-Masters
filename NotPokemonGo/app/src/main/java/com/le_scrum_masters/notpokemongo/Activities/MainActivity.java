@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
     }
 
     private void playTutorialVideo() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
+        mediaPlayer = MediaPlayer.create(this, R.raw.penna);
         mediaPlayer.start();
     }
 
@@ -71,11 +71,9 @@ public class MainActivity extends Activity {
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     startActivity(mapsIntent);
                     // permission was granted, yay! Do the task you need to do.
-<<<<<<< HEAD
-        //mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
-=======
 
->>>>>>> origin/master
+        //mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
+
 
         /*Button tstBtn = (Button)findViewById(R.id.tstvid_btn);
         tstBtn.setOnClickListener(new View.OnClickListener() {
