@@ -77,11 +77,12 @@ public class POIActivity extends AppCompatActivity{
 
                 ArrayList<NPGPointOfInterest> places = poiCallback.getPlaces();
                 for (NPGPointOfInterest poi : places) {
-                    if (b.getString("Name").equals(poi.getName())) {
+                    if (b.getString("Name").equals(poi.getName()) && !poi.isCompleted()) {
                         poiCallback.completePOI(poi);
+                        finish();
                     }
                 }
-                finish();
+
             }
         });
 
