@@ -56,8 +56,13 @@ public class MainActivity extends Activity {
         }
     }
 
+
     /*private void playTutorialVideo() {
         mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
+=======
+    private void playTutorialVideo() {
+        mediaPlayer = MediaPlayer.create(this, R.raw.penna);
+>>>>>>> origin/master
         mediaPlayer.start();
     }*/
 
