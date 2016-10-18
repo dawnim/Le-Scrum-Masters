@@ -153,9 +153,23 @@ public class NPGPointOfInterest implements PointOfInterest {
         completed = bool;
 
         switch(activePlaceType){
-            case Place.TYPE_RESTAURANT: setIcon(R.drawable.cutlerygold);
+            case Place.TYPE_CAFE: activePlaceType = Place.TYPE_CAFE; setIcon(R.drawable.cafegold);
                 break;
-            default: setIcon(R.drawable.checkgreen);
+            case Place.TYPE_RESTAURANT: activePlaceType = Place.TYPE_RESTAURANT; setIcon(R.drawable.cutlerygold);
+                break;
+            case Place.TYPE_HOSPITAL: activePlaceType = Place.TYPE_HOSPITAL; setIcon(R.drawable.sjukhusgold);
+                break;
+            case Place.TYPE_GROCERY_OR_SUPERMARKET: activePlaceType = Place.TYPE_GROCERY_OR_SUPERMARKET; setIcon(R.drawable.mataffargold);
+                break;
+            case Place.TYPE_LODGING: activePlaceType = Place.TYPE_LODGING; setIcon(R.drawable.hotellgold);
+                break;
+            case Place.TYPE_SPA: activePlaceType = Place.TYPE_SPA; setIcon(R.drawable.hotellgold);
+                break;
+            case Place.TYPE_LIBRARY: activePlaceType = Place.TYPE_LIBRARY; setIcon(R.drawable.bibliotekgold);
+                break;
+            case Place.TYPE_BAR: activePlaceType = Place.TYPE_BAR; setIcon(R.drawable.bargold);
+                break;
+            default: activePlaceType = Place.TYPE_OTHER; setIcon(R.drawable.checkgreen);
                 break;
         }
     }
