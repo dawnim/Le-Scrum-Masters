@@ -88,9 +88,10 @@ public class NPGPointOfInterest implements PointOfInterest {
         } else if (placeType.contains(Place.TYPE_LIBRARY)){
             activePlaceType = Place.TYPE_LIBRARY;
             setIcon(R.drawable.cchapel);
-        } else{
+        } else {
             setIcon(R.drawable.pplayground);
         }
+
 
     }
 
@@ -131,11 +132,35 @@ public class NPGPointOfInterest implements PointOfInterest {
     @Override
     public void setCompleted(Boolean bool){
         completed = bool;
-        setIcon(R.drawable.checkgreen);
-        if (placeType.contains(Place.TYPE_FOOD)) {
-            setIcon(R.drawable.cutlerygold);
-        } else {
-            setIcon(R.drawable.checkgreen);
+
+        switch(activePlaceType){
+            case Place.TYPE_CAFE:
+                setIcon(R.drawable.cafegold);
+                break;
+            case Place.TYPE_RESTAURANT:
+                setIcon(R.drawable.cutlerygold);
+                break;
+            case Place.TYPE_HOSPITAL:
+                setIcon(R.drawable.sjukhusgold);
+                break;
+            case Place.TYPE_GROCERY_OR_SUPERMARKET:
+                setIcon(R.drawable.mataffargold);
+                break;
+            case Place.TYPE_LODGING:
+                setIcon(R.drawable.hotellgold);
+                break;
+            case Place.TYPE_SPA:
+                setIcon(R.drawable.hotellgold);
+                break;
+            case Place.TYPE_LIBRARY:
+                setIcon(R.drawable.bibliotekgold);
+                break;
+            case Place.TYPE_BAR:
+                setIcon(R.drawable.bargold);
+                break;
+            default:
+                setIcon(R.drawable.checkgreen);
+                break;
         }
     }
 

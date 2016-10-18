@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -47,6 +48,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Intent POIIntent;
     Bundle b;
 
+    TextView counter;
+    int completedAmount;
 
     ArrayList<NPGPointOfInterest> places;
     ArrayList<Marker> markers;
@@ -74,6 +77,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         POIIntent = new Intent(this, POIActivity.class);
 
         poiCallback = this;
+
+        counter = (TextView)findViewById(R.id.counter);
 
         markers = new ArrayList<Marker>();
 
@@ -211,6 +216,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         marker.remove();
         markers.remove(marker);
         markers.add(mMap.addMarker(new MarkerOptions().position(poi.getCoords()).title(poi.getName()).icon(BitmapDescriptorFactory.fromResource(poi.getIcon()))));
+        completedAmount += 1;
+        counter.setText(Integer.toString(completedAmount));
     }
 
     @Override
