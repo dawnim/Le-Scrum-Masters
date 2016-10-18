@@ -1,6 +1,8 @@
 package adapters;
 
+import android.content.Context;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,14 +23,16 @@ import java.util.List;
 
 public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.ViewHolder> {
     private List<Bitmap> images;
-    private List<String> mp3files;
+    private List<Integer> mp3files;
+    private Context ctx;
+    private MediaPlayer mediaPlayer;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public View cardView;
-        public String mp3filename;
+        public int mp3fileInt;
         private Bitmap image;
         private ImageButton imageButton;
         private ImageView imageView;
@@ -57,9 +61,10 @@ public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.ViewHo
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public CardListAdapter(List<Bitmap> images, List<String> mp3filenames) {
+    public CardListAdapter(List<Bitmap> images, List<Integer> mp3filenames, Context ctx) {
         this.images = images;
         this.mp3files = mp3filenames;
+        this.ctx = ctx;
     }
 
     // Create new views (invoked by the layout manager)
@@ -76,16 +81,11 @@ public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.ViewHo
         ViewHolder vh = new ViewHolder(v, imageView, imageButton);
 
         return vh;
-        // create a new view
-        //View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_text_view, parent, false);
-        // set the view's size, margins, paddings and layout parameters
-        //...
-        //ViewHolder vh = new ViewHolder(null);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         if (images != null){
             if (!(images.size()-1 < position)){
                 holder.setImage(images.get(position));
@@ -94,9 +94,18 @@ public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.ViewHo
 
         if (mp3files != null){
             if (!(mp3files.size()-1 < position)){
-                holder.mp3filename = mp3files.get(position);
+                holder.mp3fileInt = mp3files.get(position);
+                holder.imageButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mediaPlayer = MediaPlayer.create(ctx.getApplicationContext(),mp3files.get(position));
+                        mediaPlayer.start();
+                    }
+                });
             }
         }
+
+
 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element

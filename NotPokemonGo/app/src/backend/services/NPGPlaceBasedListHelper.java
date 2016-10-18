@@ -49,28 +49,46 @@ public class NPGPlaceBasedListHelper {
         return tmp;
     }
 
-    public static List<String> getMp3FilenamesForPlaceType(int placetype){
-        List<String> tmp;
+    public static List<Integer> getMp3FilenamesForPlaceType(int placetype){
+        List<Integer> tmp;
         switch (placetype){
             case Place.TYPE_CAFE:
-                tmp = getMp3FilenamesForCafe();
+                tmp = getMp3FileIntegerForCafe();
                 break;
             case Place.TYPE_CAMPGROUND:
-                tmp = getMp3FilenamesForCampground();
+                tmp = getMp3FileIntegerForCampground();
                 break;
             case Place.TYPE_DEPARTMENT_STORE:
-                tmp = getMp3FilenamesForDepartmentStore();
+                tmp = getMp3FileIntegerForDepartmentStore();
                 break;
             case Place.TYPE_FOOD:
-                tmp = getMp3FilenamesForFood();
+                tmp = getMp3FileIntegerForFood();
                 break;
             case Place.TYPE_HOSPITAL:
-                tmp = getMp3FilenamesForHospital();
+                tmp = getMp3FileIntegerForHospital();
                 break;
             case Place.TYPE_LIBRARY:
-                tmp = getMp3FilenamesForLibrary();
+                tmp = getMp3FileIntegerForLibrary();
                 break;
 
+            default:
+                tmp = null;
+                break;
+
+        }
+
+        return tmp;
+    }
+
+    public static Integer getVideoFileIntegerForPlaceType(int placetype){
+        Integer tmp;
+        switch (placetype){
+            case Place.TYPE_CAFE:
+                tmp = getVideoFileIntegerForCafe();
+                break;
+            case Place.TYPE_LIBRARY:
+                tmp = getVideoFileIntegerForLibrary();
+                break;
             default:
                 tmp = null;
                 break;
@@ -115,11 +133,11 @@ public class NPGPlaceBasedListHelper {
     private static List<Bitmap> getImagesForFood(){
         List<Bitmap> tmp = new ArrayList<>();
 
+
         tmp.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.cafe_brod));
         tmp.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.cafe_kaffe));
-        tmp.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.cafe_kaka));
-        tmp.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.cafe_kanelbulle));
-        tmp.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.cafe_te));
+        tmp.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.bibliotek_lampa));
+        tmp.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.restaurang));
 
         return tmp;
     }
@@ -142,28 +160,82 @@ public class NPGPlaceBasedListHelper {
 
     //Mp3files
 
-    private static List<String> getMp3FilenamesForCafe(){
-        return null;
+    private static List<Integer> getMp3FileIntegerForCafe(){
+        List<Integer> tmp = new ArrayList<>();
+
+        tmp.add(R.raw.brod);
+        tmp.add(R.raw.kaffe);
+        tmp.add(R.raw.kaka);
+        tmp.add(R.raw.bulle);
+        tmp.add(R.raw.te);
+
+        return tmp;
     }
 
-    private static List<String> getMp3FilenamesForCampground(){
-        return null;
+    private static List<Integer> getMp3FileIntegerForCampground(){
+        List<Integer> tmp = new ArrayList<>();
+
+        tmp.add(R.raw.busshallplats);
+        tmp.add(R.raw.gras);
+        tmp.add(R.raw.hund);
+        tmp.add(R.raw.lampa);
+        tmp.add(R.raw.trad);
+
+        return tmp;
     }
 
-    private static List<String> getMp3FilenamesForDepartmentStore(){
-        return null;
+    private static List<Integer> getMp3FileIntegerForDepartmentStore(){
+        List<Integer> tmp = new ArrayList<>();
+
+        tmp.add(R.raw.brod);
+        tmp.add(R.raw.kaffe);
+        tmp.add(R.raw.bulle);
+        tmp.add(R.raw.kaka);
+        tmp.add(R.raw.te);
+
+        return tmp;
     }
 
-    private static List<String> getMp3FilenamesForFood(){
-        return null;
+    private static List<Integer> getMp3FileIntegerForFood(){
+        List<Integer> tmp = new ArrayList<>();
+
+        tmp.add(R.raw.brod);
+        tmp.add(R.raw.kaffe);
+        tmp.add(R.raw.lampa);
+        tmp.add(R.raw.restaurang);
+
+        return tmp;
     }
 
-    private static List<String> getMp3FilenamesForHospital(){
-        return null;
+    private static List<Integer> getMp3FileIntegerForHospital(){
+        List<Integer> tmp = new ArrayList<>();
+
+        tmp.add(R.raw.busshallplats);
+        tmp.add(R.raw.penna);
+        tmp.add(R.raw.fontan);
+
+        return tmp;
     }
 
-    private static List<String> getMp3FilenamesForLibrary(){
-        return null;
+    private static List<Integer> getMp3FileIntegerForLibrary(){
+        List<Integer> tmp = new ArrayList<>();
+
+        tmp.add(R.raw.bok);
+        tmp.add(R.raw.dator);
+        tmp.add(R.raw.glasogon);
+        tmp.add(R.raw.lampa);
+        tmp.add(R.raw.penna);
+
+        return tmp;
+    }
+
+    private static Integer getVideoFileIntegerForLibrary(){
+        return R.raw.bibliotekfilm;
+    }
+
+    private static Integer getVideoFileIntegerForCafe(){
+        return R.raw.cafefilm;
+
     }
 
 }

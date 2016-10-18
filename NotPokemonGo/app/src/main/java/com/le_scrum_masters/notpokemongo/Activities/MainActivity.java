@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     startActivity(mapsIntent);
                     // permission was granted, yay! Do the task you need to do.
-        mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
+        //mediaPlayer = MediaPlayer.create(this, R.raw.sillsound);
 
         /*Button tstBtn = (Button)findViewById(R.id.tstvid_btn);
         tstBtn.setOnClickListener(new View.OnClickListener() {

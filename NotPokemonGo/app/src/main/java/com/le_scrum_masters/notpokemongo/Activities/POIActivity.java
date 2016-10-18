@@ -3,8 +3,11 @@ package com.le_scrum_masters.notpokemongo.Activities;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -30,6 +33,8 @@ import model.NPGPointOfInterest;
 import model.POICallback;
 import services.NPGPlaceBasedListHelper;
 
+import static android.R.attr.path;
+
 public class POIActivity extends AppCompatActivity{
 
     TextView t;
@@ -39,9 +44,11 @@ public class POIActivity extends AppCompatActivity{
     MediaController controller;
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
+    VideoView videoView;
 
     List<Bitmap> images = new ArrayList<>();
-    List<String> mp3filenames = new ArrayList<>();
+    List<Integer> mp3fileInt = new ArrayList<>();
+    Integer videofileInt;
 
     static POICallback poiCallback;
     static ImageView placePhoto;
@@ -66,7 +73,7 @@ public class POIActivity extends AppCompatActivity{
         placePhoto = (ImageView) findViewById(R.id.placePhotoView);
 
         if (b.getParcelable("Image") != null){
-            Bitmap image = (Bitmap)b.getParcelable("Image");
+            Bitmap image = b.getParcelable("Image");
             placePhoto.setImageBitmap(image);
         }
 
@@ -85,33 +92,8 @@ public class POIActivity extends AppCompatActivity{
             }
         });
 
-        //PLAY VIDEO ON CLICK
         videoBtn = (ImageButton)findViewById(R.id.play_video_btn);
-        controller = new MediaController(this);
 
-        videoBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                VideoView videoView = (VideoView)findViewById(R.id.videoView);
-                controller.setAnchorView(videoView);
-                controller.setMediaPlayer(videoView);
-                if (videoView != null) {
-                    videoView.setMediaController(controller);
-                    String path = "android.resource://" + getPackageName() + "/" + R.raw.allweknow;
-                    videoView.setVideoURI(Uri.parse(path));
-
-                    DisplayMetrics metrics = new DisplayMetrics(); getWindowManager().getDefaultDisplay().getMetrics(metrics);
-                    android.widget.RelativeLayout.LayoutParams params = (android.widget.RelativeLayout.LayoutParams) videoView.getLayoutParams();
-                    params.width =  metrics.widthPixels;
-                    params.height = metrics.heightPixels;
-                    params.leftMargin = 0;
-                    videoView.setLayoutParams(params);
-
-                    videoView.start();
-                    videoBtn.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
 
         poiCallback.returnPlacephoto();
 
@@ -127,9 +109,52 @@ public class POIActivity extends AppCompatActivity{
 
         images = NPGPlaceBasedListHelper.getImagesForPlaceType(b.getInt("ActiveType"));
 
-        mp3filenames = NPGPlaceBasedListHelper.getMp3FilenamesForPlaceType(b.getInt("ActiveType"));
+        mp3fileInt = NPGPlaceBasedListHelper.getMp3FilenamesForPlaceType(b.getInt("ActiveType"));
 
-        CardListAdapter cardListAdapter = new CardListAdapter(images,mp3filenames);
+        videofileInt = NPGPlaceBasedListHelper.getVideoFileIntegerForPlaceType(b.getInt("ActiveType"));
+
+        //PLAY VIDEO ON CLICK
+        controller = new MediaController(this);
+        videoView = (VideoView)findViewById(R.id.videoView);
+
+        if (videoView != null && videofileInt != null) {
+
+            String path = "android.resource://" + getPackageName() + "/" + videofileInt;
+            Bitmap thumb = ThumbnailUtils.createVideoThumbnail(path,
+                    MediaStore.Images.Thumbnails.MINI_KIND);
+
+            videoBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    controller.setAnchorView(videoView);
+                    controller.setMediaPlayer(videoView);
+
+                    videoView.setMediaController(controller);
+
+                    String path = "android.resource://" + getPackageName() + "/" + videofileInt;
+                    videoView.setVideoURI(Uri.parse(path));
+                    videoView.seekTo(100);
+
+                    DisplayMetrics metrics = new DisplayMetrics();
+                    getWindowManager().getDefaultDisplay().getMetrics(metrics);
+                    android.widget.RelativeLayout.LayoutParams params = (android.widget.RelativeLayout.LayoutParams) videoView.getLayoutParams();
+                    params.width = metrics.widthPixels;
+                    params.height = metrics.heightPixels;
+                    params.leftMargin = 0;
+                    videoView.setLayoutParams(params);
+
+                    videoView.start();
+                    videoBtn.setVisibility(View.INVISIBLE);
+
+                }
+            });
+        }else {
+            videoBtn.setVisibility(View.INVISIBLE);
+            TextView noVideoTxt = (TextView)findViewById(R.id.no_video_txt);
+            noVideoTxt.setVisibility(View.VISIBLE);
+        }
+
+        CardListAdapter cardListAdapter = new CardListAdapter(images,mp3fileInt,this);
 
         mRecyclerView.setAdapter(cardListAdapter);
     }

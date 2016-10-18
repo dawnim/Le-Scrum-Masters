@@ -29,12 +29,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activities.TaskActivity"
-            android:label="@string/title_activity_task"></activity>
+
         <activity
             android:name=".Activities.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps">
+        </activity>
         <activity android:name=".Activities.POIActivity"
                     android:theme="@style/POI">
 

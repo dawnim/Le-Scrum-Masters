@@ -37,6 +37,7 @@ import maps.MapBehaviour;
 import model.NPGPOIDirector;
 import model.NPGPointOfInterest;
 import model.POICallback;
+import services.NPGPlaceBasedListHelper;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, Observer, POICallback, GoogleApiClient.ConnectionCallbacks {
     private static final int GOOGLE_API_CLIENT_ID = 0;
