@@ -116,11 +116,22 @@ public class NPGPOIDirector extends Observable{
 
     public void massiveSearch(LatLng coords){
 
+        this.mPlaces.clear();
+
         LatLngBounds bounds = NPGCoordinates.toBounds(coords, 5000);
 
         String[] arr = new String[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
 
-        int[] types = new int[]{15,16,29,38,50,55, 1035};
+        /*
+            Existing placetypes:
+                cafe - 15
+                Campground - 16
+                Department store - 29
+                Food - 38
+                Hospital - 50
+                Library - 55
+        */
+        int[] types = new int[]{55,50,16,15,29,38,1035};
 
         int i = 0;
         for (int type : types){

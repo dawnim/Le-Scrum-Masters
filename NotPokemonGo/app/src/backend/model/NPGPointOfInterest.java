@@ -25,6 +25,7 @@ public class NPGPointOfInterest implements PointOfInterest {
     private LatLng coords;
     private Boolean completed = false;
     private Boolean isOnMap = false;
+    private int activePlaceType = 2;
 
 
     public NPGPointOfInterest(String name, String address, String id, LatLng latlng){
@@ -70,16 +71,22 @@ public class NPGPointOfInterest implements PointOfInterest {
         this.placeType = types;
 
         if (placeType.contains(Place.TYPE_CAFE)){
+            activePlaceType = Place.TYPE_CAFE;
             setIcon(R.drawable.cafe);
         } else if (placeType.contains(Place.TYPE_CAMPGROUND)){
+            activePlaceType = Place.TYPE_CAMPGROUND;
             setIcon(R.drawable.tree);
         } else if (placeType.contains(Place.TYPE_DEPARTMENT_STORE)){
+            activePlaceType = Place.TYPE_DEPARTMENT_STORE;
             setIcon(R.drawable.mmonument);
         } else if (placeType.contains(Place.TYPE_FOOD)){
+            activePlaceType = Place.TYPE_FOOD;
             setIcon(R.drawable.cutlery);
         } else if (placeType.contains(Place.TYPE_HOSPITAL)){
+            activePlaceType = Place.TYPE_HOSPITAL;
             setIcon(R.drawable.ffountain_2);
         } else if (placeType.contains(Place.TYPE_LIBRARY)){
+            activePlaceType = Place.TYPE_LIBRARY;
             setIcon(R.drawable.cchapel);
         } else{
             setIcon(R.drawable.pplayground);
@@ -90,6 +97,11 @@ public class NPGPointOfInterest implements PointOfInterest {
     @Override
     public List<Integer> getPlaceTypes() {
         return placeType;
+    }
+
+    @Override
+    public int getActivePlaceType(){
+        return this.activePlaceType;
     }
 
     @Override

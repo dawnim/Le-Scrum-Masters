@@ -28,6 +28,7 @@ import adapters.CardListAdapter;
 
 import model.NPGPointOfInterest;
 import model.POICallback;
+import services.NPGPlaceBasedListHelper;
 
 public class POIActivity extends AppCompatActivity{
 
@@ -122,15 +123,11 @@ public class POIActivity extends AppCompatActivity{
 
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        Bitmap image = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.cchapel);
+        NPGPlaceBasedListHelper.context = this;
 
-        images.add(image);
-        images.add(image);
-        images.add(image);
+        images = NPGPlaceBasedListHelper.getImagesForPlaceType(b.getInt("ActiveType"));
 
-        mp3filenames.add("test");
-        mp3filenames.add("test");
-        mp3filenames.add("test");
+        mp3filenames = NPGPlaceBasedListHelper.getMp3FilenamesForPlaceType(b.getInt("ActiveType"));
 
         CardListAdapter cardListAdapter = new CardListAdapter(images,mp3filenames);
 

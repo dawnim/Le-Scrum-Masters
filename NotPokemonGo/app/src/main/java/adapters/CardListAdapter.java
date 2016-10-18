@@ -86,8 +86,17 @@ public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.ViewHo
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.setImage(images.get(position));
-        holder.mp3filename = mp3files.get(position);
+        if (images != null){
+            if (!(images.size()-1 < position)){
+                holder.setImage(images.get(position));
+            }
+        }
+
+        if (mp3files != null){
+            if (!(mp3files.size()-1 < position)){
+                holder.mp3filename = mp3files.get(position);
+            }
+        }
 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
@@ -98,6 +107,7 @@ public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.ViewHo
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
+        if (images == null) return 0;
         return images.size();
     }
 }

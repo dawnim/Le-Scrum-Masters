@@ -18,6 +18,7 @@ public interface PointOfInterest {
 
     void setPlaceTypes(List<Integer> types);
     List<Integer> getPlaceTypes();
+    int getActivePlaceType();
 
     void setImage(Bitmap image);
     Bitmap getImage();
