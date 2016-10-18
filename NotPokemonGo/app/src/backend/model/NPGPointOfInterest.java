@@ -70,27 +70,47 @@ public class NPGPointOfInterest implements PointOfInterest {
     public void setPlaceTypes(List<Integer> types) {
         this.placeType = types;
 
-        if (placeType.contains(Place.TYPE_CAFE)){
-            activePlaceType = Place.TYPE_CAFE;
-            setIcon(R.drawable.cafe);
-        } else if (placeType.contains(Place.TYPE_CAMPGROUND)){
-            activePlaceType = Place.TYPE_CAMPGROUND;
-            setIcon(R.drawable.tree);
-        } else if (placeType.contains(Place.TYPE_DEPARTMENT_STORE)){
-            activePlaceType = Place.TYPE_DEPARTMENT_STORE;
-            setIcon(R.drawable.mmonument);
-        } else if (placeType.contains(Place.TYPE_FOOD)){
-            activePlaceType = Place.TYPE_FOOD;
-            setIcon(R.drawable.cutlery);
-        } else if (placeType.contains(Place.TYPE_HOSPITAL)){
-            activePlaceType = Place.TYPE_HOSPITAL;
-            setIcon(R.drawable.ffountain_2);
-        } else if (placeType.contains(Place.TYPE_LIBRARY)){
-            activePlaceType = Place.TYPE_LIBRARY;
-            setIcon(R.drawable.cchapel);
-        } else{
-            setIcon(R.drawable.pplayground);
+        int type = types.get(0);
+
+        switch(type){
+            case Place.TYPE_CAFE: activePlaceType = Place.TYPE_CAFE; setIcon(R.drawable.cafe);
+                break;
+            case Place.TYPE_PARK: activePlaceType = Place.TYPE_PARK; setIcon(R.drawable.lleaf);
+                break;
+            case Place.TYPE_RESTAURANT: activePlaceType = Place.TYPE_RESTAURANT; setIcon(R.drawable.cutlery);
+                break;
+            case Place.TYPE_AIRPORT: activePlaceType = Place.TYPE_AIRPORT; setIcon(R.drawable.airport);
+                break;
+            case Place.TYPE_CEMETERY: activePlaceType = Place.TYPE_CEMETERY; setIcon(R.drawable.mmonument);
+                break;
+            case Place.TYPE_MOSQUE: activePlaceType = Place.TYPE_MOSQUE; setIcon(R.drawable.mmosque);
+                break;
+            case Place.TYPE_CHURCH: activePlaceType = Place.TYPE_CHURCH; setIcon(R.drawable.cchapel);
+                break;
+            case Place.TYPE_AMUSEMENT_PARK: activePlaceType = Place.TYPE_AMUSEMENT_PARK; setIcon(R.drawable.pplayground);
+                break;
+            case Place.TYPE_BUS_STATION: activePlaceType = Place.TYPE_BUS_STATION; setIcon(R.drawable.trolleybus);
+                break;
+            case Place.TYPE_TRAIN_STATION: activePlaceType = Place.TYPE_TRAIN_STATION; setIcon(R.drawable.ttrain);
+                break;
+            case Place.TYPE_HOSPITAL: activePlaceType = Place.TYPE_HOSPITAL; setIcon(R.drawable.sjukhus);
+                break;
+            case Place.TYPE_UNIVERSITY: activePlaceType = Place.TYPE_UNIVERSITY; setIcon(R.drawable.universitet);
+                break;
+            case Place.TYPE_GROCERY_OR_SUPERMARKET: activePlaceType = Place.TYPE_GROCERY_OR_SUPERMARKET; setIcon(R.drawable.mataffar);
+                break;
+            case Place.TYPE_LODGING: activePlaceType = Place.TYPE_LODGING; setIcon(R.drawable.hotell);
+                break;
+            case Place.TYPE_SPA: activePlaceType = Place.TYPE_SPA; setIcon(R.drawable.hotell);
+                break;
+            case Place.TYPE_LIBRARY: activePlaceType = Place.TYPE_LIBRARY; setIcon(R.drawable.bibliotek);
+                break;
+            case Place.TYPE_BAR: activePlaceType = Place.TYPE_BAR; setIcon(R.drawable.bar);
+                break;
+            default: activePlaceType = Place.TYPE_OTHER; setIcon(R.drawable.butik);
+                break;
         }
+
 
     }
 
@@ -131,11 +151,12 @@ public class NPGPointOfInterest implements PointOfInterest {
     @Override
     public void setCompleted(Boolean bool){
         completed = bool;
-        setIcon(R.drawable.checkgreen);
-        if (placeType.contains(Place.TYPE_FOOD)) {
-            setIcon(R.drawable.cutlerygold);
-        } else {
-            setIcon(R.drawable.checkgreen);
+
+        switch(activePlaceType){
+            case Place.TYPE_RESTAURANT: setIcon(R.drawable.cutlerygold);
+                break;
+            default: setIcon(R.drawable.checkgreen);
+                break;
         }
     }
 
