@@ -95,6 +95,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if(finnishedLocations != null) {
             for (String place : finnishedLocations) {
                 dir.addPlaceToCompletedList(place);
+                Log.e("Saved Place", place);
             }
         }
 
@@ -165,9 +166,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void placeMarkersOnMap(){
-        places = dir.getPlaces();
-        places.addAll(dir.getCompletedPOIList());
-
         if (markers != null){
             for (Marker marker : markers){
                 marker.remove();
@@ -176,7 +174,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             markers.removeAll(tmpMarkers);
         }
 
+        places = new ArrayList<>(dir.getPlaces());
+
+        places.addAll(dir.getCompletedPOIList());
+        /*for (NPGPointOfInterest place : dir.getCompletedPOIList()){
+            places.add(place);
+        }*/
+
         for (NPGPointOfInterest place : places){
+            //Log.e("Placing Marker", place.getName());
             placeAssignmentMarker(place);
             /*if(place.isOnMap() != true){
                 placeAssignmentMarker(place);
@@ -184,16 +190,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }*/
         }
 
-        Log.e("Yeah", "places: " + places.size());
+        Log.e("Place Markers", "places: " + places.size());
+
     }
 
     @Override
     public void update(Observable observable, Object data) {
         Log.i("update", "update()");
         if (observable.getClass() == NPGPOIDirector.class){
+            Log.i("update", "update() inner");
             placeMarkersOnMap();
             updateCounterText();
-            Log.i("update", "update() inner");
         }
         if (observable.getClass() == MapBehaviour.class){
             Log.e("Update: ", "Update... MapBehaviour");
