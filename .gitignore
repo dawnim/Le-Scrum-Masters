@@ -2,7 +2,6 @@
 
 ### Android ###
 # Built application files
-*.apk
 *.ap_
 *.local.properties
 # Java class files
