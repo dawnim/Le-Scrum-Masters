@@ -87,7 +87,7 @@ public class NPGPOIDirector extends Observable{
                                                 final NPGPointOfInterest tmp = new NPGPointOfInterest(myPlace.getName().toString(), myPlace.getAddress().toString(), myPlace.getId(), myPlace.getLatLng());
                                                 tmp.setPlaceTypes(myPlace.getPlaceTypes());
 
-                                                if (!completedListContainsPlaceID(tmp.getID())){
+                                                if (!completedListContainsPlaceID(tmp.getID()) && !(placesContainsPlaceID(tmp.getID()))){
                                                     getPlacePhoto(tmp);
                                                     addToPlaces(tmp);
                                                 }
@@ -123,7 +123,7 @@ public class NPGPOIDirector extends Observable{
 
         this.mPlaces.clear();
 
-        LatLngBounds bounds = NPGCoordinates.toBounds(coords, 5000);
+        LatLngBounds bounds = NPGCoordinates.toBounds(coords, 2000); //5000 is standard
 
         String[] arr = new String[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
 
@@ -177,6 +177,19 @@ public class NPGPOIDirector extends Observable{
 
     public List<NPGPointOfInterest> getCompletedPOIList(){
         return this.cPlaces;
+    }
+
+    public boolean placesContainsPlaceID(String placeID){
+        boolean tmp = false;
+
+        for (NPGPointOfInterest poi : mPlaces){
+            if (poi.getID().equals(placeID)){
+                tmp = true;
+                break;
+            }
+        }
+
+        return tmp;
     }
 
     public boolean completedListContainsPlaceID(String placeID){

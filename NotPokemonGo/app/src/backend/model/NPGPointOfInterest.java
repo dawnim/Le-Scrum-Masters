@@ -2,6 +2,7 @@ package model;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.maps.model.LatLng;
@@ -25,7 +26,7 @@ public class NPGPointOfInterest implements PointOfInterest {
     private LatLng coords;
     private Boolean completed = false;
     private Boolean isOnMap = false;
-    private int activePlaceType = 2;
+    private int activePlaceType;
 
 
     public NPGPointOfInterest(String name, String address, String id, LatLng latlng){
@@ -70,27 +71,50 @@ public class NPGPointOfInterest implements PointOfInterest {
     public void setPlaceTypes(List<Integer> types) {
         this.placeType = types;
 
-        if (placeType.contains(Place.TYPE_CAFE)){
-            activePlaceType = Place.TYPE_CAFE;
-            setIcon(R.drawable.cafe);
-        } else if (placeType.contains(Place.TYPE_CAMPGROUND)){
-            activePlaceType = Place.TYPE_CAMPGROUND;
-            setIcon(R.drawable.tree);
-        } else if (placeType.contains(Place.TYPE_DEPARTMENT_STORE)){
-            activePlaceType = Place.TYPE_DEPARTMENT_STORE;
-            setIcon(R.drawable.mmonument);
-        } else if (placeType.contains(Place.TYPE_FOOD)){
-            activePlaceType = Place.TYPE_FOOD;
-            setIcon(R.drawable.cutlery);
-        } else if (placeType.contains(Place.TYPE_HOSPITAL)){
-            activePlaceType = Place.TYPE_HOSPITAL;
-            setIcon(R.drawable.ffountain_2);
-        } else if (placeType.contains(Place.TYPE_LIBRARY)){
-            activePlaceType = Place.TYPE_LIBRARY;
-            setIcon(R.drawable.cchapel);
-        } else {
-            setIcon(R.drawable.pplayground);
+        if (placeType != null && placeType.size() > 0){
+            switch(types.get(0)){
+                case Place.TYPE_CAFE:
+                    activePlaceType = Place.TYPE_CAFE;
+                    setIcon(R.drawable.cafe);
+                    break;
+                case Place.TYPE_RESTAURANT:
+                    activePlaceType = Place.TYPE_RESTAURANT;
+                    setIcon(R.drawable.cutlery);
+                    break;
+                case Place.TYPE_HOSPITAL:
+                    activePlaceType = Place.TYPE_HOSPITAL;
+                    setIcon(R.drawable.sjukhus);
+                    break;
+                case Place.TYPE_GROCERY_OR_SUPERMARKET:
+                    activePlaceType = Place.TYPE_GROCERY_OR_SUPERMARKET;
+                    setIcon(R.drawable.mataffar);
+                    break;
+                case Place.TYPE_LODGING:
+                    activePlaceType = Place.TYPE_LODGING;
+                    setIcon(R.drawable.hotell);
+                    break;
+                case Place.TYPE_SPA:
+                    activePlaceType = Place.TYPE_SPA;
+                    setIcon(R.drawable.hotell);
+                    break;
+                case Place.TYPE_LIBRARY:
+                    activePlaceType = Place.TYPE_LIBRARY;
+                    setIcon(R.drawable.bibliotek);
+                    break;
+                case Place.TYPE_BAR:
+                    activePlaceType = Place.TYPE_BAR;
+                    setIcon(R.drawable.bar);
+                    break;
+                default:
+                    activePlaceType = 0;
+                    setIcon(R.drawable.butik);
+                    break;
+            }
+        } else{
+            activePlaceType = 0;
+            setIcon(R.drawable.butik);
         }
+
 
 
     }
@@ -132,6 +156,8 @@ public class NPGPointOfInterest implements PointOfInterest {
     @Override
     public void setCompleted(Boolean bool){
         completed = bool;
+
+        Log.e("SetCompleted()", "" + activePlaceType);
 
         switch(activePlaceType){
             case Place.TYPE_CAFE:

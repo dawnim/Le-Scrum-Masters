@@ -183,6 +183,8 @@ public class POIActivity extends AppCompatActivity{
                     editor.putStringSet(getString(R.string.finnishLoc_name),finnishedLocations);
                     editor.apply();
                     poiCallback.completePOI(poi);
+
+                    finish();
                 }
             }
         });
