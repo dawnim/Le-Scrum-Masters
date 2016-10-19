@@ -41,7 +41,7 @@ public class NPGPlaceBasedListHelper {
                 break;
 
             default:
-                tmp = null;
+                tmp = getImagesForCafe();
                 break;
 
         }
@@ -72,7 +72,7 @@ public class NPGPlaceBasedListHelper {
                 break;
 
             default:
-                tmp = null;
+                tmp = getMp3FileIntegerForCafe();
                 break;
 
         }
@@ -90,7 +90,7 @@ public class NPGPlaceBasedListHelper {
                 tmp = getVideoFileIntegerForLibrary();
                 break;
             default:
-                tmp = null;
+                tmp = getVideoFileIntegerForCafe();
                 break;
 
         }
