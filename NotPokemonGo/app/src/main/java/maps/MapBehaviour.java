@@ -173,7 +173,7 @@ public class MapBehaviour extends Observable
     public void setMapPositionToCurrentLocation(int scale){
 
         if(currentLocation!=null){
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, scale));
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, scale));
         }
     }
 
