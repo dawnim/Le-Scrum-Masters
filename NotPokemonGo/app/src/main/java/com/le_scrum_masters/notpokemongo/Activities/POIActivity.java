@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -56,6 +57,7 @@ public class POIActivity extends AppCompatActivity{
     RecyclerView.LayoutManager mLayoutManager;
     VideoView videoView;
     SharedPreferences pref;
+    int videoImageInt;
 
 
 
@@ -106,6 +108,8 @@ public class POIActivity extends AppCompatActivity{
 
         mp3fileInt = NPGPlaceBasedListHelper.getMp3FilenamesForPlaceType(this.poi.getActivePlaceType());
 
+        videoImageInt = NPGPlaceBasedListHelper.getImageFileIntegerForPlaceType(this.poi.getActivePlaceType());
+
         CardListAdapter cardListAdapter = new CardListAdapter(images,mp3fileInt,this);
 
         mRecyclerView.setAdapter(cardListAdapter);
@@ -121,7 +125,16 @@ public class POIActivity extends AppCompatActivity{
         controller = new MediaController(this);
         videoView = (VideoView)findViewById(R.id.videoView);
 
+
         if (videoView != null && videofileInt != null) {
+
+            videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    videoView.setBackground(getResources().getDrawable(videoImageInt));
+                    videoBtn.setVisibility(View.VISIBLE);
+                }
+            });
 
             videoBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -130,6 +143,7 @@ public class POIActivity extends AppCompatActivity{
                     controller.setMediaPlayer(videoView);
 
                     videoView.setMediaController(controller);
+                    videoView.setBackgroundResource(0);
 
                     String path = "android.resource://" + getPackageName() + "/" + videofileInt;
                     videoView.setVideoURI(Uri.parse(path));
@@ -181,6 +195,9 @@ public class POIActivity extends AppCompatActivity{
                     doneBtn.setBackgroundColor(Color.parseColor("#fdcc32"));
                     finnishedLocations.add(locationID);
                     editor.putStringSet(getString(R.string.finnishLoc_name),finnishedLocations);
+                    int tmp = pref.getInt(getString(R.string.finnish_int),0);
+                    tmp++;
+                    editor.putInt(getString(R.string.finnish_int),tmp);
                     editor.apply();
                     poiCallback.completePOI(poi);
 

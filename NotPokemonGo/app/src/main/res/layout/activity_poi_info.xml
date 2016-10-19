@@ -85,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/videoView"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:background="@drawable/cafe_kaffe"/>
 
         <ImageButton
             android:layout_width="wrap_content"

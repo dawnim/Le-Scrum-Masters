@@ -8,4 +8,5 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="shared_pref_name">MySharedPref</string>
     <string name="finnishLoc_name">FinnishedLocations</string>
+    <string name="finnish_int">FinnishedInt</string>
 </resources>

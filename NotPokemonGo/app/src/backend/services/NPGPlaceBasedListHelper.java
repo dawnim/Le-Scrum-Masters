@@ -89,8 +89,32 @@ public class NPGPlaceBasedListHelper {
             case Place.TYPE_LIBRARY:
                 tmp = getVideoFileIntegerForLibrary();
                 break;
+            case Place.TYPE_FOOD:
+                tmp = getVideoFileIntegerForFood();
+                break;
             default:
                 tmp = getVideoFileIntegerForCafe();
+                break;
+
+        }
+
+        return tmp;
+    }
+
+    public static Integer getImageFileIntegerForPlaceType(int placetype){
+        Integer tmp;
+        switch (placetype){
+            case Place.TYPE_CAFE:
+                tmp = getImageFileIntegerForCafe();
+                break;
+            case Place.TYPE_LIBRARY:
+                tmp = getImageFileIntegerForLibrary();
+                break;
+            case Place.TYPE_FOOD:
+                tmp = getImageFileIntegerForFood();
+                break;
+            default:
+                tmp = getImageFileIntegerForCafe();
                 break;
 
         }
@@ -235,7 +259,21 @@ public class NPGPlaceBasedListHelper {
 
     private static Integer getVideoFileIntegerForCafe(){
         return R.raw.cafefilm;
-
     }
 
+    private static Integer getVideoFileIntegerForFood(){
+        return R.raw.restaurang_film;
+    }
+
+    private static Integer getImageFileIntegerForFood(){
+        return R.drawable.potatis;
+    }
+
+    private static Integer getImageFileIntegerForCafe(){
+        return R.drawable.cafe_kaffe;
+    }
+
+    private static Integer getImageFileIntegerForLibrary(){
+        return R.drawable.bibliotek_glasogon;
+    }
 }

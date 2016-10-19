@@ -11,6 +11,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.widget.VideoView;
 
 import com.le_scrum_masters.notpokemongo.R;
 
@@ -38,6 +39,7 @@ public class MainActivity extends Activity {
 
 
         mapsIntent = new Intent(this, MapsActivity.class);
+
 
         //Places
         if (ContextCompat.checkSelfPermission(this,

@@ -52,7 +52,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Bundle b;
 
     TextView counter;
-    int completedAmount;
+    int completedAmount,count;
 
     ArrayList<NPGPointOfInterest> places;
     ArrayList<Marker> markers = new ArrayList<Marker>();
@@ -99,6 +99,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
 
+        count = pref.getInt(getString(R.string.finnish_int),0);
     }
 
     @Override
