@@ -128,6 +128,7 @@ public class POIActivity extends AppCompatActivity{
 
         if (videoView != null && videofileInt != null) {
 
+            videoView.setBackground(getResources().getDrawable(videoImageInt));
             videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
