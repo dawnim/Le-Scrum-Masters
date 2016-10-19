@@ -227,16 +227,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         poi.setCompleted(true);
         poi.setIsOnMap(false);
 
-        Marker tmpMarker = null;
+        /*Marker tmpMarker = null;
         for (Marker marker : markers){
             if (poi.getID().equals((String)marker.getTag())){
                 tmpMarker = marker;
                 marker.remove();
             }
         }
-        this.markers.remove(tmpMarker);
+        this.markers.remove(tmpMarker);*/
 
         //markers.add(mMap.addMarker(new MarkerOptions().position(poi.getCoords()).title(poi.getName()).icon(BitmapDescriptorFactory.fromResource(poi.getIcon()))));
+        dir.getPlaces().remove(poi);
         dir.addPlaceToCompletedList(poi);
 
         updateCounterText();
