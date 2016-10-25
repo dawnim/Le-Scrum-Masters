@@ -41,6 +41,7 @@ import maps.MapBehaviour;
 import model.NPGPOIDirector;
 import model.NPGPointOfInterest;
 import model.POICallback;
+import services.NPGCoordinates;
 import services.NPGPlaceBasedListHelper;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, Observer, POICallback, GoogleApiClient.ConnectionCallbacks {
@@ -240,6 +241,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //markers.add(mMap.addMarker(new MarkerOptions().position(poi.getCoords()).title(poi.getName()).icon(BitmapDescriptorFactory.fromResource(poi.getIcon()))));
         dir.getPlaces().remove(poi);
         dir.addPlaceToCompletedList(poi);
+        System.out.println("Adding new POI to map...");
+        int size = dir.getPlaces().size();
+        String[] arr = new String[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+        for(String s : arr){
+            if(dir.getPlaces().size() == size){
+                dir.findPlaceBy(poi.getActivePlaceType(), s, NPGCoordinates.toBounds(mapBehaviour.getCurrentLocation(), 2000));
+                System.out.println("Nothing found... :(");
+            } else {
+                System.out.println("New POI found!");
+                break;
+            }
+        }
+
 
         updateCounterText();
     }

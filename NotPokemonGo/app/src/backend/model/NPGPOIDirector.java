@@ -58,9 +58,8 @@ public class NPGPOIDirector extends Observable{
 
     }
 
-    private void findPlaceBy(final int TYPE, String phrase, LatLngBounds bounds){
+    public void findPlaceBy(final int TYPE, String phrase, LatLngBounds bounds){
         //LatLngBounds bounds = new LatLngBounds(new LatLng(57.67524480400853, 11.946945190429688), new LatLng(57.71120876687646, 11.988036632537842));
-
 
         AutocompleteFilter filter = new AutocompleteFilter.Builder().setTypeFilter(TYPE_FILTER_NONE).build();
 
