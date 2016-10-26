@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -121,6 +123,16 @@ public class POIActivity extends AppCompatActivity{
 
         videofileInt = NPGPlaceBasedListHelper.getVideoFileIntegerForPlaceType(this.poi.getActivePlaceType());
 
+        initVideoPlayer();
+
+        pref = this.getSharedPreferences(getString(R.string.shared_pref_name), Context.MODE_PRIVATE);
+
+        initButtons();
+
+
+    }
+
+    public void initVideoPlayer(){
         //PLAY VIDEO ON CLICK
         controller = new MediaController(this);
         videoView = (VideoView)findViewById(R.id.videoView);
@@ -128,11 +140,15 @@ public class POIActivity extends AppCompatActivity{
 
         if (videoView != null && videofileInt != null) {
 
-            videoView.setBackground(getResources().getDrawable(videoImageInt));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                videoView.setBackground(getResources().getDrawable(videoImageInt));
+            }
             videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
-                    videoView.setBackground(getResources().getDrawable(videoImageInt));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        videoView.setBackground(getResources().getDrawable(videoImageInt));
+                    }
                     videoBtn.setVisibility(View.VISIBLE);
                 }
             });
@@ -152,7 +168,7 @@ public class POIActivity extends AppCompatActivity{
 
                     DisplayMetrics metrics = new DisplayMetrics();
                     getWindowManager().getDefaultDisplay().getMetrics(metrics);
-                    android.widget.RelativeLayout.LayoutParams params = (android.widget.RelativeLayout.LayoutParams) videoView.getLayoutParams();
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) videoView.getLayoutParams();
                     params.width = metrics.widthPixels;
                     params.height = metrics.heightPixels;
                     params.leftMargin = 0;
@@ -168,11 +184,10 @@ public class POIActivity extends AppCompatActivity{
             TextView noVideoTxt = (TextView)findViewById(R.id.no_video_txt);
             noVideoTxt.setVisibility(View.VISIBLE);
         }
+    }
 
-        //Video shit end ---------------------------------------
 
-
-        pref = this.getSharedPreferences(getString(R.string.shared_pref_name), Context.MODE_PRIVATE);
+    public void initButtons(){
 
         //DONE BUTTON
         doneBtn = (ImageButton)findViewById(R.id.done_button);
@@ -204,6 +219,15 @@ public class POIActivity extends AppCompatActivity{
 
                     finish();
                 }
+            }
+        });
+
+        //CLOSE BUTTON
+        ImageButton closeBtn = (ImageButton)findViewById(R.id.close_poi_btn);
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
