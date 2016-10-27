@@ -1,6 +1,6 @@
 OUTPUT FROM GITINSPECTOR - 2016/10/27 22:45
 Options used: --Grading
-
+Note: Baawa and Albin B is the same user.
 -------------------------------------------------------------------------------
 
 
