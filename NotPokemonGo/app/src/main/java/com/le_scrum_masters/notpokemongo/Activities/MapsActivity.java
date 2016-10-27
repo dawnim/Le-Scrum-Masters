@@ -59,7 +59,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     ArrayList<Marker> markers = new ArrayList<Marker>();
     NPGPOIDirector dir;
 
-    Bitmap currentPlacePhoto;
     MapBehaviour mapBehaviour;
 
     POICallback poiCallback;
@@ -148,12 +147,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void placeAssignmentMarker(NPGPointOfInterest poi){
-        //LatLng latLng = new LatLng(coordinates[0],coordinates[1]);
-        //int id = drawableID;
         Marker mMarker = mMap.addMarker(new MarkerOptions().position(poi.getCoords()).title(poi.getName()).icon(BitmapDescriptorFactory.fromResource(poi.getIcon())));
         mMarker.setTag(poi.getID());
         markers.add(mMarker);
-        //markers.add(mMap.addMarker(new MarkerOptions().position(coordinates).title(description).icon(BitmapDescriptorFactory.fromResource(id))));
     }
 
     @Override
@@ -179,17 +175,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         places = new ArrayList<>(dir.getPlaces());
 
         places.addAll(dir.getCompletedPOIList());
-        /*for (NPGPointOfInterest place : dir.getCompletedPOIList()){
-            places.add(place);
-        }*/
 
         for (NPGPointOfInterest place : places){
             //Log.e("Placing Marker", place.getName());
             placeAssignmentMarker(place);
-            /*if(place.isOnMap() != true){
-                placeAssignmentMarker(place);
-                place.setIsOnMap(true);
-            }*/
         }
 
         Log.e("Place Markers", "places: " + places.size());
@@ -209,7 +198,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             if(isStartingUp) {
                 isStartingUp = false;
-                dir.massiveSearch(mapBehaviour.getCurrentLocation());
+                dir.fundamentalSearch(mapBehaviour.getCurrentLocation());
                 mapBehaviour.setMapPositionToCurrentLocation(10);
             }
         }
@@ -229,33 +218,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         poi.setCompleted(true);
         poi.setIsOnMap(false);
 
-        /*Marker tmpMarker = null;
-        for (Marker marker : markers){
-            if (poi.getID().equals((String)marker.getTag())){
-                tmpMarker = marker;
-                marker.remove();
-            }
-        }
-        this.markers.remove(tmpMarker);*/
-
-        //markers.add(mMap.addMarker(new MarkerOptions().position(poi.getCoords()).title(poi.getName()).icon(BitmapDescriptorFactory.fromResource(poi.getIcon()))));
         dir.getPlaces().remove(poi);
         dir.addPlaceToCompletedList(poi);
-        System.out.println("Adding new POI to map...");
-        int size = dir.getPlaces().size();
-        String[] arr = new String[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
-        for(String s : arr){
-            if(dir.getPlaces().size() == size){
-                dir.findPlaceBy(poi.getActivePlaceType(), s, NPGCoordinates.toBounds(mapBehaviour.getCurrentLocation(), 2000));
-                System.out.println("Nothing found... :(");
-            } else {
-                System.out.println("New POI found!");
-                break;
-            }
-        }
-
 
         updateCounterText();
+
+        dir.fundamentalSearch(mapBehaviour.getCurrentLocation());
     }
 
     @Override

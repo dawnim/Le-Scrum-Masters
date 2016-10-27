@@ -1,6 +1,7 @@
 package model;
 
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
@@ -58,7 +59,7 @@ public class NPGPOIDirector extends Observable{
 
     }
 
-    public void findPlaceBy(final int TYPE, String phrase, LatLngBounds bounds){
+    private void findPlaceBy(final int TYPE, String phrase, LatLngBounds bounds, final Boolean limitedToOne){
         //LatLngBounds bounds = new LatLngBounds(new LatLng(57.67524480400853, 11.946945190429688), new LatLng(57.71120876687646, 11.988036632537842));
 
         AutocompleteFilter filter = new AutocompleteFilter.Builder().setTypeFilter(TYPE_FILTER_NONE).build();
@@ -85,6 +86,8 @@ public class NPGPOIDirector extends Observable{
 
                                                 final NPGPointOfInterest tmp = new NPGPointOfInterest(myPlace.getName().toString(), myPlace.getAddress().toString(), myPlace.getId(), myPlace.getLatLng());
                                                 tmp.setPlaceTypes(myPlace.getPlaceTypes());
+
+                                                if (limitedToOne && placesContainsType(myPlace.getPlaceTypes().get(0))) return;
 
                                                 if (!completedListContainsPlaceID(tmp.getID()) && !(placesContainsPlaceID(tmp.getID()))){
                                                     getPlacePhoto(tmp);
@@ -118,15 +121,10 @@ public class NPGPOIDirector extends Observable{
         return this.mPlaces;
     }
 
-    public void massiveSearch(LatLng coords){
 
-        this.mPlaces.clear();
-
-        LatLngBounds bounds = NPGCoordinates.toBounds(coords, 2000); //5000 is standard
-
-        String[] arr = new String[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
-
-        /*
+    private final int radius = 5000;
+    private final int extendedRadius = 10000;
+    /*
             Existing placetypes:
                 cafe - 15
                 Campground - 16
@@ -134,16 +132,66 @@ public class NPGPOIDirector extends Observable{
                 Food - 38
                 Hospital - 50
                 Library - 55
-        */
-        int[] types = new int[]{55,50,16,15,29,38,1035};
+                "Geolocation" - 1035
+     */
+    private final int[] types = new int[]{55,50,16,15,29,38,1035};
 
-        int i = 0;
+    private final String[] alphabet = new String[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+
+    private void limitedSearch(LatLng coords){
+        LatLngBounds bounds = NPGCoordinates.toBounds(coords, radius); //5000 is standard
+
         for (int type : types){
-            for (String tmp : arr){
-                findPlaceBy(type, tmp, bounds);
+            for (String character : alphabet){
+                findPlaceBy(type, character, bounds, true);
             }
         }
+    }
 
+    private void extendedSearch(LatLng coords, Boolean extendedByRadius, Boolean sameTypesAllowed){
+        int curr_radius = radius;
+        if (extendedByRadius) curr_radius = extendedRadius;
+
+        LatLngBounds bounds = NPGCoordinates.toBounds(coords, curr_radius); //5000 is standard
+
+        for (int type : types){
+            for (String character : alphabet){
+                findPlaceBy(type, character, bounds, !sameTypesAllowed);
+            }
+        }
+    }
+
+    public void fundamentalSearch(LatLng coords){
+        LatLngBounds bounds = NPGCoordinates.toBounds(coords, extendedRadius);
+
+        removeOutOfBoundsPlaces(bounds);
+
+        FundamentalSearch fs = new FundamentalSearch(coords);
+
+        fs.doInBackground(null);
+    }
+
+    class FundamentalSearch extends AsyncTask<Void,Void,Void> {
+
+        private LatLng coord;
+
+        public FundamentalSearch(LatLng coord){
+            this.coord = coord;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            limitedSearch(coord);
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            if (mPlaces.size() < 10) {
+                extendedSearch(coord, true, false);
+            }
+        }
     }
 
     private void getPlacePhoto(final NPGPointOfInterest poi){
@@ -191,6 +239,17 @@ public class NPGPOIDirector extends Observable{
         return tmp;
     }
 
+    public boolean placesContainsType(Integer type){
+
+        for (NPGPointOfInterest poi : mPlaces){
+            if (poi.getActivePlaceType() == type){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public boolean completedListContainsPlaceID(String placeID){
         boolean tmp = false;
 
@@ -209,6 +268,18 @@ public class NPGPOIDirector extends Observable{
         setChanged();
         notifyObservers();
         clearChanged();
+    }
+
+    private void removeOutOfBoundsPlaces(LatLngBounds bounds){
+        List<NPGPointOfInterest> tmp_list = new ArrayList<>();
+
+        for (NPGPointOfInterest poi : mPlaces){
+            if (!bounds.contains(poi.getCoords())){
+                tmp_list.add(poi);
+            }
+        }
+
+        mPlaces.removeAll(tmp_list);
     }
 
     public void addPlaceToCompletedList(String placeID){
