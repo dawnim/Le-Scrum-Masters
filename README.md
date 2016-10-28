@@ -12,7 +12,7 @@ The repo is divided into two parts. One part is called "project_documents" and c
 
 The second part("notpokemongo"-folder) is the actual android studio project. Most parts of the code we've written along with resources can be found in: NotPokemonGo > app > src. 
 
-
+## Misc
 
 Download link to D3 (Github did not like our +100mb .apk):
 
