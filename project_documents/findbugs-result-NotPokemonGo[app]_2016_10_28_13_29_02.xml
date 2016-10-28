@@ -1,0 +1,1622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://findbugs.sourceforge.net/xsl/default.xsl"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1477653860744" analysisTimestamp="1477653848654" release="">
+  <Project projectName="NotPokemonGo[app]">
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/adapters/CardListAdapter$1.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/adapters/CardListAdapter$ViewHolder$1.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/adapters/CardListAdapter$ViewHolder.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/adapters/CardListAdapter.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$anim.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$attr.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$bool.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$color.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$dimen.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$drawable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$id.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$integer.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$layout.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$string.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$style.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R$styleable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/design/R.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$anim.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$attr.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$bool.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$color.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$dimen.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$integer.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$string.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$style.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$styleable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/appcompat/R.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/cardview/R$attr.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/cardview/R$color.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/cardview/R$dimen.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/cardview/R$style.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/cardview/R$styleable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/cardview/R.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$attr.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$dimen.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$id.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$styleable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$array.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$attr.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$color.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$dimen.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$drawable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$id.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$integer.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$layout.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$raw.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$string.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$style.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R$styleable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/android/gms/R.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$attr.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$color.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$drawable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$id.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$integer.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$layout.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$raw.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$string.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$style.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R$styleable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/google/maps/android/R.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/Activities/MainActivity.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/Activities/MapsActivity$1.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/Activities/MapsActivity.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/Activities/POIActivity$1.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/Activities/POIActivity$2.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/Activities/POIActivity$3.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/Activities/POIActivity$4.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/Activities/POIActivity.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/BuildConfig.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$anim.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$attr.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$bool.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$color.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$dimen.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$drawable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$id.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$integer.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$layout.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$menu.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$mipmap.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$raw.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$string.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$style.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R$styleable.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/com/le_scrum_masters/notpokemongo/R.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/maps/MapBehaviour$1.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/maps/MapBehaviour.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/NPGPOIDirector$1$1.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/NPGPOIDirector$1.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/NPGPOIDirector$2$1.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/NPGPOIDirector$2.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/NPGPOIDirector$3.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/NPGPOIDirector$FundamentalSearch.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/NPGPOIDirector.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/NPGPointOfInterest.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/POICallback.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/model/PointOfInterest.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/services/NPGCoordinates.class</Jar>
+    <Jar>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug/services/NPGPlaceBasedListHelper.class</Jar>
+    <AuxClasspathEntry>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/intermediates/classes/debug</AuxClasspathEntry>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/generated/source/r/debug</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/generated/source/aidl/debug</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/generated/source/buildConfig/debug</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/generated/source/rs/debug</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/generated/source/apt/debug</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/generated/res/rs/debug</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/build/generated/res/resValues/debug</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/src/main/res</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/src/main/assets</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/src/main/java</SrcDir>
+    <SrcDir>/Users/Albin/Documents/Java/Git/Le-Scrum-Masters/NotPokemonGo/app/src/backend</SrcDir>
+  </Project>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="650de04a0bdb303a975d72d19c1f7ed3" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: adapters.CardListAdapter$ViewHolder.cardView</LongMessage>
+    <Class classname="adapters.CardListAdapter$ViewHolder" primary="true">
+      <SourceLine classname="adapters.CardListAdapter$ViewHolder" sourcefile="CardListAdapter.java" sourcepath="adapters/CardListAdapter.java" relSourcepath="src/main/java/adapters/CardListAdapter.java">
+        <Message>In CardListAdapter.java</Message>
+      </SourceLine>
+      <Message>In class adapters.CardListAdapter$ViewHolder</Message>
+    </Class>
+    <Field classname="adapters.CardListAdapter$ViewHolder" name="cardView" signature="Landroid/view/View;" isStatic="false" primary="true">
+      <SourceLine classname="adapters.CardListAdapter$ViewHolder" sourcefile="CardListAdapter.java" sourcepath="adapters/CardListAdapter.java" relSourcepath="src/main/java/adapters/CardListAdapter.java">
+        <Message>In CardListAdapter.java</Message>
+      </SourceLine>
+      <Message>Field adapters.CardListAdapter$ViewHolder.cardView</Message>
+    </Field>
+    <SourceLine classname="adapters.CardListAdapter$ViewHolder" primary="true" start="41" end="41" startBytecode="7" endBytecode="7" sourcefile="CardListAdapter.java" sourcepath="adapters/CardListAdapter.java" relSourcepath="src/main/java/adapters/CardListAdapter.java">
+      <Message>At CardListAdapter.java:[line 41]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" instanceHash="a462cf1bf9938a6dd00dede756227b6b" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: adapters.CardListAdapter$ViewHolder.mp3fileInt</LongMessage>
+    <Class classname="adapters.CardListAdapter$ViewHolder" primary="true">
+      <SourceLine classname="adapters.CardListAdapter$ViewHolder" sourcefile="CardListAdapter.java" sourcepath="adapters/CardListAdapter.java" relSourcepath="src/main/java/adapters/CardListAdapter.java">
+        <Message>In CardListAdapter.java</Message>
+      </SourceLine>
+      <Message>In class adapters.CardListAdapter$ViewHolder</Message>
+    </Class>
+    <Field classname="adapters.CardListAdapter$ViewHolder" name="mp3fileInt" signature="I" isStatic="false" primary="true">
+      <SourceLine classname="adapters.CardListAdapter$ViewHolder" sourcefile="CardListAdapter.java" sourcepath="adapters/CardListAdapter.java" relSourcepath="src/main/java/adapters/CardListAdapter.java">
+        <Message>In CardListAdapter.java</Message>
+      </SourceLine>
+      <Message>Field adapters.CardListAdapter$ViewHolder.mp3fileInt</Message>
+    </Field>
+    <SourceLine classname="adapters.CardListAdapter" primary="true" start="97" end="97" startBytecode="78" endBytecode="78" sourcefile="CardListAdapter.java" sourcepath="adapters/CardListAdapter.java" relSourcepath="src/main/java/adapters/CardListAdapter.java">
+      <Message>At CardListAdapter.java:[line 97]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="8c49ce8c44ae459a5c13279e039f5cce" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$anim doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$anim" primary="true">
+      <SourceLine classname="android.support.design.R$anim" start="10" end="10" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 10]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$anim</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$anim" start="10" end="10" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 10]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="e3b4a7795849fed077287014341ec752" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$attr doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$attr" primary="true">
+      <SourceLine classname="android.support.design.R$attr" start="28" end="28" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 28]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$attr</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$attr" start="28" end="28" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 28]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="2b33195d99fbffdbe88132b49c07f78f" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$bool doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$bool" primary="true">
+      <SourceLine classname="android.support.design.R$bool" start="312" end="312" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 312]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$bool</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$bool" start="312" end="312" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 312]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="38bcac2154945339b172737f7c380c64" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$color doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$color" primary="true">
+      <SourceLine classname="android.support.design.R$color" start="322" end="322" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 322]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$color</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$color" start="322" end="322" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 322]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="63c1ee9095614f53e5b4d4973fb23960" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$dimen doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$dimen" primary="true">
+      <SourceLine classname="android.support.design.R$dimen" start="404" end="404" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 404]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$dimen</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$dimen" start="404" end="404" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 404]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="c6344e375f31a55f57070a831c621f6d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$drawable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$drawable" primary="true">
+      <SourceLine classname="android.support.design.R$drawable" start="513" end="513" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 513]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$drawable</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$drawable" start="513" end="513" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 513]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="adcd1a279916d39ab669c77014c4d720" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$id doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$id" primary="true">
+      <SourceLine classname="android.support.design.R$id" start="593" end="593" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 593]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$id</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$id" start="593" end="593" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 593]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="364c780d4403e904a8088037b503b8af" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$integer doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$integer" primary="true">
+      <SourceLine classname="android.support.design.R$integer" start="722" end="722" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 722]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$integer</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$integer" start="722" end="722" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 722]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="d0a99c8fe08e6d67e752c0c7a7ac57af" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$layout doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$layout" primary="true">
+      <SourceLine classname="android.support.design.R$layout" start="731" end="731" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 731]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$layout</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$layout" start="731" end="731" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 731]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="37795884cefa647d1c59996384cba87d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$string doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$string" primary="true">
+      <SourceLine classname="android.support.design.R$string" start="782" end="782" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 782]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$string</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$string" start="782" end="782" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 782]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="6cc9d0d2362203c359482975308dcdef" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$style doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$style" primary="true">
+      <SourceLine classname="android.support.design.R$style" start="807" end="807" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[line 807]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$style</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$style" start="807" end="807" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[line 807]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="f9512fbf3d4b99e8dc32ddd38bd206e1" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.design.R$styleable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.design.R$styleable" primary="true">
+      <SourceLine classname="android.support.design.R$styleable" start="1152" end="1582" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java">
+        <Message>At R.java:[lines 1152-1582]</Message>
+      </SourceLine>
+      <Message>In class android.support.design.R$styleable</Message>
+    </Class>
+    <SourceLine classname="android.support.design.R$styleable" start="1152" end="1582" sourcefile="R.java" sourcepath="android/support/design/R.java" relSourcepath="build/generated/source/r/debug/android/support/design/R.java" synthetic="true">
+      <Message>At R.java:[lines 1152-1582]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="f6a1cbf292ff207d99da7a613befbb74" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$anim doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$anim" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$anim" start="10" end="10" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 10]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$anim</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$anim" start="10" end="10" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 10]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="1841a87261af5505ef0bac16428b3ee6" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$attr doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$attr" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$attr" start="22" end="22" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 22]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$attr</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$attr" start="22" end="22" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 22]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="6e15cf5b46efb9b08ec3ad487d23b8db" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$bool doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$bool" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$bool" start="233" end="233" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 233]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$bool</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$bool" start="233" end="233" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 233]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="d721e264e8a73ef86ae94e22cd8cc639" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$color doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$color" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$color" start="243" end="243" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 243]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$color</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$color" start="243" end="243" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 243]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="6c48a87875850baec10124065d2f5610" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$dimen doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$dimen" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$dimen" start="315" end="315" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 315]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$dimen</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$dimen" start="315" end="315" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 315]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="13f703ca4a33017dc948c8ea80d8ec8d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$drawable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$drawable" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$drawable" start="392" end="392" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 392]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$drawable</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$drawable" start="392" end="392" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 392]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="6d9f0f6db2329fa2e6de5bae23c8cc93" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$id doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$id" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$id" start="470" end="470" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 470]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$id</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$id" start="470" end="470" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 470]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="9d97a85fb4b15c9f5c7189d477ab1f4d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$integer doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$integer" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$integer" start="565" end="565" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 565]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$integer</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$integer" start="565" end="565" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 565]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="6235b0ac91d4fa4768ae353cfc4409f4" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$layout doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$layout" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$layout" start="572" end="572" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 572]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$layout</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$layout" start="572" end="572" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 572]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="8a0a35ba0abb82cfadea608762efa21f" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$string doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$string" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$string" start="611" end="611" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 611]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$string</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$string" start="611" end="611" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 611]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="be71f48a6a0a1a64f7ea54d19087815d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$style doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$style" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$style" start="633" end="633" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[line 633]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$style</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$style" start="633" end="633" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[line 633]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="a7cd7e4c358187a4ea2cd89a8c263e12" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.appcompat.R$styleable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.appcompat.R$styleable" primary="true">
+      <SourceLine classname="android.support.v7.appcompat.R$styleable" start="953" end="1271" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java">
+        <Message>At R.java:[lines 953-1271]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.appcompat.R$styleable</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.appcompat.R$styleable" start="953" end="1271" sourcefile="R.java" sourcepath="android/support/v7/appcompat/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/appcompat/R.java" synthetic="true">
+      <Message>At R.java:[lines 953-1271]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="166e23f90059f050821e0d3ec4be432b" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.cardview.R$attr doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.cardview.R$attr" primary="true">
+      <SourceLine classname="android.support.v7.cardview.R$attr" start="10" end="10" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java">
+        <Message>At R.java:[line 10]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.cardview.R$attr</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.cardview.R$attr" start="10" end="10" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java" synthetic="true">
+      <Message>At R.java:[line 10]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="6db2234c69e442f4140094769427a276" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.cardview.R$color doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.cardview.R$color" primary="true">
+      <SourceLine classname="android.support.v7.cardview.R$color" start="23" end="23" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java">
+        <Message>At R.java:[line 23]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.cardview.R$color</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.cardview.R$color" start="23" end="23" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java" synthetic="true">
+      <Message>At R.java:[line 23]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="dd9ae0d15f35c5fa6a48fbcb90b58a88" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.cardview.R$dimen doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.cardview.R$dimen" primary="true">
+      <SourceLine classname="android.support.v7.cardview.R$dimen" start="29" end="29" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java">
+        <Message>At R.java:[line 29]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.cardview.R$dimen</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.cardview.R$dimen" start="29" end="29" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java" synthetic="true">
+      <Message>At R.java:[line 29]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="104e5e212337518d28df9cc1be4460af" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.cardview.R$style doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.cardview.R$style" primary="true">
+      <SourceLine classname="android.support.v7.cardview.R$style" start="34" end="34" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java">
+        <Message>At R.java:[line 34]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.cardview.R$style</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.cardview.R$style" start="34" end="34" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java" synthetic="true">
+      <Message>At R.java:[line 34]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="6953161567f818a4d6a5cd2bb7f2409d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.cardview.R$styleable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.cardview.R$styleable" primary="true">
+      <SourceLine classname="android.support.v7.cardview.R$styleable" start="40" end="41" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java">
+        <Message>At R.java:[lines 40-41]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.cardview.R$styleable</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.cardview.R$styleable" start="40" end="41" sourcefile="R.java" sourcepath="android/support/v7/cardview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/cardview/R.java" synthetic="true">
+      <Message>At R.java:[lines 40-41]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="1dcc322f5d1a6eb9e47867cfb7682a72" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.recyclerview.R$attr doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.recyclerview.R$attr" primary="true">
+      <SourceLine classname="android.support.v7.recyclerview.R$attr" start="10" end="10" sourcefile="R.java" sourcepath="android/support/v7/recyclerview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/recyclerview/R.java">
+        <Message>At R.java:[line 10]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.recyclerview.R$attr</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.recyclerview.R$attr" start="10" end="10" sourcefile="R.java" sourcepath="android/support/v7/recyclerview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/recyclerview/R.java" synthetic="true">
+      <Message>At R.java:[line 10]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="7f65ea8d21f9d09fdb6ed47b20aa4ad8" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.recyclerview.R$dimen doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.recyclerview.R$dimen" primary="true">
+      <SourceLine classname="android.support.v7.recyclerview.R$dimen" start="16" end="16" sourcefile="R.java" sourcepath="android/support/v7/recyclerview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/recyclerview/R.java">
+        <Message>At R.java:[line 16]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.recyclerview.R$dimen</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.recyclerview.R$dimen" start="16" end="16" sourcefile="R.java" sourcepath="android/support/v7/recyclerview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/recyclerview/R.java" synthetic="true">
+      <Message>At R.java:[line 16]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="5891eeb5d9d609bb0e8e08cea707acaa" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.recyclerview.R$id doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.recyclerview.R$id" primary="true">
+      <SourceLine classname="android.support.v7.recyclerview.R$id" start="21" end="21" sourcefile="R.java" sourcepath="android/support/v7/recyclerview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/recyclerview/R.java">
+        <Message>At R.java:[line 21]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.recyclerview.R$id</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.recyclerview.R$id" start="21" end="21" sourcefile="R.java" sourcepath="android/support/v7/recyclerview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/recyclerview/R.java" synthetic="true">
+      <Message>At R.java:[line 21]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="c2307e4bec09f5ad39f2000477f9afe" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name android.support.v7.recyclerview.R$styleable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="android.support.v7.recyclerview.R$styleable" primary="true">
+      <SourceLine classname="android.support.v7.recyclerview.R$styleable" start="24" end="25" sourcefile="R.java" sourcepath="android/support/v7/recyclerview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/recyclerview/R.java">
+        <Message>At R.java:[lines 24-25]</Message>
+      </SourceLine>
+      <Message>In class android.support.v7.recyclerview.R$styleable</Message>
+    </Class>
+    <SourceLine classname="android.support.v7.recyclerview.R$styleable" start="24" end="25" sourcefile="R.java" sourcepath="android/support/v7/recyclerview/R.java" relSourcepath="build/generated/source/r/debug/android/support/v7/recyclerview/R.java" synthetic="true">
+      <Message>At R.java:[lines 24-25]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="d5486a6b69af519604bbd2b2755607ea" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$array doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$array" primary="true">
+      <SourceLine classname="com.google.android.gms.R$array" start="10" end="10" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 10]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$array</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$array" start="10" end="10" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 10]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="7b40c7558eb783439939e0f14f06cf5f" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$attr doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$attr" primary="true">
+      <SourceLine classname="com.google.android.gms.R$attr" start="12" end="12" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 12]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$attr</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$attr" start="12" end="12" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 12]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="44e09fdf09f86f6ecbfd48ff442777e" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$color doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$color" primary="true">
+      <SourceLine classname="com.google.android.gms.R$color" start="43" end="43" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 43]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$color</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$color" start="43" end="43" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 43]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="e711032677fdd98341d6eb680b8b801e" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$dimen doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$dimen" primary="true">
+      <SourceLine classname="com.google.android.gms.R$dimen" start="61" end="61" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 61]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$dimen</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$dimen" start="61" end="61" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 61]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="7ca8e59c54618082431d86565fa73a33" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$drawable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$drawable" primary="true">
+      <SourceLine classname="com.google.android.gms.R$drawable" start="73" end="73" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 73]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$drawable</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$drawable" start="73" end="73" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 73]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="cdccad9c80b0e5efcfdc4c93f7e50e7e" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$id doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$id" primary="true">
+      <SourceLine classname="com.google.android.gms.R$id" start="101" end="101" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 101]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$id</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$id" start="101" end="101" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 101]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="29c099321dce038cdeb2be0f6aec83ef" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$integer doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$integer" primary="true">
+      <SourceLine classname="com.google.android.gms.R$integer" start="129" end="129" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 129]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$integer</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$integer" start="129" end="129" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 129]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="29b64df139d68aae2b4376ad8a2f71af" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$layout doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$layout" primary="true">
+      <SourceLine classname="com.google.android.gms.R$layout" start="132" end="132" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 132]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$layout</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$layout" start="132" end="132" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 132]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="e776aae68b1bf42e4f98ef655c552f11" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$raw doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$raw" primary="true">
+      <SourceLine classname="com.google.android.gms.R$raw" start="138" end="138" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 138]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$raw</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$raw" start="138" end="138" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 138]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="eea8abe2d40c6b1979380f03146c419b" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$string doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$string" primary="true">
+      <SourceLine classname="com.google.android.gms.R$string" start="140" end="140" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 140]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$string</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$string" start="140" end="140" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 140]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="f538c4852adde46e9d5b57e0baf03937" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$style doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$style" primary="true">
+      <SourceLine classname="com.google.android.gms.R$style" start="164" end="164" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[line 164]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$style</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$style" start="164" end="164" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[line 164]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="425c35cada3102f2c5047d119a5bef36" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.android.gms.R$styleable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.android.gms.R$styleable" primary="true">
+      <SourceLine classname="com.google.android.gms.R$styleable" start="166" end="195" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java">
+        <Message>At R.java:[lines 166-195]</Message>
+      </SourceLine>
+      <Message>In class com.google.android.gms.R$styleable</Message>
+    </Class>
+    <SourceLine classname="com.google.android.gms.R$styleable" start="166" end="195" sourcefile="R.java" sourcepath="com/google/android/gms/R.java" relSourcepath="build/generated/source/r/debug/com/google/android/gms/R.java" synthetic="true">
+      <Message>At R.java:[lines 166-195]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="ea20b584396850346d3897dde4f91d38" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$attr doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$attr" primary="true">
+      <SourceLine classname="com.google.maps.android.R$attr" start="10" end="10" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[line 10]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$attr</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$attr" start="10" end="10" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[line 10]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="89737533006a473093f15784a355f87e" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$color doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$color" primary="true">
+      <SourceLine classname="com.google.maps.android.R$color" start="41" end="41" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[line 41]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$color</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$color" start="41" end="41" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[line 41]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="dd5dadd4afd656e1872ee8d0d00b21b1" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$drawable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$drawable" primary="true">
+      <SourceLine classname="com.google.maps.android.R$drawable" start="53" end="53" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[line 53]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$drawable</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$drawable" start="53" end="53" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[line 53]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="1461fd68865c1156357f0d2a489a556e" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$id doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$id" primary="true">
+      <SourceLine classname="com.google.maps.android.R$id" start="79" end="79" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[line 79]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$id</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$id" start="79" end="79" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[line 79]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="264a15bba190bb466a90bc4bcf439d2" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$integer doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$integer" primary="true">
+      <SourceLine classname="com.google.maps.android.R$integer" start="97" end="97" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[line 97]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$integer</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$integer" start="97" end="97" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[line 97]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="5cc2b6e1a9a86f3a44dfa6d30e515771" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$layout doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$layout" primary="true">
+      <SourceLine classname="com.google.maps.android.R$layout" start="100" end="100" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[line 100]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$layout</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$layout" start="100" end="100" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[line 100]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="52e7f784d4cbf815806416fb161fa765" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$raw doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$raw" primary="true">
+      <SourceLine classname="com.google.maps.android.R$raw" start="105" end="105" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[line 105]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$raw</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$raw" start="105" end="105" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[line 105]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="5da155388926853d196188d9d6e0d1c6" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$string doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$string" primary="true">
+      <SourceLine classname="com.google.maps.android.R$string" start="127" end="127" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[line 127]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$string</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$string" start="127" end="127" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[line 127]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="15fb1b6e3de08ef07f30a370f0e42fe9" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$style doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$style" primary="true">
+      <SourceLine classname="com.google.maps.android.R$style" start="149" end="149" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[line 149]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$style</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$style" start="149" end="149" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[line 149]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="4c6d6d9e634db99cd0c4ee2a62d1ab0f" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.google.maps.android.R$styleable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.google.maps.android.R$styleable" primary="true">
+      <SourceLine classname="com.google.maps.android.R$styleable" start="154" end="183" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java">
+        <Message>At R.java:[lines 154-183]</Message>
+      </SourceLine>
+      <Message>In class com.google.maps.android.R$styleable</Message>
+    </Class>
+    <SourceLine classname="com.google.maps.android.R$styleable" start="154" end="183" sourcefile="R.java" sourcepath="com/google/maps/android/R.java" relSourcepath="build/generated/source/r/debug/com/google/maps/android/R.java" synthetic="true">
+      <Message>At R.java:[lines 154-183]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SS_SHOULD_BE_STATIC" priority="2" rank="18" abbrev="SS" category="PERFORMANCE" instanceHash="a2973c827a51e8f652756db6e26103ac" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread field: should this field be static?</ShortMessage>
+    <LongMessage>Unread field: com.le_scrum_masters.notpokemongo.Activities.MainActivity.MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION; should this field be static?</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" sourcefile="MainActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MainActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MainActivity.java">
+        <Message>In MainActivity.java</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.Activities.MainActivity</Message>
+    </Class>
+    <Field classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" name="MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION" signature="I" isStatic="false" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" sourcefile="MainActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MainActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MainActivity.java">
+        <Message>In MainActivity.java</Message>
+      </SourceLine>
+      <Message>Field com.le_scrum_masters.notpokemongo.Activities.MainActivity.MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION</Message>
+    </Field>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" primary="true" start="21" end="21" startBytecode="7" endBytecode="7" sourcefile="MainActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MainActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MainActivity.java">
+      <Message>At MainActivity.java:[line 21]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" instanceHash="f8578d7621dd28d7309c2b2857f7c33" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unused field</ShortMessage>
+    <LongMessage>Unused field: com.le_scrum_masters.notpokemongo.Activities.MainActivity.mediaPlayer</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" sourcefile="MainActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MainActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MainActivity.java">
+        <Message>In MainActivity.java</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.Activities.MainActivity</Message>
+    </Class>
+    <Field classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" name="mediaPlayer" signature="Landroid/media/MediaPlayer;" isStatic="false" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" sourcefile="MainActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MainActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MainActivity.java">
+        <Message>In MainActivity.java</Message>
+      </SourceLine>
+      <Message>Field com.le_scrum_masters.notpokemongo.Activities.MainActivity.mediaPlayer</Message>
+    </Field>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MainActivity" sourcefile="MainActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MainActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MainActivity.java" synthetic="true">
+      <Message>In MainActivity.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION" priority="2" rank="16" abbrev="DMI" category="BAD_PRACTICE" instanceHash="a980f3ba257027987cb60b28dfcbb8e4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="440">
+    <ShortMessage>Don&apos;t use removeAll to clear a collection</ShortMessage>
+    <LongMessage>removeAll used to clear a collection in com.le_scrum_masters.notpokemongo.Activities.MapsActivity.placeMarkersOnMap()</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" sourcefile="MapsActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java">
+        <Message>In MapsActivity.java</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.Activities.MapsActivity</Message>
+    </Class>
+    <Method classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" name="placeMarkersOnMap" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" start="167" end="186" startBytecode="0" endBytecode="68" sourcefile="MapsActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java"/>
+      <Message>In method com.le_scrum_masters.notpokemongo.Activities.MapsActivity.placeMarkersOnMap()</Message>
+    </Method>
+    <Method classname="java.util.ArrayList" name="removeAll" signature="(Ljava/util/Collection;)Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.ArrayList" start="689" end="690" startBytecode="0" endBytecode="39" sourcefile="ArrayList.java" sourcepath="java/util/ArrayList.java"/>
+      <Message>Called method java.util.ArrayList.removeAll(Collection)</Message>
+    </Method>
+    <LocalVariable name="tmpMarkers" register="1" pc="50" role="LOCAL_VARIABLE_INVOKED_ON">
+      <Message>Invoked on tmpMarkers</Message>
+    </LocalVariable>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" primary="true" start="172" end="172" startBytecode="51" endBytecode="51" sourcefile="MapsActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java">
+      <Message>At MapsActivity.java:[line 172]</Message>
+    </SourceLine>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" primary="true" start="172" end="172" startBytecode="51" endBytecode="51" sourcefile="MapsActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java">
+      <Message>At MapsActivity.java:[line 172]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="IS2_INCONSISTENT_SYNC" priority="2" rank="17" abbrev="IS" category="MT_CORRECTNESS" instanceHash="5e55d29824fed578faaaf536bf4c80de" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="366">
+    <ShortMessage>Inconsistent synchronization</ShortMessage>
+    <LongMessage>Inconsistent synchronization of com.le_scrum_masters.notpokemongo.Activities.MapsActivity.mGoogleApiClient; locked 50% of time</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" sourcefile="MapsActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java">
+        <Message>In MapsActivity.java</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.Activities.MapsActivity</Message>
+    </Class>
+    <Field classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" name="mGoogleApiClient" signature="Lcom/google/android/gms/common/api/GoogleApiClient;" isStatic="false" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" sourcefile="MapsActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java">
+        <Message>In MapsActivity.java</Message>
+      </SourceLine>
+      <Message>Field com.le_scrum_masters.notpokemongo.Activities.MapsActivity.mGoogleApiClient</Message>
+    </Field>
+    <Int value="50" role="INT_SYNC_PERCENT">
+      <Message>Synchronized 50% of the time</Message>
+    </Int>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" primary="true" start="90" end="90" startBytecode="82" endBytecode="82" sourcefile="MapsActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" role="SOURCE_LINE_UNSYNC_ACCESS">
+      <Message>Unsynchronized access at MapsActivity.java:[line 90]</Message>
+    </SourceLine>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" start="143" end="143" startBytecode="38" endBytecode="38" sourcefile="MapsActivity.java" sourcepath="com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" relSourcepath="src/main/java/com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" role="SOURCE_LINE_SYNC_ACCESS">
+      <Message>Synchronized access at MapsActivity.java:[line 143]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="af1f5d1d7c61f8d55b87377392ed262b" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$anim doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$anim" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$anim" start="11" end="11" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 11]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$anim</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$anim" start="11" end="11" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 11]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="3a3337c2342bbb8e113b573eb2f138a3" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$attr doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$attr" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$attr" start="29" end="29" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 29]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$attr</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$attr" start="29" end="29" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 29]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="86abfd0ee24032ca3a27df7ad602fea6" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$bool doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$bool" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$bool" start="2345" end="2345" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 2345]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$bool</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$bool" start="2345" end="2345" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 2345]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="a40e59ad5d08194b5d0839a1e189059f" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$color doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$color" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$color" start="2355" end="2355" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 2355]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$color</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$color" start="2355" end="2355" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 2355]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="d94406bbe65d0f6094695a6ab0ce9112" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$dimen doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$dimen" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$dimen" start="2461" end="2461" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 2461]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$dimen</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$dimen" start="2461" end="2461" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 2461]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="f5059c87e4e6ef48070d0b5cf7ff7c6b" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$drawable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$drawable" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$drawable" start="2586" end="2586" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 2586]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$drawable</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$drawable" start="2586" end="2586" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 2586]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="5f0e710a1b1f8cbe183833064a4a41a2" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$id doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$id" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$id" start="2753" end="2753" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 2753]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$id</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$id" start="2753" end="2753" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 2753]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="f00a6d54d01bc3f067208156c5fbe190" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$integer doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$integer" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$integer" start="2921" end="2921" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 2921]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$integer</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$integer" start="2921" end="2921" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 2921]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="155fe586ee84024a90f6d80a674b0a44" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$layout doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$layout" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$layout" start="2931" end="2931" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 2931]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$layout</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$layout" start="2931" end="2931" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 2931]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="e38b724ae6d858d2e198808826a2e296" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$menu doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$menu" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$menu" start="2994" end="2994" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 2994]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$menu</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$menu" start="2994" end="2994" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 2994]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="f4658433380557864477298a4cd8ec9" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$mipmap doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$mipmap" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$mipmap" start="2999" end="2999" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 2999]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$mipmap</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$mipmap" start="2999" end="2999" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 2999]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="d59a7aab63f35323401e8aac06f5d4ab" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$raw doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$raw" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$raw" start="3002" end="3002" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 3002]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$raw</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$raw" start="3002" end="3002" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 3002]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="b1d283903baab24755f6137e007da3d" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$string doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$string" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$string" start="3053" end="3053" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 3053]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$string</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$string" start="3053" end="3053" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 3053]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="206214493130cc7e29cad136beca8fa" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$style doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$style" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$style" start="3110" end="3110" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[line 3110]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$style</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$style" start="3110" end="3110" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[line 3110]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="3ba59b3f798db87b51c94af0fdc632a3" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Class names should start with an upper case letter</ShortMessage>
+    <LongMessage>The class name com.le_scrum_masters.notpokemongo.R$styleable doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.le_scrum_masters.notpokemongo.R$styleable" primary="true">
+      <SourceLine classname="com.le_scrum_masters.notpokemongo.R$styleable" start="3465" end="10027" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java">
+        <Message>At R.java:[lines 3465-10027]</Message>
+      </SourceLine>
+      <Message>In class com.le_scrum_masters.notpokemongo.R$styleable</Message>
+    </Class>
+    <SourceLine classname="com.le_scrum_masters.notpokemongo.R$styleable" start="3465" end="10027" sourcefile="R.java" sourcepath="com/le_scrum_masters/notpokemongo/R.java" relSourcepath="build/generated/source/r/debug/com/le_scrum_masters/notpokemongo/R.java" synthetic="true">
+      <Message>At R.java:[lines 3465-10027]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" instanceHash="1e0363db6d761327b240902af6f8125a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="563">
+    <ShortMessage>Dead store to local variable</ShortMessage>
+    <LongMessage>Dead store to builder in maps.MapBehaviour.onConnected(Bundle)</LongMessage>
+    <Class classname="maps.MapBehaviour" primary="true">
+      <SourceLine classname="maps.MapBehaviour" sourcefile="MapBehaviour.java" sourcepath="maps/MapBehaviour.java" relSourcepath="src/main/java/maps/MapBehaviour.java">
+        <Message>In MapBehaviour.java</Message>
+      </SourceLine>
+      <Message>In class maps.MapBehaviour</Message>
+    </Class>
+    <Method classname="maps.MapBehaviour" name="onConnected" signature="(Landroid/os/Bundle;)V" isStatic="false" primary="true">
+      <SourceLine classname="maps.MapBehaviour" start="88" end="107" startBytecode="0" endBytecode="31" sourcefile="MapBehaviour.java" sourcepath="maps/MapBehaviour.java" relSourcepath="src/main/java/maps/MapBehaviour.java"/>
+      <Message>In method maps.MapBehaviour.onConnected(Bundle)</Message>
+    </Method>
+    <LocalVariable name="builder" register="2" pc="52" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named builder</Message>
+    </LocalVariable>
+    <SourceLine classname="maps.MapBehaviour" primary="true" start="95" end="95" startBytecode="51" endBytecode="51" sourcefile="MapBehaviour.java" sourcepath="maps/MapBehaviour.java" relSourcepath="src/main/java/maps/MapBehaviour.java">
+      <Message>At MapBehaviour.java:[line 95]</Message>
+    </SourceLine>
+    <SourceLine classname="maps.MapBehaviour" primary="true" start="95" end="95" startBytecode="51" endBytecode="51" sourcefile="MapBehaviour.java" sourcepath="maps/MapBehaviour.java" relSourcepath="src/main/java/maps/MapBehaviour.java">
+      <Message>At MapBehaviour.java:[line 95]</Message>
+    </SourceLine>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="builder"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH" priority="2" rank="8" abbrev="NP" category="CORRECTNESS" instanceHash="c474452c25ee8eb5603981c457c8ee31" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Possible null pointer dereference</ShortMessage>
+    <LongMessage>Possible null pointer dereference of pendingResult in maps.MapBehaviour.requestLocationUpdates()</LongMessage>
+    <Class classname="maps.MapBehaviour" primary="true">
+      <SourceLine classname="maps.MapBehaviour" sourcefile="MapBehaviour.java" sourcepath="maps/MapBehaviour.java" relSourcepath="src/main/java/maps/MapBehaviour.java">
+        <Message>In MapBehaviour.java</Message>
+      </SourceLine>
+      <Message>In class maps.MapBehaviour</Message>
+    </Class>
+    <Method classname="maps.MapBehaviour" name="requestLocationUpdates" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="maps.MapBehaviour" start="110" end="128" startBytecode="0" endBytecode="126" sourcefile="MapBehaviour.java" sourcepath="maps/MapBehaviour.java" relSourcepath="src/main/java/maps/MapBehaviour.java"/>
+      <Message>In method maps.MapBehaviour.requestLocationUpdates()</Message>
+    </Method>
+    <LocalVariable name="pendingResult" register="1" pc="8" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from pendingResult</Message>
+    </LocalVariable>
+    <SourceLine classname="maps.MapBehaviour" primary="true" start="117" end="117" startBytecode="41" endBytecode="41" sourcefile="MapBehaviour.java" sourcepath="maps/MapBehaviour.java" relSourcepath="src/main/java/maps/MapBehaviour.java" role="SOURCE_LINE_DEREF">
+      <Message>Dereferenced at MapBehaviour.java:[line 117]</Message>
+    </SourceLine>
+    <SourceLine classname="maps.MapBehaviour" start="110" end="110" startBytecode="0" endBytecode="0" sourcefile="MapBehaviour.java" sourcepath="maps/MapBehaviour.java" relSourcepath="src/main/java/maps/MapBehaviour.java" role="SOURCE_LINE_NULL_VALUE">
+      <Message>Null value at MapBehaviour.java:[line 110]</Message>
+    </SourceLine>
+    <SourceLine classname="maps.MapBehaviour" start="112" end="112" startBytecode="11" endBytecode="11" sourcefile="MapBehaviour.java" sourcepath="maps/MapBehaviour.java" relSourcepath="src/main/java/maps/MapBehaviour.java" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at MapBehaviour.java:[line 112]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH" priority="2" rank="8" abbrev="NP" category="CORRECTNESS" instanceHash="fd904b94f4823438593ef98f7a19e5b3" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Possible null pointer dereference</ShortMessage>
+    <LongMessage>Possible null pointer dereference of photoMetadataBuffer in model.NPGPOIDirector$2.onResult(PlacePhotoMetadataResult)</LongMessage>
+    <Class classname="model.NPGPOIDirector$2" primary="true">
+      <SourceLine classname="model.NPGPOIDirector$2" sourcefile="NPGPOIDirector.java" sourcepath="model/NPGPOIDirector.java" relSourcepath="src/backend/model/NPGPOIDirector.java">
+        <Message>In NPGPOIDirector.java</Message>
+      </SourceLine>
+      <Message>In class model.NPGPOIDirector$2</Message>
+    </Class>
+    <Method classname="model.NPGPOIDirector$2" name="onResult" signature="(Lcom/google/android/gms/location/places/PlacePhotoMetadataResult;)V" isStatic="false" primary="true">
+      <SourceLine classname="model.NPGPOIDirector$2" start="203" end="221" startBytecode="0" endBytecode="192" sourcefile="NPGPOIDirector.java" sourcepath="model/NPGPOIDirector.java" relSourcepath="src/backend/model/NPGPOIDirector.java"/>
+      <Message>In method model.NPGPOIDirector$2.onResult(PlacePhotoMetadataResult)</Message>
+    </Method>
+    <LocalVariable name="photoMetadataBuffer" register="2" pc="50" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from photoMetadataBuffer</Message>
+    </LocalVariable>
+    <SourceLine classname="model.NPGPOIDirector$2" primary="true" start="220" end="220" startBytecode="51" endBytecode="51" sourcefile="NPGPOIDirector.java" sourcepath="model/NPGPOIDirector.java" relSourcepath="src/backend/model/NPGPOIDirector.java" role="SOURCE_LINE_DEREF">
+      <Message>Dereferenced at NPGPOIDirector.java:[line 220]</Message>
+    </SourceLine>
+    <SourceLine classname="model.NPGPOIDirector$2" start="206" end="206" startBytecode="6" endBytecode="6" sourcefile="NPGPOIDirector.java" sourcepath="model/NPGPOIDirector.java" relSourcepath="src/backend/model/NPGPOIDirector.java" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at NPGPOIDirector.java:[line 206]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_CANNOT_BE_FINAL" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" instanceHash="c5fb5e4d9b77e33cc96a9945d2af63aa" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="218">
+    <ShortMessage>Field isn&apos;t final and can&apos;t be protected from malicious code</ShortMessage>
+    <LongMessage>services.NPGPlaceBasedListHelper.context isn&apos;t final and can&apos;t be protected from malicious code </LongMessage>
+    <Class classname="services.NPGPlaceBasedListHelper" primary="true">
+      <SourceLine classname="services.NPGPlaceBasedListHelper" sourcefile="NPGPlaceBasedListHelper.java" sourcepath="services/NPGPlaceBasedListHelper.java" relSourcepath="src/backend/services/NPGPlaceBasedListHelper.java">
+        <Message>In NPGPlaceBasedListHelper.java</Message>
+      </SourceLine>
+      <Message>In class services.NPGPlaceBasedListHelper</Message>
+    </Class>
+    <Field classname="services.NPGPlaceBasedListHelper" name="context" signature="Landroid/content/Context;" isStatic="true" primary="true">
+      <SourceLine classname="services.NPGPlaceBasedListHelper" sourcefile="NPGPlaceBasedListHelper.java" sourcepath="services/NPGPlaceBasedListHelper.java" relSourcepath="src/backend/services/NPGPlaceBasedListHelper.java">
+        <Message>In NPGPlaceBasedListHelper.java</Message>
+      </SourceLine>
+      <Message>Field services.NPGPlaceBasedListHelper.context</Message>
+    </Field>
+    <SourceLine classname="services.NPGPlaceBasedListHelper" sourcefile="NPGPlaceBasedListHelper.java" sourcepath="services/NPGPlaceBasedListHelper.java" relSourcepath="src/backend/services/NPGPlaceBasedListHelper.java" synthetic="true">
+      <Message>In NPGPlaceBasedListHelper.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="BAD_PRACTICE">
+    <Description>Bad practice</Description>
+  </BugCategory>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugCategory category="PERFORMANCE">
+    <Description>Performance</Description>
+  </BugCategory>
+  <BugCategory category="CORRECTNESS">
+    <Description>Correctness</Description>
+  </BugCategory>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugCategory category="MT_CORRECTNESS">
+    <Description>Multithreaded correctness</Description>
+  </BugCategory>
+  <BugPattern type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" abbrev="UrF" category="STYLE">
+    <ShortDescription>Unread public/protected field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="DLS_DEAD_LOCAL_STORE" abbrev="DLS" category="STYLE">
+    <ShortDescription>Dead store to local variable</ShortDescription>
+    <Details><![CDATA[
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because FindBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="NM_CLASS_NAMING_CONVENTION" abbrev="Nm" category="BAD_PRACTICE">
+    <ShortDescription>Class names should start with an upper case letter</ShortDescription>
+    <Details><![CDATA[
+
+  <p> Class names should be nouns, in mixed case with the first letter of each internal word capitalized. Try to keep your class names simple and descriptive. Use whole words-avoid acronyms and abbreviations (unless the abbreviation is much more widely used than the long form, such as URL or HTML).
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="NP_NULL_ON_SOME_PATH" abbrev="NP" category="CORRECTNESS">
+    <ShortDescription>Possible null pointer dereference</ShortDescription>
+    <Details><![CDATA[
+
+<p> There is a branch of statement that, <em>if executed,</em>  guarantees that
+a null value will be dereferenced, which
+would generate a <code>NullPointerException</code> when the code is executed.
+Of course, the problem might be that the branch or statement is infeasible and that
+the null pointer exception can't ever be executed; deciding that is beyond the ability of FindBugs.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION" abbrev="DMI" category="BAD_PRACTICE">
+    <ShortDescription>Don&apos;t use removeAll to clear a collection</ShortDescription>
+    <Details><![CDATA[
+     
+     <p> If you want to remove all elements from a collection <code>c</code>, use <code>c.clear</code>,
+not <code>c.removeAll(c)</code>. Calling  <code>c.removeAll(c)</code> to clear a collection
+is less clear, susceptible to errors from typos, less efficient and
+for some collections, might throw a <code>ConcurrentModificationException</code>.
+    </p>
+     
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="UUF_UNUSED_FIELD" abbrev="UuF" category="PERFORMANCE">
+    <ShortDescription>Unused field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="SS_SHOULD_BE_STATIC" abbrev="SS" category="PERFORMANCE">
+    <ShortDescription>Unread field: should this field be static?</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This class contains an instance final field that
+   is initialized to a compile-time static value.
+   Consider making the field static.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="MS_CANNOT_BE_FINAL" abbrev="MS" category="MALICIOUS_CODE">
+    <ShortDescription>Field isn&apos;t final and can&apos;t be protected from malicious code</ShortDescription>
+    <Details><![CDATA[
+
+  <p>
+ A mutable static field could be changed by malicious code or
+        by accident from another package.
+   Unfortunately, the way the field is used doesn't allow
+   any easy fix to this problem.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="IS2_INCONSISTENT_SYNC" abbrev="IS" category="MT_CORRECTNESS">
+    <ShortDescription>Inconsistent synchronization</ShortDescription>
+    <Details><![CDATA[
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="SS">
+    <Description>Unread field should be static</Description>
+  </BugCode>
+  <BugCode abbrev="DMI" cweid="440">
+    <Description>Dubious method invocation</Description>
+  </BugCode>
+  <BugCode abbrev="NP" cweid="476">
+    <Description>Null pointer dereference</Description>
+  </BugCode>
+  <BugCode abbrev="MS" cweid="218">
+    <Description>Mutable static field</Description>
+  </BugCode>
+  <BugCode abbrev="UuF">
+    <Description>Unused field</Description>
+  </BugCode>
+  <BugCode abbrev="UrF">
+    <Description>Unread field</Description>
+  </BugCode>
+  <BugCode abbrev="IS" cweid="366">
+    <Description>Inconsistent synchronization</Description>
+  </BugCode>
+  <BugCode abbrev="DLS" cweid="563">
+    <Description>Dead local store</Description>
+  </BugCode>
+  <BugCode abbrev="Nm">
+    <Description>Confusing method name</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Fri, 28 Oct 2016 13:23:09 +0200" total_classes="104" referenced_classes="127" total_bugs="80" total_size="6452" num_packages="12" java_version="1.8.0_76-release" vm_version="25.76-b03" cpu_seconds="258.37" clock_seconds="294.14" peak_mbytes="629.83" alloc_mbytes="1246.75" gc_seconds="1.67" priority_2="80">
+    <FileStats path="adapters/CardListAdapter.java" bugCount="2" size="71" bugHash="4703d4da765200e42cb27e2526b46f35"/>
+    <FileStats path="android/support/design/R.java" bugCount="12" size="1645" bugHash="09a6bd8fbb0d3ddc1d956ad48bb573bd"/>
+    <FileStats path="android/support/v7/appcompat/R.java" bugCount="12" size="1316" bugHash="2dcc9d950ddfe2265ade652f7d12a528"/>
+    <FileStats path="android/support/v7/cardview/R.java" bugCount="5" size="56" bugHash="b1405047d3a4161278121729931550d2"/>
+    <FileStats path="android/support/v7/recyclerview/R.java" bugCount="4" size="31" bugHash="9e5eb2bbc6fa6f69dab4562dd9aaeb88"/>
+    <FileStats path="com/google/android/gms/R.java" bugCount="12" size="209" bugHash="9983d8869f48e792e6d07a6654d3299e"/>
+    <FileStats path="com/google/maps/android/R.java" bugCount="10" size="195" bugHash="9d669d0576eb24cefbde5b2cd25fe973"/>
+    <FileStats path="com/le_scrum_masters/notpokemongo/Activities/MainActivity.java" bugCount="2" size="25" bugHash="ef748d94a879cc5d2d54f37948f2c8ca"/>
+    <FileStats path="com/le_scrum_masters/notpokemongo/Activities/MapsActivity.java" bugCount="2" size="136" bugHash="3b4e104cdf43d0284dbef6eaffa29311"/>
+    <FileStats path="com/le_scrum_masters/notpokemongo/Activities/POIActivity.java" bugCount="0" size="140"/>
+    <FileStats path="com/le_scrum_masters/notpokemongo/BuildConfig.java" bugCount="0" size="11"/>
+    <FileStats path="com/le_scrum_masters/notpokemongo/R.java" bugCount="15" size="2018" bugHash="fd86e2a6bb6fab20d2875b47bf44fb61"/>
+    <FileStats path="maps/MapBehaviour.java" bugCount="2" size="114" bugHash="11fb66ca51b82a14e4d623bdf45fb12d"/>
+    <FileStats path="model/NPGPOIDirector.java" bugCount="1" size="201" bugHash="881ab8a3dfe9b85f805b519fdf22309c"/>
+    <FileStats path="model/NPGPointOfInterest.java" bugCount="0" size="105"/>
+    <FileStats path="model/POICallback.java" bugCount="0" size="5"/>
+    <FileStats path="model/PointOfInterest.java" bugCount="0" size="15"/>
+    <FileStats path="services/NPGCoordinates.java" bugCount="0" size="17"/>
+    <FileStats path="services/NPGPlaceBasedListHelper.java" bugCount="1" size="142" bugHash="3cc489d93d81d7aae4038c303a24c29b"/>
+    <PackageStats package="adapters" total_bugs="2" total_types="4" total_size="71" priority_2="2">
+      <ClassStats class="adapters.CardListAdapter" sourceFile="CardListAdapter.java" interface="false" size="36" bugs="1" priority_2="1"/>
+      <ClassStats class="adapters.CardListAdapter$1" sourceFile="CardListAdapter.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="adapters.CardListAdapter$ViewHolder" sourceFile="CardListAdapter.java" interface="false" size="20" bugs="1" priority_2="1"/>
+      <ClassStats class="adapters.CardListAdapter$ViewHolder$1" sourceFile="CardListAdapter.java" interface="false" size="6" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="android.support.design" total_bugs="12" total_types="13" total_size="1645" priority_2="12">
+      <ClassStats class="android.support.design.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="android.support.design.R$anim" sourceFile="R.java" interface="false" size="19" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$attr" sourceFile="R.java" interface="false" size="285" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$bool" sourceFile="R.java" interface="false" size="11" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$color" sourceFile="R.java" interface="false" size="83" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$dimen" sourceFile="R.java" interface="false" size="110" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$drawable" sourceFile="R.java" interface="false" size="81" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$id" sourceFile="R.java" interface="false" size="130" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$integer" sourceFile="R.java" interface="false" size="10" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$layout" sourceFile="R.java" interface="false" size="52" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$string" sourceFile="R.java" interface="false" size="26" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$style" sourceFile="R.java" interface="false" size="346" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.design.R$styleable" sourceFile="R.java" interface="false" size="489" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="android.support.v7.appcompat" total_bugs="12" total_types="13" total_size="1316" priority_2="12">
+      <ClassStats class="android.support.v7.appcompat.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="android.support.v7.appcompat.R$anim" sourceFile="R.java" interface="false" size="13" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$attr" sourceFile="R.java" interface="false" size="212" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$bool" sourceFile="R.java" interface="false" size="11" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$color" sourceFile="R.java" interface="false" size="73" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$dimen" sourceFile="R.java" interface="false" size="78" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$drawable" sourceFile="R.java" interface="false" size="79" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$id" sourceFile="R.java" interface="false" size="96" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$integer" sourceFile="R.java" interface="false" size="8" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$layout" sourceFile="R.java" interface="false" size="40" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$string" sourceFile="R.java" interface="false" size="23" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$style" sourceFile="R.java" interface="false" size="321" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.appcompat.R$styleable" sourceFile="R.java" interface="false" size="359" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="android.support.v7.cardview" total_bugs="5" total_types="6" total_size="56" priority_2="5">
+      <ClassStats class="android.support.v7.cardview.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="android.support.v7.cardview.R$attr" sourceFile="R.java" interface="false" size="14" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.cardview.R$color" sourceFile="R.java" interface="false" size="7" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.cardview.R$dimen" sourceFile="R.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.cardview.R$style" sourceFile="R.java" interface="false" size="7" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.cardview.R$styleable" sourceFile="R.java" interface="false" size="19" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="android.support.v7.recyclerview" total_bugs="4" total_types="5" total_size="31" priority_2="4">
+      <ClassStats class="android.support.v7.recyclerview.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="android.support.v7.recyclerview.R$attr" sourceFile="R.java" interface="false" size="7" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.recyclerview.R$dimen" sourceFile="R.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.recyclerview.R$id" sourceFile="R.java" interface="false" size="4" bugs="1" priority_2="1"/>
+      <ClassStats class="android.support.v7.recyclerview.R$styleable" sourceFile="R.java" interface="false" size="11" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="com.google.android.gms" total_bugs="12" total_types="13" total_size="209" priority_2="12">
+      <ClassStats class="com.google.android.gms.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="com.google.android.gms.R$array" sourceFile="R.java" interface="false" size="3" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$attr" sourceFile="R.java" interface="false" size="32" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$color" sourceFile="R.java" interface="false" size="19" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$dimen" sourceFile="R.java" interface="false" size="13" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$drawable" sourceFile="R.java" interface="false" size="29" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$id" sourceFile="R.java" interface="false" size="29" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$integer" sourceFile="R.java" interface="false" size="4" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$layout" sourceFile="R.java" interface="false" size="7" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$raw" sourceFile="R.java" interface="false" size="3" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$string" sourceFile="R.java" interface="false" size="25" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$style" sourceFile="R.java" interface="false" size="3" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.android.gms.R$styleable" sourceFile="R.java" interface="false" size="39" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="com.google.maps.android" total_bugs="10" total_types="11" total_size="195" priority_2="10">
+      <ClassStats class="com.google.maps.android.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="com.google.maps.android.R$attr" sourceFile="R.java" interface="false" size="32" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.maps.android.R$color" sourceFile="R.java" interface="false" size="13" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.maps.android.R$drawable" sourceFile="R.java" interface="false" size="27" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.maps.android.R$id" sourceFile="R.java" interface="false" size="19" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.maps.android.R$integer" sourceFile="R.java" interface="false" size="4" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.maps.android.R$layout" sourceFile="R.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.maps.android.R$raw" sourceFile="R.java" interface="false" size="23" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.maps.android.R$string" sourceFile="R.java" interface="false" size="23" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.maps.android.R$style" sourceFile="R.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="com.google.maps.android.R$styleable" sourceFile="R.java" interface="false" size="39" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="com.le_scrum_masters.notpokemongo" total_bugs="15" total_types="17" total_size="2029" priority_2="15">
+      <ClassStats class="com.le_scrum_masters.notpokemongo.BuildConfig" sourceFile="BuildConfig.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R" sourceFile="R.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$anim" sourceFile="R.java" interface="false" size="19" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$attr" sourceFile="R.java" interface="false" size="325" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$bool" sourceFile="R.java" interface="false" size="11" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$color" sourceFile="R.java" interface="false" size="107" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$dimen" sourceFile="R.java" interface="false" size="126" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$drawable" sourceFile="R.java" interface="false" size="168" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$id" sourceFile="R.java" interface="false" size="169" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$integer" sourceFile="R.java" interface="false" size="11" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$layout" sourceFile="R.java" interface="false" size="64" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$menu" sourceFile="R.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$mipmap" sourceFile="R.java" interface="false" size="4" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$raw" sourceFile="R.java" interface="false" size="52" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$string" sourceFile="R.java" interface="false" size="58" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$style" sourceFile="R.java" interface="false" size="356" bugs="1" priority_2="1"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.R$styleable" sourceFile="R.java" interface="false" size="539" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="com.le_scrum_masters.notpokemongo.Activities" total_bugs="4" total_types="8" total_size="301" priority_2="4">
+      <ClassStats class="com.le_scrum_masters.notpokemongo.Activities.MainActivity" sourceFile="MainActivity.java" interface="false" size="25" bugs="2" priority_2="2"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.Activities.MapsActivity" sourceFile="MapsActivity.java" interface="false" size="124" bugs="2" priority_2="2"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.Activities.MapsActivity$1" sourceFile="MapsActivity.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.Activities.POIActivity" sourceFile="POIActivity.java" interface="false" size="81" bugs="0"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.Activities.POIActivity$1" sourceFile="POIActivity.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.Activities.POIActivity$2" sourceFile="POIActivity.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.Activities.POIActivity$3" sourceFile="POIActivity.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="com.le_scrum_masters.notpokemongo.Activities.POIActivity$4" sourceFile="POIActivity.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="maps" total_bugs="2" total_types="2" total_size="114" priority_2="2">
+      <ClassStats class="maps.MapBehaviour" sourceFile="MapBehaviour.java" interface="false" size="106" bugs="2" priority_2="2"/>
+      <ClassStats class="maps.MapBehaviour$1" sourceFile="MapBehaviour.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="model" total_bugs="1" total_types="10" total_size="326" priority_2="1">
+      <ClassStats class="model.NPGPOIDirector" sourceFile="NPGPOIDirector.java" interface="false" size="108" bugs="0"/>
+      <ClassStats class="model.NPGPOIDirector$1" sourceFile="NPGPOIDirector.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="model.NPGPOIDirector$1$1" sourceFile="NPGPOIDirector.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="model.NPGPOIDirector$2" sourceFile="NPGPOIDirector.java" interface="false" size="14" bugs="1" priority_2="1"/>
+      <ClassStats class="model.NPGPOIDirector$2$1" sourceFile="NPGPOIDirector.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="model.NPGPOIDirector$3" sourceFile="NPGPOIDirector.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="model.NPGPOIDirector$FundamentalSearch" sourceFile="NPGPOIDirector.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="model.NPGPointOfInterest" sourceFile="NPGPointOfInterest.java" interface="false" size="105" bugs="0"/>
+      <ClassStats class="model.POICallback" sourceFile="POICallback.java" interface="true" size="5" bugs="0"/>
+      <ClassStats class="model.PointOfInterest" sourceFile="PointOfInterest.java" interface="true" size="15" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="services" total_bugs="1" total_types="2" total_size="159" priority_2="1">
+      <ClassStats class="services.NPGCoordinates" sourceFile="NPGCoordinates.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="services.NPGPlaceBasedListHelper" sourceFile="NPGPlaceBasedListHelper.java" interface="false" size="142" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.FindBugs2" totalMilliseconds="1461" invocations="2" avgMicrosecondsPerInvocation="730590" maxMicrosecondsPerInvocation="746023" standardDeviationMircosecondsPerInvocation="15409"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="582" invocations="563" avgMicrosecondsPerInvocation="1034" maxMicrosecondsPerInvocation="40363" standardDeviationMircosecondsPerInvocation="2656"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="485" invocations="236" avgMicrosecondsPerInvocation="2056" maxMicrosecondsPerInvocation="111605" standardDeviationMircosecondsPerInvocation="8305"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="450" invocations="236" avgMicrosecondsPerInvocation="1907" maxMicrosecondsPerInvocation="76300" standardDeviationMircosecondsPerInvocation="7321"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="406" invocations="236" avgMicrosecondsPerInvocation="1721" maxMicrosecondsPerInvocation="39218" standardDeviationMircosecondsPerInvocation="4810"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="385" invocations="236" avgMicrosecondsPerInvocation="1631" maxMicrosecondsPerInvocation="78115" standardDeviationMircosecondsPerInvocation="6865"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="341" invocations="127" avgMicrosecondsPerInvocation="2691" maxMicrosecondsPerInvocation="74525" standardDeviationMircosecondsPerInvocation="8573"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="296" invocations="238" avgMicrosecondsPerInvocation="1244" maxMicrosecondsPerInvocation="37269" standardDeviationMircosecondsPerInvocation="3408"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="279" invocations="227" avgMicrosecondsPerInvocation="1229" maxMicrosecondsPerInvocation="23068" standardDeviationMircosecondsPerInvocation="2601"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="238" invocations="104" avgMicrosecondsPerInvocation="2293" maxMicrosecondsPerInvocation="229879" standardDeviationMircosecondsPerInvocation="22425"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="236" invocations="565" avgMicrosecondsPerInvocation="418" maxMicrosecondsPerInvocation="24690" standardDeviationMircosecondsPerInvocation="1498"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="233" invocations="195" avgMicrosecondsPerInvocation="1199" maxMicrosecondsPerInvocation="24906" standardDeviationMircosecondsPerInvocation="2921"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="224" invocations="104" avgMicrosecondsPerInvocation="2158" maxMicrosecondsPerInvocation="35811" standardDeviationMircosecondsPerInvocation="4498"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="218" invocations="332" avgMicrosecondsPerInvocation="659" maxMicrosecondsPerInvocation="31155" standardDeviationMircosecondsPerInvocation="2194"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="202" invocations="256" avgMicrosecondsPerInvocation="790" maxMicrosecondsPerInvocation="102460" standardDeviationMircosecondsPerInvocation="6447"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="186" invocations="104" avgMicrosecondsPerInvocation="1790" maxMicrosecondsPerInvocation="58877" standardDeviationMircosecondsPerInvocation="6816"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="183" invocations="104" avgMicrosecondsPerInvocation="1763" maxMicrosecondsPerInvocation="99718" standardDeviationMircosecondsPerInvocation="9984"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="177" invocations="127" avgMicrosecondsPerInvocation="1400" maxMicrosecondsPerInvocation="23727" standardDeviationMircosecondsPerInvocation="2952"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.Naming" totalMilliseconds="164" invocations="104" avgMicrosecondsPerInvocation="1577" maxMicrosecondsPerInvocation="57770" standardDeviationMircosecondsPerInvocation="6612"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="158" invocations="203" avgMicrosecondsPerInvocation="778" maxMicrosecondsPerInvocation="46979" standardDeviationMircosecondsPerInvocation="3610"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="156" invocations="104" avgMicrosecondsPerInvocation="1501" maxMicrosecondsPerInvocation="52464" standardDeviationMircosecondsPerInvocation="6508"/>
+      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="127" invocations="12445" avgMicrosecondsPerInvocation="10" maxMicrosecondsPerInvocation="16628" standardDeviationMircosecondsPerInvocation="191"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="123" invocations="127" avgMicrosecondsPerInvocation="970" maxMicrosecondsPerInvocation="23370" standardDeviationMircosecondsPerInvocation="2673"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="117" invocations="127" avgMicrosecondsPerInvocation="922" maxMicrosecondsPerInvocation="20700" standardDeviationMircosecondsPerInvocation="2825"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="112" invocations="104" avgMicrosecondsPerInvocation="1083" maxMicrosecondsPerInvocation="31831" standardDeviationMircosecondsPerInvocation="3587"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="109" invocations="127" avgMicrosecondsPerInvocation="863" maxMicrosecondsPerInvocation="27976" standardDeviationMircosecondsPerInvocation="2976"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="104" invocations="127" avgMicrosecondsPerInvocation="824" maxMicrosecondsPerInvocation="16048" standardDeviationMircosecondsPerInvocation="2516"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="100" invocations="104" avgMicrosecondsPerInvocation="963" maxMicrosecondsPerInvocation="51849" standardDeviationMircosecondsPerInvocation="5193"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="97" invocations="127" avgMicrosecondsPerInvocation="771" maxMicrosecondsPerInvocation="22757" standardDeviationMircosecondsPerInvocation="2894"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteRecursiveLoop" totalMilliseconds="96" invocations="104" avgMicrosecondsPerInvocation="931" maxMicrosecondsPerInvocation="73924" standardDeviationMircosecondsPerInvocation="7203"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.HugeSharedStringConstants" totalMilliseconds="96" invocations="104" avgMicrosecondsPerInvocation="926" maxMicrosecondsPerInvocation="62311" standardDeviationMircosecondsPerInvocation="6535"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="95" invocations="127" avgMicrosecondsPerInvocation="751" maxMicrosecondsPerInvocation="10393" standardDeviationMircosecondsPerInvocation="1611"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="95" invocations="236" avgMicrosecondsPerInvocation="404" maxMicrosecondsPerInvocation="10236" standardDeviationMircosecondsPerInvocation="1240"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="91" invocations="127" avgMicrosecondsPerInvocation="718" maxMicrosecondsPerInvocation="14078" standardDeviationMircosecondsPerInvocation="2096"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="81" invocations="104" avgMicrosecondsPerInvocation="785" maxMicrosecondsPerInvocation="25502" standardDeviationMircosecondsPerInvocation="3638"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StaticCalendarDetector" totalMilliseconds="81" invocations="104" avgMicrosecondsPerInvocation="778" maxMicrosecondsPerInvocation="27319" standardDeviationMircosecondsPerInvocation="2869"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="80" invocations="104" avgMicrosecondsPerInvocation="778" maxMicrosecondsPerInvocation="31468" standardDeviationMircosecondsPerInvocation="3316"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteSuppressedWarnings" totalMilliseconds="74" invocations="127" avgMicrosecondsPerInvocation="583" maxMicrosecondsPerInvocation="12474" standardDeviationMircosecondsPerInvocation="1715"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RuntimeExceptionCapture" totalMilliseconds="70" invocations="104" avgMicrosecondsPerInvocation="679" maxMicrosecondsPerInvocation="22949" standardDeviationMircosecondsPerInvocation="2455"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="69" invocations="104" avgMicrosecondsPerInvocation="672" maxMicrosecondsPerInvocation="16984" standardDeviationMircosecondsPerInvocation="1845"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.Methods" totalMilliseconds="68" invocations="127" avgMicrosecondsPerInvocation="540" maxMicrosecondsPerInvocation="25580" standardDeviationMircosecondsPerInvocation="2539"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadForLoop" totalMilliseconds="68" invocations="104" avgMicrosecondsPerInvocation="659" maxMicrosecondsPerInvocation="26865" standardDeviationMircosecondsPerInvocation="2809"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindHEmismatch" totalMilliseconds="67" invocations="104" avgMicrosecondsPerInvocation="649" maxMicrosecondsPerInvocation="33983" standardDeviationMircosecondsPerInvocation="3323"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

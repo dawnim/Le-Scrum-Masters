@@ -1,0 +1,1423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+		</style>
+</head>
+<body>
+<h1>FindBugs Report</h1>
+<p>Produced using <a href="http://findbugs.sourceforge.net">FindBugs</a>3.0.1.</p>
+<p>Project: 
+			NotPokemonGo[app]</p>
+<h2>Metrics</h2>
+<p>6452 lines of code analyzed,
+	in 104 classes, 
+	in 12 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">NaN</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">80</td>
+<td align="right">12.40</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>80</b>
+</td>
+<td align="right">
+<b>12.40</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Summary</h2>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">71</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>80</b>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h1>Warnings</h1>
+<p>Click on each warning link to see a full description of the issue, and
+	    details of how to resolve it.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION">Don't use removeAll to clear a collection</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>removeAll used to clear a collection in com.le_scrum_masters.notpokemongo.Activities.MapsActivity.placeMarkersOnMap()<br/>
+<br/>
+<br/>In file MapsActivity.java,
+					
+						line 172<br/>In class com.le_scrum_masters.notpokemongo.Activities.MapsActivity<br/>In method com.le_scrum_masters.notpokemongo.Activities.MapsActivity.placeMarkersOnMap()<br/>Called method java.util.ArrayList.removeAll(Collection)<br/>Invoked on tmpMarkers<br/>At MapsActivity.java:[line 172]<br/>At MapsActivity.java:[line 172]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$anim doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 10<br/>In class android.support.design.R$anim<br/>At R.java:[line 10]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$attr doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 28<br/>In class android.support.design.R$attr<br/>At R.java:[line 28]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$bool doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 312<br/>In class android.support.design.R$bool<br/>At R.java:[line 312]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$color doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 322<br/>In class android.support.design.R$color<br/>At R.java:[line 322]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$dimen doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 404<br/>In class android.support.design.R$dimen<br/>At R.java:[line 404]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$drawable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 513<br/>In class android.support.design.R$drawable<br/>At R.java:[line 513]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$id doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 593<br/>In class android.support.design.R$id<br/>At R.java:[line 593]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$integer doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 722<br/>In class android.support.design.R$integer<br/>At R.java:[line 722]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$layout doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 731<br/>In class android.support.design.R$layout<br/>At R.java:[line 731]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$string doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 782<br/>In class android.support.design.R$string<br/>At R.java:[line 782]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$style doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 807<br/>In class android.support.design.R$style<br/>At R.java:[line 807]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.design.R$styleable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						lines 1152
+						    to 1582<br/>In class android.support.design.R$styleable<br/>At R.java:[lines 1152-1582]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$anim doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 10<br/>In class android.support.v7.appcompat.R$anim<br/>At R.java:[line 10]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$attr doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 22<br/>In class android.support.v7.appcompat.R$attr<br/>At R.java:[line 22]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$bool doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 233<br/>In class android.support.v7.appcompat.R$bool<br/>At R.java:[line 233]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$color doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 243<br/>In class android.support.v7.appcompat.R$color<br/>At R.java:[line 243]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$dimen doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 315<br/>In class android.support.v7.appcompat.R$dimen<br/>At R.java:[line 315]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$drawable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 392<br/>In class android.support.v7.appcompat.R$drawable<br/>At R.java:[line 392]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$id doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 470<br/>In class android.support.v7.appcompat.R$id<br/>At R.java:[line 470]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$integer doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 565<br/>In class android.support.v7.appcompat.R$integer<br/>At R.java:[line 565]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$layout doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 572<br/>In class android.support.v7.appcompat.R$layout<br/>At R.java:[line 572]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$string doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 611<br/>In class android.support.v7.appcompat.R$string<br/>At R.java:[line 611]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$style doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 633<br/>In class android.support.v7.appcompat.R$style<br/>At R.java:[line 633]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.appcompat.R$styleable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						lines 953
+						    to 1271<br/>In class android.support.v7.appcompat.R$styleable<br/>At R.java:[lines 953-1271]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.cardview.R$attr doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 10<br/>In class android.support.v7.cardview.R$attr<br/>At R.java:[line 10]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.cardview.R$color doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 23<br/>In class android.support.v7.cardview.R$color<br/>At R.java:[line 23]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.cardview.R$dimen doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 29<br/>In class android.support.v7.cardview.R$dimen<br/>At R.java:[line 29]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.cardview.R$style doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 34<br/>In class android.support.v7.cardview.R$style<br/>At R.java:[line 34]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.cardview.R$styleable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						lines 40
+						    to 41<br/>In class android.support.v7.cardview.R$styleable<br/>At R.java:[lines 40-41]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.recyclerview.R$attr doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 10<br/>In class android.support.v7.recyclerview.R$attr<br/>At R.java:[line 10]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.recyclerview.R$dimen doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 16<br/>In class android.support.v7.recyclerview.R$dimen<br/>At R.java:[line 16]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.recyclerview.R$id doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 21<br/>In class android.support.v7.recyclerview.R$id<br/>At R.java:[line 21]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name android.support.v7.recyclerview.R$styleable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						lines 24
+						    to 25<br/>In class android.support.v7.recyclerview.R$styleable<br/>At R.java:[lines 24-25]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$array doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 10<br/>In class com.google.android.gms.R$array<br/>At R.java:[line 10]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$attr doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 12<br/>In class com.google.android.gms.R$attr<br/>At R.java:[line 12]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$color doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 43<br/>In class com.google.android.gms.R$color<br/>At R.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$dimen doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 61<br/>In class com.google.android.gms.R$dimen<br/>At R.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$drawable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 73<br/>In class com.google.android.gms.R$drawable<br/>At R.java:[line 73]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$id doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 101<br/>In class com.google.android.gms.R$id<br/>At R.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$integer doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 129<br/>In class com.google.android.gms.R$integer<br/>At R.java:[line 129]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$layout doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 132<br/>In class com.google.android.gms.R$layout<br/>At R.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$raw doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 138<br/>In class com.google.android.gms.R$raw<br/>At R.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$string doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 140<br/>In class com.google.android.gms.R$string<br/>At R.java:[line 140]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$style doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 164<br/>In class com.google.android.gms.R$style<br/>At R.java:[line 164]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.android.gms.R$styleable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						lines 166
+						    to 195<br/>In class com.google.android.gms.R$styleable<br/>At R.java:[lines 166-195]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$attr doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 10<br/>In class com.google.maps.android.R$attr<br/>At R.java:[line 10]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$color doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 41<br/>In class com.google.maps.android.R$color<br/>At R.java:[line 41]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$drawable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 53<br/>In class com.google.maps.android.R$drawable<br/>At R.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$id doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 79<br/>In class com.google.maps.android.R$id<br/>At R.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$integer doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 97<br/>In class com.google.maps.android.R$integer<br/>At R.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$layout doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 100<br/>In class com.google.maps.android.R$layout<br/>At R.java:[line 100]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$raw doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 105<br/>In class com.google.maps.android.R$raw<br/>At R.java:[line 105]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$string doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 127<br/>In class com.google.maps.android.R$string<br/>At R.java:[line 127]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$style doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 149<br/>In class com.google.maps.android.R$style<br/>At R.java:[line 149]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.google.maps.android.R$styleable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						lines 154
+						    to 183<br/>In class com.google.maps.android.R$styleable<br/>At R.java:[lines 154-183]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$anim doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 11<br/>In class com.le_scrum_masters.notpokemongo.R$anim<br/>At R.java:[line 11]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$attr doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 29<br/>In class com.le_scrum_masters.notpokemongo.R$attr<br/>At R.java:[line 29]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$bool doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 2345<br/>In class com.le_scrum_masters.notpokemongo.R$bool<br/>At R.java:[line 2345]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$color doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 2355<br/>In class com.le_scrum_masters.notpokemongo.R$color<br/>At R.java:[line 2355]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$dimen doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 2461<br/>In class com.le_scrum_masters.notpokemongo.R$dimen<br/>At R.java:[line 2461]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$drawable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 2586<br/>In class com.le_scrum_masters.notpokemongo.R$drawable<br/>At R.java:[line 2586]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$id doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 2753<br/>In class com.le_scrum_masters.notpokemongo.R$id<br/>At R.java:[line 2753]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$integer doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 2921<br/>In class com.le_scrum_masters.notpokemongo.R$integer<br/>At R.java:[line 2921]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$layout doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 2931<br/>In class com.le_scrum_masters.notpokemongo.R$layout<br/>At R.java:[line 2931]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$menu doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 2994<br/>In class com.le_scrum_masters.notpokemongo.R$menu<br/>At R.java:[line 2994]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$mipmap doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 2999<br/>In class com.le_scrum_masters.notpokemongo.R$mipmap<br/>At R.java:[line 2999]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$raw doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 3002<br/>In class com.le_scrum_masters.notpokemongo.R$raw<br/>At R.java:[line 3002]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$string doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 3053<br/>In class com.le_scrum_masters.notpokemongo.R$string<br/>At R.java:[line 3053]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$style doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						line 3110<br/>In class com.le_scrum_masters.notpokemongo.R$style<br/>At R.java:[line 3110]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The class name com.le_scrum_masters.notpokemongo.R$styleable doesn't start with an upper case letter<br/>
+<br/>
+<br/>In file R.java,
+					
+						lines 3465
+						    to 10027<br/>In class com.le_scrum_masters.notpokemongo.R$styleable<br/>At R.java:[lines 3465-10027]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NP_NULL_ON_SOME_PATH">Possible null pointer dereference</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Possible null pointer dereference of pendingResult in maps.MapBehaviour.requestLocationUpdates()<br/>
+<br/>
+<br/>In file MapBehaviour.java,
+					
+						line 117<br/>In class maps.MapBehaviour<br/>In method maps.MapBehaviour.requestLocationUpdates()<br/>Value loaded from pendingResult<br/>Dereferenced at MapBehaviour.java:[line 117]<br/>Null value at MapBehaviour.java:[line 110]<br/>Known null at MapBehaviour.java:[line 112]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NP_NULL_ON_SOME_PATH">Possible null pointer dereference</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Possible null pointer dereference of photoMetadataBuffer in model.NPGPOIDirector$2.onResult(PlacePhotoMetadataResult)<br/>
+<br/>
+<br/>In file NPGPOIDirector.java,
+					
+						line 220<br/>In class model.NPGPOIDirector$2<br/>In method model.NPGPOIDirector$2.onResult(PlacePhotoMetadataResult)<br/>Value loaded from photoMetadataBuffer<br/>Dereferenced at NPGPOIDirector.java:[line 220]<br/>Known null at NPGPOIDirector.java:[line 206]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_CANNOT_BE_FINAL">Field isn't final and can't be protected from malicious code</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>services.NPGPlaceBasedListHelper.context isn't final and can't be protected from malicious code <br/>
+<br/>
+<br/>In file NPGPlaceBasedListHelper.java,
+					
+						lines 
+						    to <br/>In class services.NPGPlaceBasedListHelper<br/>Field services.NPGPlaceBasedListHelper.context<br/>In NPGPlaceBasedListHelper.java</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#IS2_INCONSISTENT_SYNC">Inconsistent synchronization</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Inconsistent synchronization of com.le_scrum_masters.notpokemongo.Activities.MapsActivity.mGoogleApiClient; locked 50% of time<br/>
+<br/>
+<br/>In file MapsActivity.java,
+					
+						line 90<br/>In class com.le_scrum_masters.notpokemongo.Activities.MapsActivity<br/>Field com.le_scrum_masters.notpokemongo.Activities.MapsActivity.mGoogleApiClient<br/>Synchronized 50% of the time<br/>Unsynchronized access at MapsActivity.java:[line 90]<br/>Synchronized access at MapsActivity.java:[line 143]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread field: com.le_scrum_masters.notpokemongo.Activities.MainActivity.MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION; should this field be static?<br/>
+<br/>
+<br/>In file MainActivity.java,
+					
+						line 21<br/>In class com.le_scrum_masters.notpokemongo.Activities.MainActivity<br/>Field com.le_scrum_masters.notpokemongo.Activities.MainActivity.MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION<br/>At MainActivity.java:[line 21]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#UUF_UNUSED_FIELD">Unused field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unused field: com.le_scrum_masters.notpokemongo.Activities.MainActivity.mediaPlayer<br/>
+<br/>
+<br/>In file MainActivity.java,
+					
+						lines 
+						    to <br/>In class com.le_scrum_masters.notpokemongo.Activities.MainActivity<br/>Field com.le_scrum_masters.notpokemongo.Activities.MainActivity.mediaPlayer<br/>In MainActivity.java</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to builder in maps.MapBehaviour.onConnected(Bundle)<br/>
+<br/>
+<br/>In file MapBehaviour.java,
+					
+						line 95<br/>In class maps.MapBehaviour<br/>In method maps.MapBehaviour.onConnected(Bundle)<br/>Local variable named builder<br/>At MapBehaviour.java:[line 95]<br/>At MapBehaviour.java:[line 95]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: adapters.CardListAdapter$ViewHolder.cardView<br/>
+<br/>
+<br/>In file CardListAdapter.java,
+					
+						line 41<br/>In class adapters.CardListAdapter$ViewHolder<br/>Field adapters.CardListAdapter$ViewHolder.cardView<br/>At CardListAdapter.java:[line 41]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread public/protected field: adapters.CardListAdapter$ViewHolder.mp3fileInt<br/>
+<br/>
+<br/>In file CardListAdapter.java,
+					
+						line 97<br/>In class adapters.CardListAdapter$ViewHolder<br/>Field adapters.CardListAdapter$ViewHolder.mp3fileInt<br/>At CardListAdapter.java:[line 97]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h1>
+<a name="Details">Warning Types</a>
+</h1>
+<h2>
+<a name="DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because FindBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION">Don't use removeAll to clear a collection</a>
+</h2>
+     
+     <p> If you want to remove all elements from a collection <code>c</code>, use <code>c.clear</code>,
+not <code>c.removeAll(c)</code>. Calling  <code>c.removeAll(c)</code> to clear a collection
+is less clear, susceptible to errors from typos, less efficient and
+for some collections, might throw a <code>ConcurrentModificationException</code>.
+    </p>
+     
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="IS2_INCONSISTENT_SYNC">Inconsistent synchronization</a>
+</h2>
+
+  <p> The fields of this class appear to be accessed inconsistently with respect
+  to synchronization.&nbsp; This bug report indicates that the bug pattern detector
+  judged that
+  </p>
+  <ul>
+  <li> The class contains a mix of locked and unlocked accesses,</li>
+  <li> The class is <b>not</b> annotated as javax.annotation.concurrent.NotThreadSafe,</li>
+  <li> At least one locked access was performed by one of the class's own methods, and</li>
+  <li> The number of unsynchronized field accesses (reads and writes) was no more than
+       one third of all accesses, with writes being weighed twice as high as reads</li>
+  </ul>
+
+  <p> A typical bug matching this bug pattern is forgetting to synchronize
+  one of the methods in a class that is intended to be thread-safe.</p>
+
+  <p> You can select the nodes labeled "Unsynchronized access" to show the
+  code locations where the detector believed that a field was accessed
+  without synchronization.</p>
+
+  <p> Note that there are various sources of inaccuracy in this detector;
+  for example, the detector cannot statically detect all situations in which
+  a lock is held.&nbsp; Also, even when the detector is accurate in
+  distinguishing locked vs. unlocked accesses, the code in question may still
+  be correct.</p>
+
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="MS_CANNOT_BE_FINAL">Field isn't final and can't be protected from malicious code</a>
+</h2>
+
+  <p>
+ A mutable static field could be changed by malicious code or
+        by accident from another package.
+   Unfortunately, the way the field is used doesn't allow
+   any easy fix to this problem.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="NM_CLASS_NAMING_CONVENTION">Class names should start with an upper case letter</a>
+</h2>
+
+  <p> Class names should be nouns, in mixed case with the first letter of each internal word capitalized. Try to keep your class names simple and descriptive. Use whole words-avoid acronyms and abbreviations (unless the abbreviation is much more widely used than the long form, such as URL or HTML).
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="NP_NULL_ON_SOME_PATH">Possible null pointer dereference</a>
+</h2>
+
+<p> There is a branch of statement that, <em>if executed,</em>  guarantees that
+a null value will be dereferenced, which
+would generate a <code>NullPointerException</code> when the code is executed.
+Of course, the problem might be that the branch or statement is infeasible and that
+the null pointer exception can't ever be executed; deciding that is beyond the ability of FindBugs.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</h2>
+
+  <p> This class contains an instance final field that
+   is initialized to a compile-time static value.
+   Consider making the field static.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD">Unread public/protected field</a>
+</h2>
+
+  <p> This field is never read.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="UUF_UNUSED_FIELD">Unused field</a>
+</h2>
+
+  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+</body>
+</html>
